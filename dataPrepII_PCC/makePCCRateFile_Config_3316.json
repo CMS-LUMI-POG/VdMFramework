@@ -1,0 +1,12 @@
+{
+"Fill": "3316",
+"InputPCCFiles": ["/Users/grothe/data/VdM/test/pcc_Data_VdM_Run207871_ZB1.root"],
+"Comment": "BCIDs on which trigger read out PCC values",
+"PCC_BCID": [1,721,1621,2161,2881],
+"AnalysisDir": "../Fill3316_Nov232012",
+"Comment": "The following directories are relative to <AnalysisDir>",
+"InputScanFile" : "cond/Scan_3316.pkl",
+"PCCTreeName": "pccminitree",
+"OutputSubDir" : "LuminometerData",
+"addScanInfo": true
+}

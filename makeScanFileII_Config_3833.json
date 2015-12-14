@@ -1,0 +1,22 @@
+{
+"Fill": "3833",
+"Date": "June072015",
+"AnalysisDir": "Fill3833_June072015",
+"InputDIPFile" : "/Users/grothe/data/VdM/scanFill3833_150607/vdm/vdm_6ec350f6-159a-4910-916d-907b72eec4fb.csv",
+"InputCentralPath": "/Users/grothe/data/VdM/scanFill3833_150607/central",		
+"ScanNames" : ["Y1","X1"],
+"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
+"ScanTimeWindows" :[[1433683691, 1433685111],[1433683691, 1433685111]],
+"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
+"Comment" : "betaStar in cm, angle in microrad",
+"BetaStar" : 9999,
+"Angle" : 9999,
+"Offset" : [0.0,0.0],
+"ParticleTypeB1" : "proton",
+"ParticleTypeB2" : "proton",
+"Comment": "Beam energies in MeV", 
+"EnergyB1" : 9999,
+"EnergyB2" : 9999,
+"Comment": "Output goes to <AnalysisDir>/cond", 
+"OutputSubDir" : "cond"
+}

@@ -1,0 +1,9 @@
+{
+"AnalysisDir": "Fill3804_May302015",
+"InputCentralPath": "/Users/grothe/data/VdM/scanFill3804_15053018/central",
+"Comment": "Input scan info file is <AnalysisDir>/<InputScanFile>",
+"InputScanFile" : "cond/Scan_3804.pkl",
+"Comment": "Output goes to <AnalysisDir>/cond", 
+"OutputSubDir" : "cond",
+"CalibrateFBCTtoDCCT" : "True"
+}

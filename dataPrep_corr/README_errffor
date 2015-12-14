@@ -1,0 +1,8 @@
+BB.py needs shared library errffor.so
+beambeam_original contains binary file for lxplus
+To run with it, copy it into same dir as BB.py
+
+To make shared library yourself:
+f2py --opt="-O3" -c -m errffor --fcompiler=gfortran  --link-lapack_opt *.f
+
+This works under anaconda python, with ROOT version linked against anaconda python

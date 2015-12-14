@@ -1,0 +1,9 @@
+{
+"Fill" : "4266",
+"AnalysisDir" : "Fill4266_Aug252015",
+"Luminometer": "HF",
+"Corr" : ["noCorr"],
+"Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
+"InputFitResultsFile" : "DGConst_FitResults.pkl",
+"FitName": "DGConst"
+}

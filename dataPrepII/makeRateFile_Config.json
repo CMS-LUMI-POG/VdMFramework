@@ -1,0 +1,10 @@
+{
+"Fill": "3804",
+"AnalysisDir": "../Fill3804_May302015",
+"Comment": "The following directories are relative to <AnalysisDir>",
+"InputScanFile" : "cond/Scan_3804.pkl",
+"InputLumiDir" : "/Users/grothe/data/VdM/scanFill3804_15053018/central",
+"RateTable": "hflumi",
+"OutputSubDir" : "LuminometerData",
+"Luminometer": "HF"
+}

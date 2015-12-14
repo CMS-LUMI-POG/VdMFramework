@@ -1,0 +1,122 @@
+{
+"Fill": "4266",
+"Date": "Aug252015",
+"Luminometer": "PLT",
+"AnalysisDir": "Fill4266_Aug252015",
+"CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
+"Corr" : ["noCorr"],
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeScanFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
+"makeRateFile": true,
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeBeamCurrentFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeBeamBeamFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGhostsFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeSatellitesFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
+"makeLengthScaleFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphsFile": true,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphs2D": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/results/<Corr>", 
+"runVdmFitter": true,
+"makeScanFileConfig":
+	{
+	"InputCentralPath": "/Users/grothe/data/VdM/Aug2015/BRILdata",		
+	"InputDIPFile" : "/Users/grothe/data/VdM/Aug2015/beamPositions/vdm_343bccdf-e950-4c38-943b-db731911dc07.csv",
+	"ScanNames" : ["X1","Y1", "Y2", "X2", "X3", "Y3", "X4", "Y4", "X5", "Y5"],
+	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
+	"ScanTimeWindows" :[[1440463385, 1440464453], [1440464723, 1440465800], [1440466014, 1440467085], [1440467318, 1440468386 ], [1440472571,  1440473458 ], [1440473655, 1440474570], [1440474774, 1440475680 ], [1440475865,1440476759 ], [1440478564, 1440479567], [1440479880,1440480952 ]],
+	"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
+	"Comment" : "betaStar in cm, angle in microrad",
+	"BetaStar" : 1917.0,
+	"Angle" : 0.0,
+	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0, 0.0, 0.0],
+	"ParticleTypeB1" : "proton",
+	"ParticleTypeB2" : "proton",
+	"Comment": "Beam energies in GeV", 
+	"EnergyB1" : 6500,
+	"EnergyB2" : 6500,
+	"OutputSubDir" : "cond"
+	},
+"makeRateFileConfig":
+	{	
+	"Comment": "The following directories are relative to <AnalysisDir>",
+	"InputScanFile": "cond/Scan_4266.pkl",
+	"InputLumiDir" : "/Users/grothe/data/VdM/Aug2015/BRILdata",
+	"RateTable": "pltlumizero",
+	"OutputSubDir": "LuminometerData"
+	},
+"makeBeamCurrentFileConfig":
+	{
+	"InputCentralPath": "/Users/grothe/data/VdM/Aug2015/BRILdata",
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_4266.pkl",
+	"OutputSubDir" : "cond",
+	"CalibrateFBCTtoDCCT" : false
+	},
+"makeBeamBeamFileConfig":
+	{
+	"Comment": "Input scan info file is <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_3563.pkl",
+	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_3563.pkl",
+	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
+	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"Scanpairs" : [[1,2],[4,3]],
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGhostsFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeSatellitesFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeLengthScaleFileConfig":
+	{
+	"Comment": "Length scale scan fill",
+	"FillLS": "3563",	
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGraphsFileConfig":
+	{
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_4266.pkl",
+	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_4266.pkl",
+	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
+	"InputLuminometerData" : "LuminometerData/Rates_PLT_4266.pkl",
+	"OutputSubDir" : "graphs"       
+	},
+"makeGraphs2DConfig":
+	{
+	"Comment": "Defines each X/Y pair for which to make 2D graphs", 
+	"Scanpairs" : [[1,2],[4,3]],
+	"Comment": "Input/output directory is <AnalysisDir>/<Luminometer>/graphs",
+	"InOutSubDir": "graphs"
+	},
+"vdmFitterConfig":
+	 {
+	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
+	 "InputGraphsFile" : "graphs/graphs_4266_noCorr.pkl",
+	 "FitName" : "DGConst",
+	 "FitConfigFile" : "fits/DGConst_Config.json"
+	 }
+}

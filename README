@@ -1,30 +1,24 @@
-Date: Wed, 9 Apr 2014 14:38:46 +0200
-From: Olga Driga <olga.mipt@gmail.com>
-To: Monika Grothe <grothe@mail.cern.ch>, Daniel Marlow <marlow@Princeton.EDU>
-Subject: Re: VdM Meeting today?
+Basic Git Instructions
 
-Hi Dan, Monika,
+0. Create your own fork of CMS-LUMI-POG/VdMFramework (upper right)
+1. Do your analysis in your fork
+   a) git clone https://github.com/YOURGITUSERNAME/VdMFramework
+2. Check in your edited files
+   a) git add file1 file2 
+   b) git commit -m "file1 and file2 are changed because..."
+   c) git checkout -b update-newcurrents-date
+   d) git push YOURGITUSERNAME update-newcurrents-date
+3. Make a pull request (PR) with your changes update-newcurrents-data 
+   a) at https://github.com/CMS-LUMI-POG/VdMFramework
+   b) let someone review and merge into the "master"
+4. Keep your master in syne with CMS-LUMI-POG/VdMFramework's master
+   a) add detail here
 
-A short update from my side.
 
-1. Now we have an svn for the VdM code:
+Framework Instructions
+To be continued...
 
-svn co svn+ssh://<username>@svn.cern.ch/reps/VdMframework
 
-I created a standard structure inside the folder, which contains work, tags and trunk folders.
-
-trunk - the latest version of the code
-tags - for tagging particular versions of the analysis
-work - developer's folder
-
-Folder work/ contains working spaces for each one of us: Dan/, Monika/ and Olga/.
-
-I have committed my files to work/Olga. Feel free to have a look and comment.
-
-Please, try to commit anything in your working space and let me know if it works.
-
-2. I have updated the corresponding parts of the VdM document.
-I updated the satellite file part, all the rest corresponds to the code.
-
-Cheers,
-Olga
+Migrated from
+svn co svn+ssh://username@svn.cern.ch/reps/VdMframework/work/Monika
+on December 14th, 2015

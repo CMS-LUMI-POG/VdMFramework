@@ -14,11 +14,11 @@
 5. Make a pull request (PR) with your changes update-newcurrents-data  
   a) at https://github.com/CMS-LUMI-POG/VdMFramework  
   b) let someone review and merge into CMS-LUMI-POG's "master"  
-6. Keep your master in syne with CMS-LUMI-POG/VdMFramework's master  
+6. Keep your master in sync with CMS-LUMI-POG/VdMFramework's master  
   a) git checkout master  
   b) git push YOURGITUSERNAME master  
-
-
+  
+  
 
 ##Framework Instructions
 To be continued...

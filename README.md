@@ -4,7 +4,7 @@
 1. Check out the group's version of the tools (easiest way to keep in sync)  
   a) git clone https://github.com/CMS-LUMI-POG/VdMFramework  
 2. Make a remote to your fork  
-  a) git remote add YOURGITUSERNAME http://github.com/YOURGITUSERNAME/DataCert  
+  a) git remote add YOURGITUSERNAME http://github.com/YOURGITUSERNAME/VdMFramework
 3. Check in your edited files  
   a) git add file1 file2  
   b) git commit -m "file1 and file2 are changed because..."  

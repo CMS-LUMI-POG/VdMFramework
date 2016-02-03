@@ -158,7 +158,10 @@ def Residuals(g,ff):
 
     for i in range(n):
         val = ff.Eval(x[i])
-        dev = (y[i]-val)/ye[i]
+        if ye[i]!=0:
+            dev = (y[i]-val)/ye[i]
+        else:
+            dev=(y[i]-val)/sqrt(val)
         res.SetPoint(i,x[i],dev)
         res.SetPointError(i,0,1)
         

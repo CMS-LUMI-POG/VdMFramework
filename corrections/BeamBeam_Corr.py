@@ -60,12 +60,15 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
             corrXPerBX = {bx:[] for bx in entry.collidingBunches}
             corrYPerBX = {bx:[] for bx in entry.collidingBunches}
             for bx in entry.collidingBunches:
-                for j in range(entry.nSP):
-                    valueX = corrXPerSP[j][str(bx)]
-                    corrXPerBX[bx].append(valueX)
-                    valueY = corrYPerSP[j][str(bx)]
-                    corrYPerBX[bx].append(valueY)
-
+                print bx
+                try:
+                    for j in range(entry.nSP):
+                        valueX = corrXPerSP[j][str(bx)]
+                        corrXPerBX[bx].append(valueX)
+                        valueY = corrYPerSP[j][str(bx)]
+                        corrYPerBX[bx].append(valueY)
+                except:
+                    print bx,"is missing; don't fill corr per bx"
             for index in entry.spPerBX:
                 if 'X' in entry.scanName:
                     entry.spPerBX[index] = [a+b for a,b in zip(entry.spPerBX[index], corrXPerBX[index])]
@@ -76,19 +79,22 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
                 histo = r.TGraph()
                 histo.SetMarkerStyle(8)
                 histo.SetMarkerSize(0.4)
-                for j in range(entry.nSP):
-                    hidx = entry.scanName + "_"+str(bx)
-                    htitle= "BeamBeam correction for " + str(hidx)
-                    if 'X' in entry.scanName:
-                        histo.SetPoint(j,entry.spPerBX[bx][j],corrXPerBX[bx][j]) 
-                        histo.SetTitle(htitle)
-                    if 'Y' in entry.scanName:
-                        histo.SetPoint(j,entry.spPerBX[bx][j],corrYPerBX[bx][j]) 
-                        histo.SetTitle(htitle)
-                histo.Draw("AP")
-                histo.GetXaxis().SetTitle('nominal displacement in mm')
-                histo.GetYaxis().SetTitle('correction from beam-beam in mm')
-                canvas.SaveAs(pdfName+'(')
+                try:
+                    for j in range(entry.nSP):
+                        hidx = entry.scanName + "_"+str(bx)
+                        htitle= "BeamBeam correction for " + str(hidx)
+                        if 'X' in entry.scanName:
+                            histo.SetPoint(j,entry.spPerBX[bx][j],corrXPerBX[bx][j]) 
+                            histo.SetTitle(htitle)
+                        if 'Y' in entry.scanName:
+                            histo.SetPoint(j,entry.spPerBX[bx][j],corrYPerBX[bx][j]) 
+                            histo.SetTitle(htitle)
+                    histo.Draw("AP")
+                    histo.GetXaxis().SetTitle('nominal displacement in mm')
+                    histo.GetYaxis().SetTitle('correction from beam-beam in mm')
+                    canvas.SaveAs(pdfName+'(')
+                except:
+                    print bx,"is missing; no BeamBeam corr."
 
         canvas.SaveAs(pdfName + ']')
                         

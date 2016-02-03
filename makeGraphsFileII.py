@@ -188,6 +188,7 @@ def doMakeGraphsFile(ConfigInfo):
             graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
             graph.SetName(name)
             graph.SetTitle(name)
+            graph.SetMinimum(0.01)
             graphsList[bx] = graph
             
 

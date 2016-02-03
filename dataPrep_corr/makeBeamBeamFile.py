@@ -86,11 +86,9 @@ def doMakeBeamBeamFile(ConfigInfo):
         CsigxList = CapSigma[keyx]
         CsigyList = CapSigma[keyy] 
 
-# IP beta functions beta* of deflected bunch (units: m)
+# IP beta functions beta* of deflected bunch (units: m; INPUT IN METERS)
         betax = float(inDataX.betaStar)
-        betax = betax/1000.
         betay = float(inDataY.betaStar)
-        betay = betay/1000.
 
 # <<<<<>>>>> For X scan:
 

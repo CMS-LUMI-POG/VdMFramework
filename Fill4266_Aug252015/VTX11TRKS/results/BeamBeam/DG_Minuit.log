@@ -1,0 +1,1821 @@
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=68.7669 FROM MIGRAD    STATUS=CONVERGED     159 CALLS         160 TOTAL
+                     EDM=4.90133e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.29120e-01   2.32178e-04  -7.77345e-07   6.40105e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.21468e-04  -1.94799e-10   4.84164e-03
+   3  Amp          2.78616e-01   8.57428e-04   3.20618e-06   4.21905e-02
+   4  Frac         3.25200e-01   8.37333e-01   8.20631e-02  -2.49258e-10
+   5  Mean        -4.06473e-03   3.20159e-04   1.42527e-06   2.05273e-01
+ FCN=45.3461 FROM MIGRAD    STATUS=CONVERGED     229 CALLS         230 TOTAL
+                     EDM=1.97913e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28368e-01   3.06348e-04   6.15145e-07  -5.10235e-01
+   2  #sigma_{1}/#sigma_{2}   8.24365e-01   5.23036e-02   1.49138e-05   3.80913e-02
+   3  Amp          2.80298e-01   9.69952e-04   4.42060e-06   4.23574e-02
+   4  Frac         8.91372e-01   1.12458e-01   2.54890e-04   2.37746e-03
+   5  Mean        -4.03272e-03   3.20335e-04   1.06441e-06   2.35578e-02
+ FCN=45.3461 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=2.48433e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28368e-01   3.06361e-04   6.15143e-07   6.44364e-02
+   2  #sigma_{1}/#sigma_{2}   8.24365e-01   5.23148e-02   1.49204e-05  -2.21790e-03
+   3  Amp          2.80298e-01   9.69971e-04   4.42058e-06   4.21266e-02
+   4  Frac         8.91371e-01   1.12483e-01   2.54481e-04  -2.36849e-05
+   5  Mean        -4.03272e-03   3.20335e-04   1.06440e-06  -3.00831e-04
+ FCN=45.3461 FROM MIGRAD    STATUS=CONVERGED      64 CALLS          65 TOTAL
+                     EDM=1.27766e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28368e-01   3.06360e-04   6.15143e-07  -2.10039e-01
+   2  #sigma_{1}/#sigma_{2}   8.24365e-01   5.23137e-02   1.49201e-05   1.99762e-03
+   3  Amp          2.80298e-01   9.69970e-04   4.42058e-06  -5.27547e-03
+   4  Frac         8.91371e-01   1.12481e-01   2.54480e-04   2.29962e-04
+   5  Mean        -4.03272e-03   3.20335e-04   1.06440e-06  -3.25047e-04
+ FCN=45.3461 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=7.29606e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28368e-01   3.06362e-04   6.15143e-07  -4.15165e-02
+   2  #sigma_{1}/#sigma_{2}   8.24365e-01   5.23152e-02   1.49201e-05  -3.23988e-03
+   3  Amp          2.80298e-01   9.69972e-04   4.42058e-06   7.40712e-03
+   4  Frac         8.91371e-01   1.12484e-01   2.54480e-04  -9.71017e-05
+   5  Mean        -4.03272e-03   3.20335e-04   1.06440e-06  -1.12798e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=87.8422 FROM MIGRAD    STATUS=CONVERGED     169 CALLS         170 TOTAL
+                     EDM=3.77189e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28348e-01   2.26922e-04  -1.66981e-06   3.21880e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.49421e-04  -1.56868e-11   3.40819e-04
+   3  Amp          2.79728e-01   8.44126e-04  -5.20217e-08   1.79001e-02
+   4  Frac         9.40460e-01   6.95131e-01   8.54558e-04  -2.62901e-12
+   5  Mean        -3.68788e-03   3.06974e-04   1.29995e-06   3.42367e-01
+ FCN=28.5233 FROM MIGRAD    STATUS=CONVERGED     180 CALLS         181 TOTAL
+                     EDM=1.59719e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27369e-01   2.86313e-04   4.75549e-07   2.11413e-01
+   2  #sigma_{1}/#sigma_{2}   7.50084e-01   3.83264e-02   1.00946e-05  -5.43481e-03
+   3  Amp          2.81993e-01   9.34801e-04   3.43648e-06   5.27346e-02
+   4  Frac         9.41170e-01   3.39915e-02   8.75749e-05  -1.67706e-03
+   5  Mean        -3.67785e-03   3.09192e-04   8.20141e-07  -4.33617e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=44.4258 FROM MIGRAD    STATUS=CONVERGED     160 CALLS         161 TOTAL
+                     EDM=3.83402e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26370e-01   2.35151e-04  -1.68625e-06  -2.19205e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   7.42270e-04  -2.97873e-11   8.25046e-04
+   3  Amp          2.89713e-01   9.23951e-04   4.20990e-05  -8.11594e-01
+   4  Frac         9.56960e-01   9.09647e-01  -5.47013e-02   1.87697e-10
+   5  Mean        -3.58568e-03   3.25192e-04   4.00820e-06  -1.41579e+00
+ FCN=25.4035 FROM MIGRAD    STATUS=CONVERGED     185 CALLS         186 TOTAL
+                     EDM=4.70373e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25767e-01   3.02574e-04   4.71437e-07  -2.23921e-01
+   2  #sigma_{1}/#sigma_{2}   7.80981e-01   7.36183e-02   1.48374e-05   1.59430e-02
+   3  Amp          2.91147e-01   1.02950e-03   3.45399e-06  -4.97040e-03
+   4  Frac         9.52989e-01   5.42576e-02   1.23096e-04   1.95569e-03
+   5  Mean        -3.57303e-03   3.25008e-04   8.15259e-07   2.83026e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=107.523 FROM MIGRAD    STATUS=CONVERGED     149 CALLS         150 TOTAL
+                     EDM=6.09286e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26481e-01   2.27713e-04   1.38830e-06  -1.92767e-01
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   9.95654e-04  -6.59199e-10   1.15346e-02
+   3  Amp          2.87414e-01   8.81127e-04  -1.47015e-05  -1.00164e-01
+   4  Frac         4.38630e-01   7.09382e-01  -3.84406e-01  -3.18636e-10
+   5  Mean        -3.07907e-03   3.10666e-04   1.39062e-06   1.74540e-01
+ FCN=59.2232 FROM MIGRAD    STATUS=CONVERGED     193 CALLS         194 TOTAL
+                     EDM=9.26352e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25593e-01   2.83700e-04   6.83907e-07  -1.83789e-01
+   2  #sigma_{1}/#sigma_{2}   7.57881e-01   4.23356e-02   1.56880e-05   4.76932e-03
+   3  Amp          2.89544e-01   9.72466e-04   5.02811e-06  -1.70536e-02
+   4  Frac         9.41057e-01   3.76875e-02   1.38125e-04   6.79239e-04
+   5  Mean        -3.09990e-03   3.11765e-04   1.18123e-06   6.32244e-02
+ FCN=59.2232 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=1.74588e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25593e-01   2.83701e-04   6.83905e-07  -2.55114e-03
+   2  #sigma_{1}/#sigma_{2}   7.57881e-01   4.23362e-02   1.56863e-05  -1.88258e-03
+   3  Amp          2.89544e-01   9.72468e-04   5.02811e-06  -9.71446e-04
+   4  Frac         9.41057e-01   3.76881e-02   1.38132e-04  -1.12247e-04
+   5  Mean        -3.09990e-03   3.11765e-04   1.18123e-06   3.18706e-02
+ FCN=59.2232 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=1.11256e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25593e-01   2.83701e-04   6.83904e-07  -1.85692e-02
+   2  #sigma_{1}/#sigma_{2}   7.57881e-01   4.23361e-02   1.56862e-05   2.51394e-04
+   3  Amp          2.89544e-01   9.72467e-04   5.02811e-06  -2.77657e-04
+   4  Frac         9.41057e-01   3.76880e-02   1.38132e-04   1.26610e-04
+   5  Mean        -3.09991e-03   3.11765e-04   1.18123e-06   1.12616e-02
+ FCN=59.2232 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=9.32636e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25593e-01   2.83701e-04   6.83904e-07   6.99720e-03
+   2  #sigma_{1}/#sigma_{2}   7.57881e-01   4.23361e-02   1.56863e-05  -7.49809e-04
+   3  Amp          2.89544e-01   9.72467e-04   5.02811e-06   1.25651e-03
+   4  Frac         9.41057e-01   3.76880e-02   1.38132e-04   3.31013e-06
+   5  Mean        -3.09991e-03   3.11765e-04   1.18123e-06   1.25486e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=59.8896 FROM MIGRAD    STATUS=CONVERGED     148 CALLS         149 TOTAL
+                     EDM=2.63726e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.8 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.23394e-01   2.38699e-04   3.05856e-06  -3.73343e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   9.18496e-04  -2.37597e-11   1.53728e-03
+   3  Amp          3.03282e-01   1.00439e-03   2.99231e-05  -5.16212e-01
+   4  Frac         9.31417e-01   9.07002e-01   4.85025e-02  -3.39206e-10
+   5  Mean        -4.92528e-03   3.30211e-04  -4.03297e-06   1.80748e+00
+ FCN=25.6508 FROM MIGRAD    STATUS=CONVERGED     253 CALLS         254 TOTAL
+                     EDM=7.39464e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.22793e-01   2.85981e-04   4.81406e-07   3.57128e-01
+   2  #sigma_{1}/#sigma_{2}   6.65279e-01   6.18128e-02   1.57036e-05   4.86831e-02
+   3  Amp          3.04854e-01   1.08434e-03   3.60887e-06  -7.37630e-03
+   4  Frac         9.84071e-01   1.18989e-02   5.29825e-05   1.36441e-02
+   5  Mean        -4.90713e-03   3.29665e-04   8.30805e-07   2.26412e-01
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.29606e-16
+NDf                       =           20
+Edm                       =  2.28809e-23
+NCalls                    =          307
+#Sigma                    = -1.56722e-05   +/-   3.08396e-11 
+#sigma_{1}/#sigma_{2}     =      1.01603   +/-   1.46908e-08  	 (limited)
+Amp                       =     0.220002   +/-   1.2857e-08   	 (limited)
+Frac                      =     0.692391   +/-   1.65946e-09  	 (limited)
+Mean                      = -2.08518e-05   +/-   3.31575e-09 
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  0.000126031
+NCalls                    =          163
+#Sigma                    =  3.22072e-06   +/-   0.00198818  
+#sigma_{1}/#sigma_{2}     =      9.90595   +/-   2.07759e-08  	 (limited)
+Amp                       =         0.22   +/-   3.75418      	 (limited)
+Frac                      =            1   +/-   0.711014     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  7.77959e-06
+NCalls                    =          285
+#Sigma                    =  3.22072e-06   +/-   0.0011623   
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   6.94621      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =   7.3807e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00110289  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  8.58449e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00113505  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=78.3174 FROM MIGRAD    STATUS=CONVERGED     183 CALLS         184 TOTAL
+                     EDM=4.47279e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15005e-01   2.18388e-04   1.87209e-07  -3.99110e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.64835e-04  -1.00472e-10   5.12693e-03
+   3  Amp          2.89106e-01   9.33108e-04   8.64914e-08  -6.44272e-02
+   4  Frac         4.89959e-01   6.37495e-01  -1.73080e-03   1.38698e-11
+   5  Mean        -5.14856e-03   2.98212e-04   1.94836e-07  -3.40731e-01
+ FCN=33.7815 FROM MIGRAD    STATUS=CONVERGED     282 CALLS         283 TOTAL
+                     EDM=9.88134e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14415e-01   2.53883e-04   5.02467e-07  -2.27847e-01
+   2  #sigma_{1}/#sigma_{2}   6.51814e-01   4.67536e-02   1.59540e-05   1.78643e-02
+   3  Amp          2.90688e-01   9.90293e-04   4.00159e-06  -1.91595e-02
+   4  Frac         9.84564e-01   8.78644e-03   5.27803e-05   5.23122e-03
+   5  Mean        -5.15527e-03   2.99372e-04   8.61969e-07   3.16875e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=60.0848 FROM MIGRAD    STATUS=CONVERGED     170 CALLS         171 TOTAL
+                     EDM=1.14547e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14900e-01   2.09770e-04   2.48544e-06   2.70586e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   6.14742e-04  -4.64771e-11   2.68779e-03
+   3  Amp          2.90749e-01   9.05777e-04  -1.12097e-05   4.65952e-01
+   4  Frac         5.12134e-01   7.43412e-01  -1.16235e-02   5.20117e-12
+   5  Mean        -5.16155e-03   2.88808e-04   3.58745e-06   7.26217e-01
+ FCN=26.1688 FROM MIGRAD    STATUS=CONVERGED     278 CALLS         279 TOTAL
+                     EDM=1.39373e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14403e-01   2.43844e-04   4.28801e-07  -1.78906e-01
+   2  #sigma_{1}/#sigma_{2}   6.56747e-01   5.07349e-02   1.56880e-05   1.97488e-02
+   3  Amp          2.92082e-01   9.61281e-04   3.42581e-06  -4.24169e-02
+   4  Frac         9.86741e-01   8.33505e-03   4.90631e-05   6.45797e-03
+   5  Mean        -5.17667e-03   2.89583e-04   7.36944e-07  -2.46897e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=62.9396 FROM MIGRAD    STATUS=CONVERGED     182 CALLS         183 TOTAL
+                     EDM=3.16794e-12    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13096e-01   2.21795e-04   1.30380e-07  -4.24204e-03
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   5.60847e-04  -1.21721e-10   6.58414e-03
+   3  Amp          2.99861e-01   9.95672e-04  -2.22728e-06  -2.84815e-04
+   4  Frac         4.22810e-01   6.80188e-01   2.59079e-02  -2.15628e-10
+   5  Mean        -4.73650e-03   3.04240e-04   3.35068e-08  -1.93107e-03
+ FCN=28.4609 FROM MIGRAD    STATUS=CONVERGED     452 CALLS         453 TOTAL
+                     EDM=1.15563e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12660e-01   2.56412e-04   4.70910e-07  -2.98831e-01
+   2  #sigma_{1}/#sigma_{2}   5.95492e-01   6.93173e-02   1.90142e-05   9.38285e-03
+   3  Amp          3.01104e-01   1.05817e-03   3.80200e-06  -4.50668e-02
+   4  Frac         9.92741e-01   5.58268e-03   9.37081e-05  -3.15161e-03
+   5  Mean        -4.76403e-03   3.04666e-04   8.07268e-07   2.38589e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=71.4063 FROM MIGRAD    STATUS=CONVERGED     165 CALLS         166 TOTAL
+                     EDM=5.38685e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13509e-01   2.12994e-04   2.47303e-07   1.80437e-01
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   6.67210e-04  -2.05617e-10   7.55860e-03
+   3  Amp          2.96750e-01   9.44046e-04  -7.75890e-07   2.67490e-02
+   4  Frac         5.05253e-01   5.51248e-01   1.30411e-03  -1.79483e-11
+   5  Mean        -5.14064e-03   2.92564e-04   4.49277e-07   8.35490e-02
+ FCN=27.8658 FROM MIGRAD    STATUS=CONVERGED     293 CALLS         294 TOTAL
+                     EDM=9.9875e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13044e-01   2.43416e-04   4.48917e-07  -3.00520e+00
+   2  #sigma_{1}/#sigma_{2}   5.78196e-01   6.25460e-02   1.80630e-05  -9.69787e-02
+   3  Amp          2.98064e-01   9.96580e-04   3.62632e-06  -1.65588e-01
+   4  Frac         9.92883e-01   4.65761e-03   3.28338e-05  -6.42493e-02
+   5  Mean        -5.13706e-03   2.93377e-04   7.69642e-07   1.59309e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=39.9264 FROM MIGRAD    STATUS=CONVERGED     182 CALLS         183 TOTAL
+                     EDM=3.99537e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.10935e-01   2.20746e-04   4.35222e-07   9.15399e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.34661e-04   1.31978e-12  -1.15555e-04
+   3  Amp          3.12363e-01   1.07606e-03  -2.91321e-06   6.46284e-02
+   4  Frac         2.85111e-01   6.39934e-01  -5.32569e-07  -3.55271e-14
+   5  Mean        -5.15580e-03   3.10210e-04  -1.11041e-06   1.20970e+00
+ FCN=26.4739 FROM MIGRAD    STATUS=CONVERGED     324 CALLS         325 TOTAL
+                     EDM=5.83486e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.10702e-01   2.48885e-04   4.60894e-07  -3.65611e-01
+   2  #sigma_{1}/#sigma_{2}   1.71639e+00   2.69643e-01   4.72605e-05  -1.44908e-02
+   3  Amp          3.13053e-01   1.12033e-03   3.82154e-06   9.91018e-02
+   4  Frac         3.34950e-03   3.65871e-03   3.95661e-05  -1.74022e-02
+   5  Mean        -5.16858e-03   3.10770e-04   7.95275e-07   2.20513e-01
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  4.46451e-08
+NDf                       =           20
+Edm                       =  6.36985e-08
+NCalls                    =          214
+#Sigma                    =  1.18128e-05   +/-   2.18856e-06 
+#sigma_{1}/#sigma_{2}     =      1.00011   +/-   0.00024632   	 (limited)
+Amp                       =     0.251994   +/-   0.000165828  	 (limited)
+Frac                      =     0.804953   +/-   3.87529e-05  	 (limited)
+Mean                      = -4.46364e-06   +/-   7.93052e-06 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  3.17316e-09
+NDf                       =           20
+Edm                       =       148301
+NCalls                    =          129
+#Sigma                    =  1.13371e-05   +/-   6.25512e-09 
+#sigma_{1}/#sigma_{2}     =            1   +/-   2.87481e-06  	 (limited)
+Amp                       =     0.221244   +/-   1.07048e-07  	 (limited)
+Frac                      =     0.808843   +/-   3.97186e-07  	 (limited)
+Mean                      = -6.12355e-06   +/-   2.35612e-05 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.04502e-12
+NDf                       =           20
+Edm                       =  1.05909e-12
+NCalls                    =          143
+#Sigma                    =  1.09605e-05   +/-   7.10382e-08 
+#sigma_{1}/#sigma_{2}     =            1   +/-   1.20089e-06  	 (limited)
+Amp                       =         0.22   +/-   8.58042e-07  	 (limited)
+Frac                      =     0.808843   +/-   1.88477e-07  	 (limited)
+Mean                      = -1.43168e-05   +/-   3.23267e-07 
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=47.1633 FROM MIGRAD    STATUS=CONVERGED     192 CALLS         193 TOTAL
+                     EDM=1.79599e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.18385e-01   2.16713e-04   9.35884e-07  -8.09078e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.78184e-04  -6.38732e-12   5.97244e-04
+   3  Amp          2.81946e-01   8.92127e-04   2.54253e-06   6.07317e-02
+   4  Frac         8.25933e-01   8.64526e-01  -4.50200e-03   1.74012e-11
+   5  Mean        -6.77858e-03   3.05572e-04   1.12249e-06  -3.14913e-01
+ FCN=31.2222 FROM MIGRAD    STATUS=CONVERGED     300 CALLS         301 TOTAL
+                     EDM=7.42806e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.18061e-01   2.46786e-04   4.87276e-07  -2.13486e+00
+   2  #sigma_{1}/#sigma_{2}   6.28149e-01   7.85162e-02   2.67680e-05   7.41303e-03
+   3  Amp          2.82752e-01   9.37870e-04   3.81642e-06  -1.24290e-01
+   4  Frac         9.93702e-01   5.73232e-03   5.29767e-05   5.74444e-03
+   5  Mean        -6.78586e-03   3.05207e-04   8.45825e-07   2.20950e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=33.8385 FROM MIGRAD    STATUS=CONVERGED     169 CALLS         170 TOTAL
+                     EDM=2.67013e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.18179e-01   2.06808e-04  -1.57215e-05   5.70604e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.95870e-04  -9.18563e-11  -6.16412e-04
+   3  Amp          2.83800e-01   8.62973e-04   9.33917e-05   6.13483e-01
+   4  Frac         2.86415e-01   8.55412e-01   7.47913e-02  -2.81872e-11
+   5  Mean        -7.50437e-03   2.95093e-04  -8.98542e-06   5.58501e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=48.0793 FROM MIGRAD    STATUS=CONVERGED     176 CALLS         177 TOTAL
+                     EDM=7.62077e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15647e-01   2.16003e-04   1.52723e-07   2.33346e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.67696e-04  -5.94398e-12  -1.69932e-05
+   3  Amp          2.94472e-01   9.60393e-04  -1.12895e-05   3.57443e-01
+   4  Frac         8.86561e-01   8.45773e-01  -9.22328e-04   1.62999e-11
+   5  Mean        -6.67442e-03   3.08779e-04   4.07097e-06  -4.72346e-01
+ FCN=48.0793 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=4.46273e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15647e-01   2.16207e-04   6.05517e-07  -2.71238e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.57833e-02   1.08601e-04  -7.21568e-05
+   3  Amp          2.94471e-01   9.60597e-04   4.91192e-06   1.66221e-02
+   4  Frac         8.72141e-01   5.07867e-01   5.00000e-01   1.06581e-12
+   5  Mean        -6.67441e-03   3.08599e-04   1.05561e-06  -1.69045e-01
+ FCN=48.0793 FROM HESSE     STATUS=NOT POSDEF     35 CALLS         116 TOTAL
+                     EDM=3.07323e-12    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15647e-01   1.31362e-05   1.21104e-07  -1.77345e-02
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   1.13675e+00   1.03154e-05  -3.54225e-06
+   3  Amp          2.94471e-01   5.83646e-05   9.82386e-07   1.99353e-02
+   4  Frac         9.98351e-01   9.97066e-01   5.00000e-01  -6.11067e-12
+   5  Mean        -6.67440e-03   2.29005e-05   2.11122e-07   5.16163e-02
+ FCN=48.0793 FROM HESSE     STATUS=NOT POSDEF     37 CALLS         109 TOTAL
+                     EDM=3.87405e-12    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15647e-01   2.42111e-05   1.21104e-07  -9.35852e-02
+   2  #sigma_{1}/#sigma_{2}   9.99981e-01   8.77052e+00   3.39544e-05  -5.94153e-06
+   3  Amp          2.94471e-01   1.07571e-04   9.82385e-07   1.22971e-03
+   4  Frac         9.99954e-01   7.58968e-01   5.00000e-01  -2.86899e-09
+   5  Mean        -6.67440e-03   4.22053e-05   2.11122e-07   4.95577e-05
+ FCN=48.0793 FROM HESSE     STATUS=NOT POSDEF     41 CALLS         118 TOTAL
+                     EDM=2.91666e-14    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15647e-01   4.41607e-06   1.21104e-07  -5.97284e-03
+   2  #sigma_{1}/#sigma_{2}   9.99287e-01   2.01949e+00   5.00000e-01   3.86240e-08
+   3  Amp          2.94471e-01   1.96207e-05   9.82386e-07   6.59857e-03
+   4  Frac         1.00000e+00   1.47725e-01   5.00000e-01** at limit **
+   5  Mean        -6.67440e-03   7.69862e-06   2.11122e-07   2.89942e-04
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=32.5229 FROM MIGRAD    STATUS=CONVERGED     170 CALLS         171 TOTAL
+                     EDM=9.85202e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16516e-01   2.10120e-04  -1.57950e-05   1.00470e+01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.94997e-04  -1.08238e-10   5.94183e-04
+   3  Amp          2.91213e-01   9.05015e-04   8.85035e-05   1.27744e+00
+   4  Frac         4.57928e-01   6.39625e-01   3.97261e-02   5.20117e-12
+   5  Mean        -6.78347e-03   2.97399e-04   1.02351e-05  -1.31928e+00
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=44.4442 FROM MIGRAD    STATUS=CONVERGED     201 CALLS         202 TOTAL
+                     EDM=6.64337e-11    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.0 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12940e-01   2.19427e-04   2.12030e-07  -2.27627e-02
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   4.82735e-04   5.66128e-12  -2.92425e-04
+   3  Amp          3.09744e-01   1.04446e-03   7.30662e-07   1.25978e-03
+   4  Frac         2.71748e-01   6.40219e-01  -2.64396e-03   2.12523e-11
+   5  Mean        -6.66168e-03   3.10583e-04   1.31285e-07  -4.80289e-02
+ FCN=38.7179 FROM MIGRAD    STATUS=CONVERGED     391 CALLS         392 TOTAL
+                     EDM=6.47722e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12799e-01   2.38986e-04   5.51337e-07  -3.34501e-02
+   2  #sigma_{1}/#sigma_{2}   5.35545e-01   1.54295e-01   6.15163e-05   4.32933e-03
+   3  Amp          3.10152e-01   1.08098e-03   4.54291e-06  -2.24541e-02
+   4  Frac         9.98614e-01   2.18639e-03   4.65492e-05   5.60343e-03
+   5  Mean        -6.66998e-03   3.11983e-04   9.59953e-07   1.69231e-01
+ FCN=38.7179 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=1.20593e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12799e-01   2.38989e-04   5.51334e-07   1.49425e-01
+   2  #sigma_{1}/#sigma_{2}   5.35544e-01   1.54311e-01   6.15250e-05  -4.21242e-04
+   3  Amp          3.10152e-01   1.08099e-03   4.54289e-06  -8.15366e-03
+   4  Frac         9.98614e-01   2.18662e-03   4.65339e-05  -6.98298e-04
+   5  Mean        -6.66998e-03   3.11983e-04   9.59949e-07   7.35044e-02
+ FCN=38.7179 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=5.27675e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12799e-01   2.38989e-04   5.51334e-07   3.88161e-02
+   2  #sigma_{1}/#sigma_{2}   5.35544e-01   1.54307e-01   6.15235e-05   7.83583e-04
+   3  Amp          3.10152e-01   1.08098e-03   4.54289e-06  -9.96839e-03
+   4  Frac         9.98614e-01   2.18657e-03   4.65331e-05   1.00195e-03
+   5  Mean        -6.66998e-03   3.11983e-04   9.59949e-07   1.39380e-02
+ FCN=38.7179 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=2.02277e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12799e-01   2.38989e-04   5.51334e-07   7.17269e-02
+   2  #sigma_{1}/#sigma_{2}   5.35544e-01   1.54310e-01   6.15239e-05  -3.12982e-04
+   3  Amp          3.10152e-01   1.08099e-03   4.54289e-06  -2.80359e-03
+   4  Frac         9.98614e-01   2.18662e-03   4.65333e-05  -4.17560e-04
+   5  Mean        -6.66998e-03   3.11983e-04   9.59949e-07   1.04159e-03
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  4.46451e-08
+NDf                       =           20
+Edm                       =  6.36985e-08
+NCalls                    =          214
+#Sigma                    =  1.18128e-05   +/-   2.18856e-06 
+#sigma_{1}/#sigma_{2}     =      1.00011   +/-   0.00024632   	 (limited)
+Amp                       =     0.251994   +/-   0.000165828  	 (limited)
+Frac                      =     0.804953   +/-   3.87529e-05  	 (limited)
+Mean                      = -4.46364e-06   +/-   7.93052e-06 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  3.17316e-09
+NDf                       =           20
+Edm                       =       148301
+NCalls                    =          129
+#Sigma                    =  1.13371e-05   +/-   6.25512e-09 
+#sigma_{1}/#sigma_{2}     =            1   +/-   2.87481e-06  	 (limited)
+Amp                       =     0.221244   +/-   1.07048e-07  	 (limited)
+Frac                      =     0.808843   +/-   3.97186e-07  	 (limited)
+Mean                      = -6.12355e-06   +/-   2.35612e-05 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.04502e-12
+NDf                       =           20
+Edm                       =  1.05909e-12
+NCalls                    =          143
+#Sigma                    =  1.09605e-05   +/-   7.10382e-08 
+#sigma_{1}/#sigma_{2}     =            1   +/-   1.20089e-06  	 (limited)
+Amp                       =         0.22   +/-   8.58042e-07  	 (limited)
+Frac                      =     0.808843   +/-   1.88477e-07  	 (limited)
+Mean                      = -1.43168e-05   +/-   3.23267e-07 
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=44.6157 FROM MIGRAD    STATUS=CONVERGED     191 CALLS         192 TOTAL
+                     EDM=2.08889e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.17889e-01   2.18556e-04   6.20035e-07   1.17161e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.94661e-04  -1.47789e-11   1.34144e-03
+   3  Amp          2.81437e-01   8.97282e-04  -2.74056e-06   2.08978e-02
+   4  Frac         8.69295e-01   7.43013e-01  -1.97111e-02   1.71035e-10
+   5  Mean        -5.54773e-04   3.04468e-04  -5.70039e-07  -5.01311e-01
+ FCN=32.6958 FROM MIGRAD    STATUS=CONVERGED     235 CALLS         236 TOTAL
+                     EDM=3.30209e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   8.8 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.17561e-01   2.62260e-04   5.23960e-08   5.21770e-01
+   2  #sigma_{1}/#sigma_{2}   6.99237e-01   9.35714e-02   5.67007e-06  -4.37642e-03
+   3  Amp          2.82250e-01   9.77490e-04  -5.23829e-07   4.51490e-01
+   4  Frac         9.88679e-01   1.40352e-02  -5.07328e-05  -4.98747e-03
+   5  Mean        -5.66159e-04   3.04193e-04   3.39755e-08  -5.40259e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=25.7066 FROM MIGRAD    STATUS=CONVERGED     170 CALLS         171 TOTAL
+                     EDM=8.699e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.18072e-01   2.08226e-04   3.32667e-07   1.67402e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.48974e-04   1.25985e-12   3.35788e-05
+   3  Amp          2.81700e-01   8.65470e-04   2.47545e-07   4.17850e-02
+   4  Frac         7.70339e-01   8.78293e-01   4.17040e-04  -3.19744e-12
+   5  Mean        -1.99430e-04   2.93861e-04   9.94208e-07  -6.21174e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=33.3199 FROM MIGRAD    STATUS=CONVERGED     202 CALLS         203 TOTAL
+                     EDM=1.14574e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.0 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15470e-01   2.19404e-04  -4.67267e-07   8.82190e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.61410e-04  -6.42273e-12   2.37530e-04
+   3  Amp          2.94734e-01   9.68670e-04  -4.33704e-06   1.48580e-01
+   4  Frac         9.83966e-01   9.07301e-01  -2.72157e-03   3.29123e-11
+   5  Mean        -3.21843e-04   3.07771e-04   1.79942e-07   3.56434e-02
+ FCN=27.7094 FROM MIGRAD    STATUS=CONVERGED     208 CALLS         209 TOTAL
+                     EDM=8.62073e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15240e-01   2.54665e-04   4.64533e-07  -2.99367e-01
+   2  #sigma_{1}/#sigma_{2}   7.06755e-01   1.16211e-01   3.43818e-05   4.48871e-03
+   3  Amp          2.95342e-01   1.02649e-03   3.73067e-06   3.02710e-02
+   4  Frac         9.91506e-01   1.30604e-02   9.60602e-05   1.75326e-03
+   5  Mean        -3.20687e-04   3.07882e-04   8.05270e-07   2.39331e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=16.3608 FROM MIGRAD    STATUS=CONVERGED     182 CALLS         183 TOTAL
+                     EDM=1.17633e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16068e-01   2.08731e-04  -1.06340e-06  -1.37022e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   4.51584e-04   6.18638e-12  -7.05494e-05
+   3  Amp          2.91845e-01   9.12169e-04   5.02570e-05  -3.96223e-01
+   4  Frac         6.99629e-01   7.29523e-01  -1.44391e-03   1.73017e-12
+   5  Mean        -4.29391e-04   2.95609e-04  -1.10854e-06  -8.29861e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=33.2857 FROM MIGRAD    STATUS=CONVERGED     206 CALLS         207 TOTAL
+                     EDM=5.43225e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.12188e-01   2.19449e-04  -8.50140e-08   3.30635e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   3.65468e-04  -3.01249e-13  -6.70814e-05
+   3  Amp          3.10772e-01   1.05221e-03  -6.15583e-06  -4.23045e-02
+   4  Frac         4.95524e-02   8.93181e-01   7.01823e-04  -1.55609e-12
+   5  Mean        -1.87536e-04   3.09666e-04   1.10922e-06  -2.10029e-01
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  4.46451e-08
+NDf                       =           20
+Edm                       =  6.36985e-08
+NCalls                    =          214
+#Sigma                    =  1.18128e-05   +/-   2.18856e-06 
+#sigma_{1}/#sigma_{2}     =      1.00011   +/-   0.00024632   	 (limited)
+Amp                       =     0.251994   +/-   0.000165828  	 (limited)
+Frac                      =     0.804953   +/-   3.87529e-05  	 (limited)
+Mean                      = -4.46364e-06   +/-   7.93052e-06 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  3.17316e-09
+NDf                       =           20
+Edm                       =       148301
+NCalls                    =          129
+#Sigma                    =  1.13371e-05   +/-   6.25512e-09 
+#sigma_{1}/#sigma_{2}     =            1   +/-   2.87481e-06  	 (limited)
+Amp                       =     0.221244   +/-   1.07048e-07  	 (limited)
+Frac                      =     0.808843   +/-   3.97186e-07  	 (limited)
+Mean                      = -6.12355e-06   +/-   2.35612e-05 
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.04502e-12
+NDf                       =           20
+Edm                       =  1.05909e-12
+NCalls                    =          143
+#Sigma                    =  1.09605e-05   +/-   7.10382e-08 
+#sigma_{1}/#sigma_{2}     =            1   +/-   1.20089e-06  	 (limited)
+Amp                       =         0.22   +/-   8.58042e-07  	 (limited)
+Frac                      =     0.808843   +/-   1.88477e-07  	 (limited)
+Mean                      = -1.43168e-05   +/-   3.23267e-07 
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=70.9058 FROM MIGRAD    STATUS=CONVERGED     153 CALLS         154 TOTAL
+                     EDM=8.02519e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28872e-01   2.29805e-04  -4.46972e-07   2.12100e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.24392e-04  -1.30238e-10   3.14172e-03
+   3  Amp          2.82426e-01   8.60804e-04  -1.10442e-05   2.47440e-01
+   4  Frac         6.95476e-01   5.04611e-01   3.90322e-02  -1.66395e-10
+   5  Mean        -5.66342e-03   3.18071e-04  -2.02098e-06   1.21110e+00
+ FCN=46.3105 FROM MIGRAD    STATUS=CONVERGED     260 CALLS         261 TOTAL
+                     EDM=2.11786e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28399e-01   2.67413e-04   6.20181e-07  -1.33618e-01
+   2  #sigma_{1}/#sigma_{2}   6.73668e-01   5.98234e-02   2.32456e-05   4.88453e-02
+   3  Amp          2.83521e-01   9.18046e-04   4.44508e-06   1.40527e-01
+   4  Frac         9.87472e-01   9.50531e-03   7.34928e-05   1.32438e-02
+   5  Mean        -5.68932e-03   3.18298e-04   1.06860e-06   1.54482e+00
+ FCN=46.3105 FROM MIGRAD    STATUS=CONVERGED      63 CALLS          64 TOTAL
+                     EDM=4.0584e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28399e-01   2.67424e-04   6.20178e-07   2.98409e-01
+   2  #sigma_{1}/#sigma_{2}   6.73666e-01   5.98356e-02   2.32311e-05  -1.52036e-02
+   3  Amp          2.83521e-01   9.18062e-04   4.44506e-06   4.56782e-02
+   4  Frac         9.87472e-01   9.50750e-03   7.34074e-05  -7.08543e-03
+   5  Mean        -5.68938e-03   3.18298e-04   1.06860e-06   4.44333e-01
+ FCN=46.3105 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=2.27591e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28399e-01   2.67421e-04   6.20178e-07  -2.30553e-01
+   2  #sigma_{1}/#sigma_{2}   6.73666e-01   5.98316e-02   2.32298e-05   7.45109e-03
+   3  Amp          2.83521e-01   9.18056e-04   4.44506e-06   5.79872e-03
+   4  Frac         9.87472e-01   9.50677e-03   7.34045e-05   2.46979e-04
+   5  Mean        -5.68939e-03   3.18298e-04   1.06860e-06   1.85110e-01
+ FCN=46.3105 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=1.93991e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28399e-01   2.67422e-04   6.20178e-07   2.56707e-02
+   2  #sigma_{1}/#sigma_{2}   6.73666e-01   5.98331e-02   2.32302e-05  -7.12141e-04
+   3  Amp          2.83521e-01   9.18058e-04   4.44506e-06   1.72202e-02
+   4  Frac         9.87472e-01   9.50701e-03   7.34054e-05  -2.42250e-03
+   5  Mean        -5.68940e-03   3.18298e-04   1.06860e-06   2.08512e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=63.2732 FROM MIGRAD    STATUS=CONVERGED     149 CALLS         150 TOTAL
+                     EDM=9.82591e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28447e-01   2.25947e-04  -2.76537e-06  -2.29294e-01
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   9.27473e-04  -2.54445e-10   5.56828e-03
+   3  Amp          2.81757e-01   8.41231e-04  -7.44213e-07  -2.80698e-02
+   4  Frac         2.16804e-01   5.11401e-01  -1.00353e-01   6.66134e-10
+   5  Mean        -5.17756e-03   3.06082e-04   2.86514e-06   1.34772e-01
+ FCN=27.9698 FROM MIGRAD    STATUS=CONVERGED     233 CALLS         234 TOTAL
+                     EDM=7.52905e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27647e-01   2.86928e-04   4.71172e-07   1.28649e-01
+   2  #sigma_{1}/#sigma_{2}   7.86461e-01   4.74084e-02   1.13510e-05   1.63855e-02
+   3  Amp          2.83598e-01   9.35658e-04   3.38104e-06  -1.83008e-02
+   4  Frac         9.29753e-01   5.54386e-02   1.23617e-04   1.37047e-03
+   5  Mean        -5.19030e-03   3.08311e-04   8.10201e-07   2.53501e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=51.9887 FROM MIGRAD    STATUS=CONVERGED     147 CALLS         148 TOTAL
+                     EDM=5.71653e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.8 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26058e-01   2.34070e-04   1.54387e-05  -7.68394e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.27843e-04  -3.36697e-11   4.25827e-03
+   3  Amp          2.94819e-01   9.30938e-04  -6.01968e-05  -5.01518e-01
+   4  Frac         5.17953e-01   7.47456e-01  -8.08045e-02  -1.88294e-11
+   5  Mean        -5.52905e-03   3.21261e-04   8.64564e-07  -7.52181e-01
+ FCN=20.9426 FROM MIGRAD    STATUS=CONVERGED     202 CALLS         203 TOTAL
+                     EDM=9.08449e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25458e-01   2.78846e-04   1.25759e-07  -2.65090e-01
+   2  #sigma_{1}/#sigma_{2}   7.00191e-01   5.50985e-02  -1.33988e-05   1.65630e-03
+   3  Amp          2.96309e-01   1.00355e-03   8.20893e-07  -3.44210e-02
+   4  Frac         9.78791e-01   1.53603e-02   6.75773e-05   2.81217e-04
+   5  Mean        -5.53010e-03   3.20649e-04   2.82542e-08  -9.03935e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=81.9134 FROM MIGRAD    STATUS=CONVERGED     150 CALLS         151 TOTAL
+                     EDM=5.41673e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27015e-01   2.28667e-04   9.48019e-07  -3.40664e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   8.49942e-04  -8.20664e-11   2.64630e-03
+   3  Amp          2.89748e-01   8.81468e-04  -1.10449e-05  -8.96023e-02
+   4  Frac         1.29243e-01   5.63342e-01  -6.33166e-02   3.71983e-10
+   5  Mean        -5.53330e-03   3.09988e-04   1.99573e-07   2.70369e-01
+ FCN=28.3261 FROM MIGRAD    STATUS=CONVERGED     284 CALLS         285 TOTAL
+                     EDM=1.40426e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26161e-01   2.77485e-04   4.79341e-07  -3.33711e+00
+   2  #sigma_{1}/#sigma_{2}   7.22432e-01   3.85686e-02   1.13812e-05  -1.55191e-02
+   3  Amp          2.91825e-01   9.62580e-04   3.46332e-06   4.36157e-01
+   4  Frac         9.60964e-01   2.08993e-02   7.25462e-05   8.17430e-03
+   5  Mean        -5.50091e-03   3.11132e-04   8.22383e-07  -2.26040e+00
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=102.183 FROM MIGRAD    STATUS=CONVERGED     168 CALLS         169 TOTAL
+                     EDM=7.8535e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.2 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.22847e-01   2.42528e-04   2.41332e-07  -2.46987e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   7.05472e-04  -2.31665e-10   7.75619e-03
+   3  Amp          3.08832e-01   1.02552e-03   1.17855e-06  -1.67155e-02
+   4  Frac         4.06842e-01   6.48158e-01  -2.29396e-02   1.99535e-10
+   5  Mean        -7.54191e-03   3.23936e-04  -2.52177e-07  -8.53723e-02
+ FCN=30.5008 FROM MIGRAD    STATUS=CONVERGED     217 CALLS         218 TOTAL
+                     EDM=7.65909e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.21642e-01   3.04382e-04   5.19949e-07  -3.08670e+00
+   2  #sigma_{1}/#sigma_{2}   7.67636e-01   2.57524e-02   9.05217e-06   3.51424e-01
+   3  Amp          3.12092e-01   1.14325e-03   3.88339e-06  -1.52703e-01
+   4  Frac         8.97671e-01   4.60293e-02   1.23251e-04   2.27315e-02
+   5  Mean        -7.51076e-03   3.25649e-04   8.92127e-07   8.82623e-01
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.29606e-16
+NDf                       =           20
+Edm                       =  2.28809e-23
+NCalls                    =          307
+#Sigma                    = -1.56722e-05   +/-   3.08396e-11 
+#sigma_{1}/#sigma_{2}     =      1.01603   +/-   1.46908e-08  	 (limited)
+Amp                       =     0.220002   +/-   1.2857e-08   	 (limited)
+Frac                      =     0.692391   +/-   1.65946e-09  	 (limited)
+Mean                      = -2.08518e-05   +/-   3.31575e-09 
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  0.000126031
+NCalls                    =          163
+#Sigma                    =  3.22072e-06   +/-   0.00198818  
+#sigma_{1}/#sigma_{2}     =      9.90595   +/-   2.07759e-08  	 (limited)
+Amp                       =         0.22   +/-   3.75418      	 (limited)
+Frac                      =            1   +/-   0.711014     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  7.77959e-06
+NCalls                    =          285
+#Sigma                    =  3.22072e-06   +/-   0.0011623   
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   6.94621      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =   7.3807e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00110289  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  8.58449e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00113505  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=98.5442 FROM MIGRAD    STATUS=CONVERGED     157 CALLS         158 TOTAL
+                     EDM=1.17112e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28079e-01   2.35672e-04  -3.53804e-07   3.45764e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   6.48535e-03   3.06206e-11  -5.54613e-03
+   3  Amp          2.82890e-01   8.74234e-04   1.01378e-07   1.99453e-02
+   4  Frac         8.80494e-01   5.16283e-01   6.75160e-01  -1.73151e-09
+   5  Mean        -8.80091e-03   3.18441e-04   1.61429e-07  -8.74936e-02
+ FCN=35.3626 FROM MIGRAD    STATUS=CONVERGED     352 CALLS         353 TOTAL
+                     EDM=6.64988e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27155e-01   3.04165e-04   5.53792e-07   2.33865e-01
+   2  #sigma_{1}/#sigma_{2}   1.58071e+00   2.08256e-01   2.83133e-05  -1.65183e-02
+   3  Amp          2.85208e-01   9.70240e-04   3.92772e-06  -6.74259e-02
+   4  Frac         2.41886e-02   1.84863e-02   5.52872e-05  -8.04822e-03
+   5  Mean        -8.83741e-03   3.19431e-04   9.40212e-07  -7.12456e-01
+ FCN=35.3626 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=2.47186e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27155e-01   3.04190e-04   5.53791e-07   6.87070e-01
+   2  #sigma_{1}/#sigma_{2}   1.58071e+00   2.08315e-01   2.83277e-05   6.88849e-03
+   3  Amp          2.85208e-01   9.70268e-04   3.92771e-06  -3.60426e-02
+   4  Frac         2.41888e-02   1.84916e-02   5.52625e-05   3.82320e-03
+   5  Mean        -8.83738e-03   3.19431e-04   9.40209e-07  -1.54654e-01
+ FCN=35.3626 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=1.40155e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27155e-01   3.04176e-04   5.53790e-07   1.51784e-01
+   2  #sigma_{1}/#sigma_{2}   1.58071e+00   2.08282e-01   2.83273e-05  -5.66835e-03
+   3  Amp          2.85209e-01   9.70253e-04   3.92771e-06  -4.86490e-02
+   4  Frac         2.41887e-02   1.84886e-02   5.52619e-05  -2.97573e-03
+   5  Mean        -8.83737e-03   3.19431e-04   9.40209e-07  -5.57927e-02
+ FCN=35.3626 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=8.88477e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27155e-01   3.04186e-04   5.53791e-07   3.72989e-01
+   2  #sigma_{1}/#sigma_{2}   1.58071e+00   2.08305e-01   2.83275e-05   3.57615e-03
+   3  Amp          2.85209e-01   9.70264e-04   3.92771e-06  -1.83385e-02
+   4  Frac         2.41888e-02   1.84907e-02   5.52622e-05   1.69267e-03
+   5  Mean        -8.83737e-03   3.19431e-04   9.40209e-07   7.20191e-04
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=35.5295 FROM MIGRAD    STATUS=FAILED        564 CALLS         565 TOTAL
+                     EDM=0.00112695    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26240e-01   2.83012e-04   0.00000e+00  -3.94003e+01
+   2  #sigma_{1}/#sigma_{2}   1.78828e+00   2.94608e-01   0.00000e+00  -1.99864e+00
+   3  Amp          2.86737e-01   9.10709e-04  -0.00000e+00  -1.65603e+00
+   4  Frac         1.40630e-02   1.00455e-02   0.00000e+00   1.18024e+00
+   5  Mean        -9.43294e-03   3.05854e-04  -0.00000e+00   3.91769e+00
+ FCN=35.5293 FROM MIGRAD    STATUS=CONVERGED      99 CALLS         100 TOTAL
+                     EDM=2.49541e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26239e-01   2.94885e-04  -6.49081e-07  -1.52680e-01
+   2  #sigma_{1}/#sigma_{2}   1.78734e+00   2.98111e-01  -3.24029e-04  -7.04692e-03
+   3  Amp          2.86740e-01   9.37680e-04   1.89888e-06   1.75079e-02
+   4  Frac         1.41160e-02   1.01777e-02   3.47895e-04  -6.87829e-03
+   5  Mean        -9.43314e-03   3.07676e-04   9.66183e-08  -1.15163e-01
+ FCN=35.5293 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=3.38658e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26239e-01   2.98037e-04   5.35667e-07   2.02436e-02
+   2  #sigma_{1}/#sigma_{2}   1.78734e+00   3.07343e-01   3.69105e-05   3.90214e-04
+   3  Amp          2.86740e-01   9.40752e-04   3.79684e-06   1.22038e-02
+   4  Frac         1.41160e-02   1.05107e-02   3.82483e-05   3.71187e-04
+   5  Mean        -9.43314e-03   3.07636e-04   9.07767e-07  -5.48701e-02
+ FCN=35.5293 FROM MIGRAD    STATUS=CONVERGED      71 CALLS          72 TOTAL
+                     EDM=9.46533e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26239e-01   2.98035e-04   5.35667e-07  -5.11293e-02
+   2  #sigma_{1}/#sigma_{2}   1.78734e+00   3.07339e-01   3.69103e-05  -2.75032e-04
+   3  Amp          2.86740e-01   9.40751e-04   3.79684e-06   1.12517e-03
+   4  Frac         1.41160e-02   1.05105e-02   3.82481e-05  -3.14900e-04
+   5  Mean        -9.43314e-03   3.07636e-04   9.07767e-07  -1.02181e-02
+ FCN=35.5293 FROM MIGRAD    STATUS=CONVERGED      72 CALLS          73 TOTAL
+                     EDM=5.22467e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26239e-01   2.98037e-04   5.35667e-07   5.22982e-03
+   2  #sigma_{1}/#sigma_{2}   1.78734e+00   3.07343e-01   3.69103e-05   4.36910e-04
+   3  Amp          2.86740e-01   9.40752e-04   3.79684e-06   4.05498e-03
+   4  Frac         1.41160e-02   1.05107e-02   3.82481e-05   4.35586e-04
+   5  Mean        -9.43314e-03   3.07636e-04   9.07767e-07  -1.19367e-05
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=98.5381 FROM MIGRAD    STATUS=CONVERGED     147 CALLS         148 TOTAL
+                     EDM=1.02048e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.24988e-01   2.38068e-04  -4.79263e-07   9.31401e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.56318e-03   1.34031e-09  -7.84993e-04
+   3  Amp          2.95535e-01   9.45706e-04  -4.30597e-07   7.66032e-02
+   4  Frac         7.05190e-01   6.41558e-01  -3.44493e-02   8.86757e-12
+   5  Mean        -9.90177e-03   3.21672e-04   1.96242e-07  -2.62397e-01
+ FCN=26.82 FROM MIGRAD    STATUS=CONVERGED     385 CALLS         386 TOTAL
+                     EDM=2.32108e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.24121e-01   3.01409e-04   4.89921e-07  -4.47650e-01
+   2  #sigma_{1}/#sigma_{2}   1.73122e+00   2.52663e-01   2.99983e-05  -8.00733e-03
+   3  Amp          2.97928e-01   1.03487e-03   3.54539e-06  -4.24445e-02
+   4  Frac         1.61856e-02   1.12324e-02   3.72723e-05   5.24658e-03
+   5  Mean        -9.92424e-03   3.22754e-04   8.31121e-07   4.02100e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=149.241 FROM MIGRAD    STATUS=CONVERGED     145 CALLS         146 TOTAL
+                     EDM=7.32608e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26240e-01   2.34884e-04  -6.65701e-07   8.09355e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   6.18428e-03   1.00117e-08  -4.92467e-03
+   3  Amp          2.89514e-01   8.93902e-04   9.26918e-08   5.34940e-02
+   4  Frac         4.97852e-01   6.07225e-01  -1.19671e-02  -1.05160e-12
+   5  Mean        -9.47140e-03   3.11658e-04   2.71454e-07  -1.91160e-01
+ FCN=15.8475 FROM MIGRAD    STATUS=CONVERGED     321 CALLS         322 TOTAL
+                     EDM=3.56635e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.24830e-01   3.09766e-04   3.71377e-07  -1.55809e+00
+   2  #sigma_{1}/#sigma_{2}   1.52095e+00   1.23218e-01   1.18369e-05  -1.00089e-02
+   3  Amp          2.93201e-01   1.01249e-03   2.63702e-06   1.19149e-01
+   4  Frac         4.73502e-02   2.57165e-02   3.83953e-05  -4.40212e-04
+   5  Mean        -9.50987e-03   3.12838e-04   6.26900e-07  -3.82086e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=95.1349 FROM MIGRAD    STATUS=CONVERGED     131 CALLS         132 TOTAL
+                     EDM=6.84339e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.22603e-01   2.40097e-04  -5.97141e-09  -4.92613e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   5.07056e-03   1.75730e-08  -1.22066e-02
+   3  Amp          3.07395e-01   1.02239e-03   1.11673e-06  -4.80709e-02
+   4  Frac         6.59829e-01   7.88445e-01   6.32607e+00  -1.11790e-09
+   5  Mean        -1.11770e-02   3.27842e-04  -4.63914e-07   1.09339e-01
+ FCN=20.9068 FROM MIGRAD    STATUS=CONVERGED     336 CALLS         337 TOTAL
+                     EDM=8.82559e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.21699e-01   3.05273e-04   4.42410e-07   1.72891e+00
+   2  #sigma_{1}/#sigma_{2}   1.69069e+00   2.20103e-01   2.39875e-05  -1.50856e-02
+   3  Amp          3.10002e-01   1.12042e-03   3.25783e-06   1.89891e-01
+   4  Frac         1.83030e-02   1.22783e-02   3.48526e-05  -8.21610e-03
+   5  Mean        -1.11707e-02   3.29071e-04   7.51996e-07   3.34252e-02
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  3.62517e-08
+NDf                       =           14
+Edm                       =  1.71896e-07
+NCalls                    =          300
+#Sigma                    = -4.83086e-06   +/-   4.61181e-07 
+#sigma_{1}/#sigma_{2}     =     0.101415   +/-   0.000361134  	 (limited)
+Amp                       =     0.342488   +/-   0.000208379  	 (limited)
+Frac                      =     0.995937   +/-   3.76922e-05  	 (limited)
+Mean                      =  5.17059e-05   +/-   4.14894e-06 
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=41.5206 FROM MIGRAD    STATUS=CONVERGED     138 CALLS         139 TOTAL
+                     EDM=2.16709e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16110e-01   2.20371e-04   8.32747e-06  -1.66683e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.93274e-03   8.14651e-11  -1.20590e-04
+   3  Amp          2.84158e-01   9.29102e-04   1.01384e-04   2.05404e-01
+   4  Frac         7.07080e-02   5.18194e-01  -8.04659e-04   5.40012e-13
+   5  Mean        -6.99213e-03   3.06879e-04  -1.97862e-06   2.00626e+00
+ FCN=23.5374 FROM MIGRAD    STATUS=CONVERGED     366 CALLS         367 TOTAL
+                     EDM=4.83374e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15826e-01   2.85179e-04   4.31238e-07  -1.10220e+00
+   2  #sigma_{1}/#sigma_{2}   2.27452e+00   1.29289e+00   1.07075e-04  -4.64326e-03
+   3  Amp          2.84978e-01   9.96970e-04   3.44053e-06   6.15366e-03
+   4  Frac         2.03044e-03   3.41581e-03   2.47915e-05  -2.07651e-02
+   5  Mean        -6.99516e-03   3.07079e-04   7.42703e-07  -9.67432e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=44.9782 FROM MIGRAD    STATUS=CONVERGED     146 CALLS         147 TOTAL
+                     EDM=2.16554e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16088e-01   2.12316e-04   7.95985e-06  -1.72781e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.83464e-03   9.86652e-11  -1.94613e-04
+   3  Amp          2.85201e-01   9.01534e-04   9.73941e-05   2.13015e-01
+   4  Frac         3.36522e-02   5.16803e-01   3.72174e-03  -2.85638e-12
+   5  Mean        -6.94943e-03   2.96783e-04  -2.04031e-06   2.05054e+00
+ FCN=19.399 FROM MIGRAD    STATUS=CONVERGED     535 CALLS         536 TOTAL
+                     EDM=1.30074e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16329e-01   2.19093e-04   3.81851e-07   1.42592e+00
+   2  #sigma_{1}/#sigma_{2}   9.99996e+00   6.05288e+00   1.07825e-02  -2.75442e-04
+   3  Amp          2.85920e-01   9.12760e-04   3.02433e-06  -1.01798e-01
+   4  Frac         6.55212e-04   1.29125e-04   1.02911e-05  -3.05807e-02
+   5  Mean        -6.95041e-03   2.97111e-04   6.55214e-07   1.74358e+00
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=37.9664 FROM MIGRAD    STATUS=CONVERGED     137 CALLS         138 TOTAL
+                     EDM=1.63495e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13993e-01   2.21903e-04   8.65048e-06  -1.00480e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.84824e-03  -1.19671e-10   2.15074e-04
+   3  Amp          2.94243e-01   9.94457e-04   1.35885e-04   8.59990e-02
+   4  Frac         7.83857e-01   5.50069e-01   2.40419e-02  -5.82645e-13
+   5  Mean        -7.63078e-03   3.12405e-04   9.09551e-07   2.23942e+00
+ FCN=27.3178 FROM MIGRAD    STATUS=CONVERGED     361 CALLS         362 TOTAL
+                     EDM=3.42208e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13797e-01   2.50738e-04   4.68676e-07  -3.60825e-01
+   2  #sigma_{1}/#sigma_{2}   4.33909e-01   2.07743e-01   6.33387e-05   7.48451e-04
+   3  Amp          2.94833e-01   1.03171e-03   3.81316e-06  -4.11681e-02
+   4  Frac         9.98679e-01   1.91398e-03   2.80763e-05   1.43133e-03
+   5  Mean        -7.64327e-03   3.12602e-04   8.12126e-07  -7.60849e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=52.4573 FROM MIGRAD    STATUS=CONVERGED     144 CALLS         145 TOTAL
+                     EDM=3.0624e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14980e-01   2.16976e-04   7.97575e-06  -2.12275e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.69945e-03   2.01600e-11  -3.25455e-05
+   3  Amp          2.90613e-01   9.42393e-04   1.17212e-04   2.59734e-01
+   4  Frac         6.73305e-01   6.06811e-01  -7.85444e-04   1.70530e-13
+   5  Mean        -7.15331e-03   3.01831e-04  -4.24315e-06   2.27979e+00
+ FCN=33.1022 FROM MIGRAD    STATUS=CONVERGED     341 CALLS         342 TOTAL
+                     EDM=4.65584e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14563e-01   2.62726e-04   4.98464e-07  -1.43702e+00
+   2  #sigma_{1}/#sigma_{2}   1.57307e+00   2.92404e-01   4.37810e-05  -4.83824e-03
+   3  Amp          2.91741e-01   1.01656e-03   4.00916e-06  -3.02175e-01
+   4  Frac         9.55244e-03   1.14813e-02   5.99499e-05   3.82389e-03
+   5  Mean        -7.14616e-03   3.01862e-04   8.60635e-07   2.40520e-01
+ FCN=33.1022 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=3.7287e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14563e-01   2.62729e-04   4.98460e-07   5.46549e-01
+   2  #sigma_{1}/#sigma_{2}   1.57307e+00   2.92423e-01   4.37728e-05  -2.17365e-03
+   3  Amp          2.91742e-01   1.01656e-03   4.00915e-06  -1.56221e-02
+   4  Frac         9.55238e-03   1.14820e-02   5.99310e-05   6.34420e-03
+   5  Mean        -7.14616e-03   3.01862e-04   8.60631e-07   6.37524e-02
+ FCN=33.1022 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=3.54784e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14563e-01   2.62716e-04   4.98459e-07  -2.40546e-01
+   2  #sigma_{1}/#sigma_{2}   1.57307e+00   2.92359e-01   4.37729e-05  -1.14842e-02
+   3  Amp          2.91742e-01   1.01654e-03   4.00915e-06  -4.27898e-02
+   4  Frac         9.55223e-03   1.14793e-02   5.99307e-05  -1.03475e-03
+   5  Mean        -7.14617e-03   3.01862e-04   8.60631e-07  -2.37321e-03
+ FCN=33.1022 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=3.40965e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14563e-01   2.62729e-04   4.98459e-07   3.03040e-01
+   2  #sigma_{1}/#sigma_{2}   1.57308e+00   2.92426e-01   4.37736e-05  -1.77496e-03
+   3  Amp          2.91742e-01   1.01656e-03   4.00915e-06  -3.82600e-04
+   4  Frac         9.55224e-03   1.14818e-02   5.99311e-05   6.05305e-03
+   5  Mean        -7.14617e-03   3.01862e-04   8.60631e-07  -5.05827e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=44.5921 FROM MIGRAD    STATUS=CONVERGED     277 CALLS         278 TOTAL
+                     EDM=1.0853e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.8 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11628e-01   2.24524e-04  -2.14818e-07   4.38123e-02
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   1.15947e-02  -2.77657e-09   3.54062e-04
+   3  Amp          3.10284e-01   1.08299e-03   1.70572e-06  -6.82849e-03
+   4  Frac         9.90310e-01   7.55306e-01   8.63032e-13   9.09495e-13
+   5  Mean        -7.35398e-03   3.16061e-04  -1.25947e-07  -1.10445e-02
+ FCN=29.2402 FROM MIGRAD    STATUS=CONVERGED     252 CALLS         253 TOTAL
+                     EDM=4.02955e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11442e-01   2.61709e-04   4.90060e-07  -3.39745e-02
+   2  #sigma_{1}/#sigma_{2}   3.54739e-01   2.22686e-01   7.50041e-05  -9.09835e-04
+   3  Amp          3.10950e-01   1.11745e-03   4.07873e-06   1.20246e-02
+   4  Frac         9.98995e-01   1.30363e-03   2.13203e-05  -8.51934e-03
+   5  Mean        -7.35887e-03   3.16391e-04   8.49527e-07   4.96560e-01
+ FCN=29.2402 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=2.66083e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11442e-01   2.61698e-04   4.90058e-07  -1.12269e-01
+   2  #sigma_{1}/#sigma_{2}   3.54739e-01   2.22650e-01   7.50119e-05   2.06120e-03
+   3  Amp          3.10950e-01   1.11744e-03   4.07872e-06   5.83000e-03
+   4  Frac         9.98995e-01   1.30340e-03   2.13101e-05   2.04396e-03
+   5  Mean        -7.35889e-03   3.16391e-04   8.49525e-07   4.74559e-02
+ FCN=29.2402 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=2.52038e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11442e-01   2.61705e-04   4.90058e-07  -3.27991e-02
+   2  #sigma_{1}/#sigma_{2}   3.54738e-01   2.22675e-01   7.50125e-05   1.80359e-04
+   3  Amp          3.10950e-01   1.11745e-03   4.07872e-06   5.42554e-03
+   4  Frac         9.98995e-01   1.30355e-03   2.13103e-05  -4.66657e-03
+   5  Mean        -7.35889e-03   3.16391e-04   8.49525e-07   1.44970e-02
+ FCN=29.2402 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=2.4151e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11442e-01   2.61699e-04   4.90058e-07  -6.59483e-02
+   2  #sigma_{1}/#sigma_{2}   3.54738e-01   2.22655e-01   7.50123e-05   1.71710e-03
+   3  Amp          3.10950e-01   1.11744e-03   4.07872e-06   1.89177e-03
+   4  Frac         9.98995e-01   1.30343e-03   2.13101e-05   8.59525e-04
+   5  Mean        -7.35889e-03   3.16391e-04   8.49525e-07  -5.92332e-03
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =    0.0040296
+NCalls                    =          268
+#Sigma                    = -1.00476e-06   +/-   4.70556e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   4.96601      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000243104
+NCalls                    =          275
+#Sigma                    = -1.00476e-06   +/-   5.24287e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   4.96601      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000137505
+NCalls                    =          275
+#Sigma                    = -1.00476e-06   +/-   5.61482e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   4.96601      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  9.50368e-05
+NCalls                    =          275
+#Sigma                    = -1.00476e-06   +/-   5.88819e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   4.96601      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000219772
+NCalls                    =          275
+#Sigma                    = -1.00476e-06   +/-   5.30429e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   4.96601      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=71.8449 FROM MIGRAD    STATUS=CONVERGED     119 CALLS         120 TOTAL
+                     EDM=2.86749e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.30055e-01   2.37962e-04  -4.77800e-07   1.39835e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   7.37534e-03   3.68453e-08  -1.15635e-02
+   3  Amp          2.82849e-01   8.68753e-04   2.48855e-06   1.53297e-02
+   4  Frac         3.47948e-01   8.02930e-01   3.39352e-01   1.07453e-09
+   5  Mean         1.82234e-02   3.22697e-04   4.10078e-07   2.77101e-02
+ FCN=21.3097 FROM MIGRAD    STATUS=CONVERGED     424 CALLS         425 TOTAL
+                     EDM=2.14673e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.29455e-01   3.52053e-04   4.42620e-07  -1.61421e+00
+   2  #sigma_{1}/#sigma_{2}   2.09244e+00   7.03145e-01   5.67451e-05  -2.39255e-02
+   3  Amp          2.84574e-01   9.57436e-04   3.05836e-06  -6.70496e-02
+   4  Frac         7.41184e-03   7.44688e-03   2.67652e-05  -5.25838e-02
+   5  Mean         1.82660e-02   3.24176e-04   7.47455e-07  -3.94236e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=98.7595 FROM MIGRAD    STATUS=CONVERGED     134 CALLS         135 TOTAL
+                     EDM=5.46855e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.7 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.29205e-01   2.30543e-04  -5.22642e-07   1.56112e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   7.18371e-03   7.49722e-08  -2.38576e-03
+   3  Amp          2.82840e-01   8.46956e-04   3.17463e-06   1.84265e-02
+   4  Frac         2.25149e-02   6.24482e-01  -1.28849e+00  -3.99068e-09
+   5  Mean         1.79772e-02   3.11955e-04   5.14286e-07   3.10351e-02
+ FCN=28.0265 FROM MIGRAD    STATUS=CONVERGED     317 CALLS         318 TOTAL
+                     EDM=8.60825e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28604e-01   3.57756e-04   4.88761e-07   1.40789e-01
+   2  #sigma_{1}/#sigma_{2}   2.32451e+00   7.69302e-01   7.23421e-05  -2.87631e-03
+   3  Amp          2.84733e-01   9.23494e-04   3.37377e-06  -1.57036e-03
+   4  Frac         6.50495e-03   5.22124e-03   2.43737e-05  -6.36646e-03
+   5  Mean         1.80541e-02   3.13290e-04   8.23568e-07  -1.48105e-01
+ FCN=28.0265 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=4.73153e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28604e-01   3.57793e-04   4.88763e-07   1.05910e-01
+   2  #sigma_{1}/#sigma_{2}   2.32451e+00   7.69442e-01   7.23757e-05   1.27010e-04
+   3  Amp          2.84733e-01   9.23512e-04   3.37377e-06  -1.53059e-02
+   4  Frac         6.50496e-03   5.22218e-03   2.43680e-05   2.24173e-03
+   5  Mean         1.80541e-02   3.13290e-04   8.23570e-07  -6.54510e-02
+ FCN=28.0265 FROM MIGRAD    STATUS=CONVERGED      64 CALLS          65 TOTAL
+                     EDM=3.86457e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28604e-01   3.57780e-04   4.88763e-07   4.20412e-02
+   2  #sigma_{1}/#sigma_{2}   2.32451e+00   7.69393e-01   7.23756e-05  -8.61414e-04
+   3  Amp          2.84733e-01   9.23506e-04   3.37377e-06  -7.51727e-03
+   4  Frac         6.50496e-03   5.22185e-03   2.43679e-05  -9.62791e-04
+   5  Mean         1.80541e-02   3.13290e-04   8.23570e-07   1.23498e-03
+ FCN=28.0265 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=3.53975e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28604e-01   3.57791e-04   4.88763e-07   4.30038e-02
+   2  #sigma_{1}/#sigma_{2}   2.32451e+00   7.69434e-01   7.23756e-05   2.48952e-05
+   3  Amp          2.84733e-01   9.23511e-04   3.37377e-06  -6.92518e-03
+   4  Frac         6.50496e-03   5.22212e-03   2.43679e-05   1.57440e-03
+   5  Mean         1.80541e-02   3.13290e-04   8.23570e-07  -2.22069e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=92.5829 FROM MIGRAD    STATUS=CONVERGED     138 CALLS         139 TOTAL
+                     EDM=6.77882e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27240e-01   2.44300e-04  -3.28094e-06   2.40738e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   6.34771e-03   7.88923e-09  -3.59124e-03
+   3  Amp          2.94480e-01   9.43679e-04   9.16633e-06   1.77583e-01
+   4  Frac         4.99713e-01   5.37719e-01   5.98257e-03  -2.55795e-13
+   5  Mean         1.88512e-02   3.27025e-04   3.27759e-07   5.21717e-01
+ FCN=13.7848 FROM MIGRAD    STATUS=CONVERGED     233 CALLS         234 TOTAL
+                     EDM=6.65973e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25864e-01   3.42295e-04   3.63020e-07   1.05023e-01
+   2  #sigma_{1}/#sigma_{2}   1.34489e+00   9.82315e-02   9.46481e-06  -1.30793e-02
+   3  Amp          2.97972e-01   1.10326e-03   2.58909e-06   2.12366e-02
+   4  Frac         1.00298e-01   7.48421e-02   7.44093e-05  -1.29417e-03
+   5  Mean         1.89288e-02   3.28350e-04   6.16136e-07   1.83744e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=36.3429 FROM MIGRAD    STATUS=FAILED        338 CALLS         339 TOTAL
+                     EDM=8.90916    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26808e-01   2.40089e-04   0.00000e+00  -6.21606e+03
+   2  #sigma_{1}/#sigma_{2}   1.59718e+00   6.21832e-02   0.00000e+00  -1.47943e+02
+   3  Amp          2.92505e-01   8.58862e-04   0.00000e+00  -4.53983e+01
+   4  Frac         3.09253e-02   8.90796e-03  -0.00000e+00  -2.08593e+01
+   5  Mean         1.88309e-02   3.16378e-04  -0.00000e+00   2.02466e+02
+ FCN=35.2187 FROM MIGRAD    STATUS=CONVERGED     163 CALLS         164 TOTAL
+                     EDM=3.27942e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26823e-01   3.06973e-04   5.52988e-07   2.90286e-01
+   2  #sigma_{1}/#sigma_{2}   1.51394e+00   1.23260e-01   1.90574e-05  -2.73707e-02
+   3  Amp          2.92476e-01   9.97769e-04   3.87035e-06   1.19945e-01
+   4  Frac         4.53385e-02   2.47975e-02   6.05542e-05  -8.91899e-03
+   5  Mean         1.88279e-02   3.18136e-04   9.34205e-07  -1.55042e-01
+ FCN=35.2187 FROM MIGRAD    STATUS=CONVERGED      63 CALLS          64 TOTAL
+                     EDM=3.77005e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26823e-01   3.06987e-04   5.52987e-07   2.17990e-01
+   2  #sigma_{1}/#sigma_{2}   1.51394e+00   1.23280e-01   1.90521e-05   4.79991e-03
+   3  Amp          2.92476e-01   9.97786e-04   3.87036e-06   2.70084e-02
+   4  Frac         4.53387e-02   2.48015e-02   6.05817e-05   1.01389e-03
+   5  Mean         1.88279e-02   3.18137e-04   9.34206e-07  -8.68333e-02
+ FCN=35.2187 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=2.40649e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26823e-01   3.06984e-04   5.52987e-07  -7.39749e-03
+   2  #sigma_{1}/#sigma_{2}   1.51394e+00   1.23276e-01   1.90520e-05  -5.48805e-04
+   3  Amp          2.92476e-01   9.97783e-04   3.87036e-06   3.84274e-03
+   4  Frac         4.53387e-02   2.48008e-02   6.05813e-05  -7.57754e-04
+   5  Mean         1.88279e-02   3.18137e-04   9.34206e-07  -3.84238e-02
+ FCN=35.2187 FROM MIGRAD    STATUS=CONVERGED      65 CALLS          66 TOTAL
+                     EDM=2.22721e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26823e-01   3.06985e-04   5.52987e-07   1.63025e-02
+   2  #sigma_{1}/#sigma_{2}   1.51394e+00   1.23278e-01   1.90520e-05   1.85840e-03
+   3  Amp          2.92476e-01   9.97785e-04   3.87036e-06   6.24858e-04
+   4  Frac         4.53387e-02   2.48011e-02   6.05813e-05   1.30482e-05
+   5  Mean         1.88279e-02   3.18137e-04   9.34206e-07  -4.81035e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=47.9838 FROM MIGRAD    STATUS=FAILED        337 CALLS         338 TOTAL
+                     EDM=7.74519e+09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.22195e-01   1.13774e-01   0.00000e+00  -2.22131e+03
+   2  #sigma_{1}/#sigma_{2}   1.26408e+00   5.41040e+00   0.00000e+00  -7.51038e+02
+   3  Amp          3.17427e-01   9.26092e-01  -0.00000e+00   4.66232e+03
+   4  Frac         3.52282e-01   7.34930e-01  -0.00000e+00  -3.89035e+00
+   5  Mean         2.01478e-02   1.01267e+00  -0.00000e+00   4.02451e+03
+ FCN=19.4908 FROM MIGRAD    STATUS=CONVERGED     235 CALLS         236 TOTAL
+                     EDM=3.7614e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.23355e-01   3.25724e-04   4.34387e-07  -1.23719e+00
+   2  #sigma_{1}/#sigma_{2}   1.41301e+00   9.32885e-02   1.19323e-05  -2.86668e-02
+   3  Amp          3.11802e-01   1.15978e-03   3.16242e-06  -8.33175e-02
+   4  Frac         7.21392e-02   4.11805e-02   6.45352e-05  -5.45174e-03
+   5  Mean         1.99317e-02   3.33853e-04   7.37748e-07  -2.60850e-01
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =    0.0045742
+NCalls                    =          268
+#Sigma                    = -1.08037e-06   +/-   4.69243e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.25514      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000285225
+NCalls                    =          275
+#Sigma                    = -1.08037e-06   +/-   5.23437e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.25514      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000160388
+NCalls                    =          275
+#Sigma                    = -1.08037e-06   +/-   5.60883e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.25514      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000110533
+NCalls                    =          275
+#Sigma                    = -1.08037e-06   +/-   5.88381e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.25514      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000674599
+NCalls                    =          275
+#Sigma                    = -1.08037e-06   +/-   4.79522e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.25514      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=35.986 FROM MIGRAD    STATUS=CONVERGED     140 CALLS         141 TOTAL
+                     EDM=3.73354e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16260e-01   2.18397e-04   9.23823e-06  -2.04785e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.95594e-03   2.45929e-10  -4.16039e-04
+   3  Amp          2.83758e-01   9.25291e-04   1.06982e-04   3.73210e-01
+   4  Frac         8.30407e-01   8.74924e-01   5.88863e-02  -2.06413e-11
+   5  Mean         9.29686e-03   3.02387e-04   8.05170e-06  -2.06673e+00
+ FCN=15.9818 FROM MIGRAD    STATUS=CONVERGED     559 CALLS         560 TOTAL
+                     EDM=1.43664e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.16097e-01   4.60276e-04   3.54306e-07   6.11338e-01
+   2  #sigma_{1}/#sigma_{2}   3.68322e+00   6.74120e+00   3.06285e-04  -7.43246e-04
+   3  Amp          2.84463e-01   9.82089e-04   2.83126e-06   6.90561e-02
+   4  Frac         9.15959e-04   1.67234e-03   1.34150e-05  -1.17226e-02
+   5  Mean         9.28467e-03   3.02401e-04   6.08231e-07  -5.05499e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=53.7061 FROM MIGRAD    STATUS=CONVERGED     141 CALLS         142 TOTAL
+                     EDM=6.46259e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15958e-01   2.09073e-04   1.03720e-05  -3.01635e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.86159e-03  -1.49451e-10   2.91046e-04
+   3  Amp          2.86184e-01   9.02166e-04   1.30123e-04   4.30266e-01
+   4  Frac         9.86469e-01   9.61858e-01   6.15025e-04   1.20792e-13
+   5  Mean         9.78865e-03   2.91131e-04   5.41111e-06  -3.27564e+00
+ FCN=38.4295 FROM MIGRAD    STATUS=CONVERGED     213 CALLS         214 TOTAL
+                     EDM=4.50814e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.5 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15721e-01   2.42609e-04  -2.34567e-08   5.41372e-01
+   2  #sigma_{1}/#sigma_{2}   4.60514e-01   1.80633e-01   1.15481e-05   7.94315e-05
+   3  Amp          2.86891e-01   9.42373e-04  -6.71482e-07   3.18971e-02
+   4  Frac         9.97991e-01   2.59796e-03  -1.58913e-05  -2.08211e-03
+   5  Mean         9.79592e-03   2.90312e-04   3.34819e-08   5.30388e-02
+ FCN=38.4295 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=3.73491e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15721e-01   2.39583e-04   5.16451e-07   5.97499e-02
+   2  #sigma_{1}/#sigma_{2}   4.60514e-01   1.73607e-01   5.86894e-05   1.20764e-03
+   3  Amp          2.86891e-01   9.41966e-04   4.19719e-06  -1.52163e-02
+   4  Frac         9.97991e-01   2.48971e-03   3.39952e-05   4.36724e-04
+   5  Mean         9.79592e-03   2.91116e-04   8.92524e-07   1.73564e-02
+ FCN=38.4295 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=3.09593e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15721e-01   2.39585e-04   5.16451e-07   1.05217e-01
+   2  #sigma_{1}/#sigma_{2}   4.60514e-01   1.73615e-01   5.86896e-05  -4.15956e-04
+   3  Amp          2.86891e-01   9.41968e-04   4.19719e-06  -1.80984e-03
+   4  Frac         9.97991e-01   2.48982e-03   3.39952e-05  -2.25547e-03
+   5  Mean         9.79592e-03   2.91116e-04   8.92524e-07  -6.74850e-03
+ FCN=38.4295 FROM MIGRAD    STATUS=CONVERGED      68 CALLS          69 TOTAL
+                     EDM=2.9006e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.15721e-01   2.39582e-04   5.16451e-07  -3.20771e-02
+   2  #sigma_{1}/#sigma_{2}   4.60514e-01   1.73606e-01   5.86894e-05   1.51252e-03
+   3  Amp          2.86891e-01   9.41965e-04   4.19719e-06  -6.89142e-03
+   4  Frac         9.97991e-01   2.48967e-03   3.39951e-05   1.25651e-03
+   5  Mean         9.79592e-03   2.91116e-04   8.92524e-07   5.13885e-04
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=41.9309 FROM MIGRAD    STATUS=CONVERGED     123 CALLS         124 TOTAL
+                     EDM=6.68889e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.13956e-01   2.19634e-04   9.96271e-06  -3.20275e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.76489e-03  -1.42874e-11   1.48420e-04
+   3  Amp          2.97112e-01   9.99183e-04   1.56850e-04   4.23699e-01
+   4  Frac         9.78401e-01   6.99147e-01   7.20653e-03  -1.84741e-12
+   5  Mean         9.13046e-03   3.05570e-04   9.11381e-06  -2.81784e+00
+ FCN=22.2744 FROM MIGRAD    STATUS=CONVERGED     503 CALLS         504 TOTAL
+                     EDM=4.73205e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14158e-01   2.27648e-04   4.19304e-07   5.41798e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e-01   2.19067e+00   2.16509e-03** at limit **
+   3  Amp          2.97763e-01   1.01028e-03   3.42578e-06   3.52870e-01
+   4  Frac         9.99444e-01   1.25175e-04   1.16679e-05   7.17443e-02
+   5  Mean         9.12362e-03   3.05456e-04   7.19534e-07   3.34297e-02
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=29.6367 FROM MIGRAD    STATUS=CONVERGED     123 CALLS         124 TOTAL
+                     EDM=7.30128e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14765e-01   2.12253e-04   1.02022e-05  -3.40946e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.59507e-03   1.11246e-10  -2.06201e-04
+   3  Amp          2.93167e-01   9.43741e-04   1.47722e-04   4.73043e-01
+   4  Frac         1.63271e-01   5.49485e-01   6.44600e-03  -2.01084e-12
+   5  Mean         9.58775e-03   2.94733e-04   8.68782e-06  -3.02888e+00
+ FCN=18.8809 FROM MIGRAD    STATUS=CONVERGED     359 CALLS         360 TOTAL
+                     EDM=1.00005e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.14517e-01   2.53185e-04   3.71775e-07   8.52525e-01
+   2  #sigma_{1}/#sigma_{2}   1.82776e+00   6.73711e-01   6.78213e-05  -1.04206e-02
+   3  Amp          2.93884e-01   1.00700e-03   3.03088e-06   1.76535e-01
+   4  Frac         3.15890e-03   5.43699e-03   3.56445e-05  -2.06516e-02
+   5  Mean         9.57916e-03   2.94492e-04   6.41071e-07  -1.65623e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=59.4546 FROM MIGRAD    STATUS=CONVERGED     123 CALLS         124 TOTAL
+                     EDM=7.17975e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.6 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11653e-01   2.25893e-04   1.20264e-05   5.29646e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   2.54443e-03   6.17134e-11  -1.17923e-04
+   3  Amp          3.08165e-01   1.07861e-03   1.63478e-04  -1.75300e-01
+   4  Frac         3.79888e-03   6.62508e-01  -1.34012e-02  -1.70530e-13
+   5  Mean         9.92603e-03   3.11888e-04   9.63627e-06  -2.50492e+00
+ FCN=38.5833 FROM MIGRAD    STATUS=CONVERGED     246 CALLS         247 TOTAL
+                     EDM=3.2062e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11162e-01   2.74703e-04   5.55455e-07   1.15594e+00
+   2  #sigma_{1}/#sigma_{2}   1.45242e+00   1.78957e-01   3.51489e-05  -3.09537e-03
+   3  Amp          3.09640e-01   1.17353e-03   4.65388e-06   1.20842e-01
+   4  Frac         1.86108e-02   1.86623e-02   8.79432e-05  -9.00247e-04
+   5  Mean         9.92569e-03   3.11705e-04   9.57533e-07   2.40839e-01
+ FCN=38.5833 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=2.98442e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11162e-01   2.74703e-04   5.55450e-07   2.59025e-02
+   2  #sigma_{1}/#sigma_{2}   1.45242e+00   1.78956e-01   3.51151e-05  -3.19502e-03
+   3  Amp          3.09640e-01   1.17353e-03   4.65389e-06  -1.81636e-02
+   4  Frac         1.86108e-02   1.86623e-02   8.80582e-05  -1.34805e-03
+   5  Mean         9.92568e-03   3.11705e-04   9.57532e-07   7.76528e-02
+ FCN=38.5833 FROM MIGRAD    STATUS=CONVERGED      71 CALLS          72 TOTAL
+                     EDM=1.62535e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11162e-01   2.74706e-04   5.55450e-07   1.58849e-01
+   2  #sigma_{1}/#sigma_{2}   1.45242e+00   1.78964e-01   3.51150e-05   8.98138e-04
+   3  Amp          3.09640e-01   1.17354e-03   4.65389e-06  -7.53060e-03
+   4  Frac         1.86108e-02   1.86632e-02   8.80581e-05   2.78904e-04
+   5  Mean         9.92568e-03   3.11705e-04   9.57533e-07   2.57331e-02
+ FCN=38.5833 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=1.10674e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.11162e-01   2.74705e-04   5.55450e-07   2.56569e-02
+   2  #sigma_{1}/#sigma_{2}   1.45242e+00   1.78960e-01   3.51148e-05  -1.19815e-03
+   3  Amp          3.09640e-01   1.17354e-03   4.65389e-06  -1.05160e-02
+   4  Frac         1.86108e-02   1.86627e-02   8.80577e-05  -6.17978e-04
+   5  Mean         9.92568e-03   3.11705e-04   9.57533e-07   4.12704e-03
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =   0.00398503
+NCalls                    =          268
+#Sigma                    = -9.98446e-07   +/-   4.70667e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.23939      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000239762
+NCalls                    =          275
+#Sigma                    = -9.98446e-07   +/-   5.24358e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.23939      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =   0.00013568
+NCalls                    =          275
+#Sigma                    = -9.98446e-07   +/-   5.61532e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.23939      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  9.37986e-05
+NCalls                    =          275
+#Sigma                    = -9.98446e-07   +/-   5.88856e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.23939      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           14
+Edm                       =  0.000199139
+NCalls                    =          275
+#Sigma                    = -9.98446e-07   +/-   5.35812e-05 
+#sigma_{1}/#sigma_{2}     =            1   +/-   9.23939      	 (limited)
+Amp                       =          1.1   +/-   2.86906      	 (limited)
+Frac                      =         0.99   +/-   0.755935     	 (limited)
+Mean                      =            0   +/-   1.41421     
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=172.292 FROM MIGRAD    STATUS=CONVERGED     156 CALLS         157 TOTAL
+                     EDM=1.72949e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.30298e-01   2.42207e-04   2.59390e-07  -7.62952e-01
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   1.18471e-03  -1.97288e-10   1.86805e-02
+   3  Amp          2.84928e-01   8.79445e-04   6.47247e-06  -1.55333e-01
+   4  Frac         7.84332e-01   5.55511e-01   6.56230e-01  -3.00693e-09
+   5  Mean        -2.01824e-02   3.20813e-04  -1.50673e-06   4.36064e-01
+ FCN=24.824 FROM MIGRAD    STATUS=CONVERGED     180 CALLS         181 TOTAL
+                     EDM=5.12224e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28352e-01   3.16673e-04   4.62965e-07  -1.62790e+00
+   2  #sigma_{1}/#sigma_{2}   7.78274e-01   1.19536e-02   5.81670e-06   3.19841e-01
+   3  Amp          2.89533e-01   1.00946e-03   3.27356e-06   1.34010e-01
+   4  Frac         7.78571e-01   6.53694e-02   1.74968e-04   1.13508e-02
+   5  Mean        -2.01444e-02   3.20326e-04   7.94736e-07   1.86281e+00
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=193.262 FROM MIGRAD    STATUS=CONVERGED     147 CALLS         148 TOTAL
+                     EDM=2.01128e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.30033e-01   2.33831e-04   1.93164e-07  -6.59504e-02
+   2  #sigma_{1}/#sigma_{2}   9.99999e-01   1.15934e-03  -1.27576e-09   1.69605e-02
+   3  Amp          2.85386e-01   8.52462e-04  -6.98371e-07   1.69479e-03
+   4  Frac         2.19546e-01   5.93245e-01   1.32657e+00   2.91578e-09
+   5  Mean        -1.97189e-02   3.09521e-04  -6.63849e-07   4.78750e-02
+ FCN=37.1437 FROM MIGRAD    STATUS=CONVERGED     223 CALLS         224 TOTAL
+                     EDM=7.43496e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28231e-01   2.97482e-04   5.44850e-07  -1.01438e+00
+   2  #sigma_{1}/#sigma_{2}   7.66191e-01   1.43128e-02   7.09240e-06   6.26674e-02
+   3  Amp          2.89685e-01   9.64900e-04   3.86010e-06  -9.10557e-03
+   4  Frac         8.32834e-01   4.85313e-02   1.46455e-04   3.10044e-03
+   5  Mean        -1.97178e-02   3.09955e-04   9.34671e-07   1.01421e+00
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=156.881 FROM MIGRAD    STATUS=CONVERGED     173 CALLS         174 TOTAL
+                     EDM=6.5176e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.28028e-01   2.45317e-04  -2.20425e-06  -1.39347e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   7.64533e-04   1.82530e-11  -5.15141e-04
+   3  Amp          2.94342e-01   9.39542e-04  -3.55914e-06  -4.31779e-03
+   4  Frac         2.60029e-01   7.99567e-01   3.10368e-04  -1.47793e-12
+   5  Mean        -1.98649e-02   3.23139e-04   2.40609e-06   1.25486e-01
+ FCN=41.994 FROM MIGRAD    STATUS=CONVERGED     199 CALLS         200 TOTAL
+                     EDM=2.64282e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26292e-01   3.17906e-04   6.06915e-07  -1.61876e-01
+   2  #sigma_{1}/#sigma_{2}   1.27339e+00   2.18119e-02   1.04053e-05   9.58354e-04
+   3  Amp          2.98647e-01   1.07186e-03   4.38091e-06  -4.35212e-02
+   4  Frac         2.10653e-01   6.83576e-02   2.34563e-04   9.89250e-05
+   5  Mean        -1.98083e-02   3.25951e-04   1.04253e-06  -1.26705e-01
+ FCN=41.994 FROM MIGRAD    STATUS=CONVERGED      69 CALLS          70 TOTAL
+                     EDM=2.60941e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26292e-01   3.17906e-04   6.06915e-07   8.35026e-02
+   2  #sigma_{1}/#sigma_{2}   1.27339e+00   2.18120e-02   1.04052e-05   2.14309e-03
+   3  Amp          2.98647e-01   1.07186e-03   4.38092e-06   3.44654e-06
+   4  Frac         2.10653e-01   6.83577e-02   2.34549e-04   1.63480e-04
+   5  Mean        -1.98083e-02   3.25951e-04   1.04253e-06  -2.87184e-02
+ FCN=41.994 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=1.19547e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26292e-01   3.17906e-04   6.06915e-07   1.09398e-02
+   2  #sigma_{1}/#sigma_{2}   1.27339e+00   2.18119e-02   1.04052e-05  -1.95471e-03
+   3  Amp          2.98647e-01   1.07186e-03   4.38092e-06  -3.71632e-03
+   4  Frac         2.10653e-01   6.83574e-02   2.34549e-04  -3.08756e-05
+   5  Mean        -1.98083e-02   3.25951e-04   1.04253e-06  -1.22924e-02
+ FCN=41.994 FROM MIGRAD    STATUS=CONVERGED      67 CALLS          68 TOTAL
+                     EDM=7.6269e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.26292e-01   3.17906e-04   6.06915e-07   3.82572e-02
+   2  #sigma_{1}/#sigma_{2}   1.27339e+00   2.18119e-02   1.04052e-05   3.21532e-04
+   3  Amp          2.98647e-01   1.07186e-03   4.38092e-06  -1.12121e-03
+   4  Frac         2.10653e-01   6.83576e-02   2.34549e-04   6.37837e-05
+   5  Mean        -1.98083e-02   3.25951e-04   1.04253e-06  -1.26314e-03
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=236.521 FROM MIGRAD    STATUS=CONVERGED     153 CALLS         154 TOTAL
+                     EDM=1.37439e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.29191e-01   2.40368e-04   3.35370e-07  -2.69387e-01
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   9.13946e-04  -5.21783e-10   1.28607e-02
+   3  Amp          2.89088e-01   8.89542e-04   2.14726e-06  -3.84307e-02
+   4  Frac         6.53036e-01   5.91143e-01   2.44440e-01  -5.23073e-10
+   5  Mean        -2.02488e-02   3.15626e-04   4.97206e-07  -1.44303e-01
+ FCN=37.3554 FROM MIGRAD    STATUS=CONVERGED     193 CALLS         194 TOTAL
+                     EDM=1.19577e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.27105e-01   3.05087e-04   5.56978e-07  -1.71589e+00
+   2  #sigma_{1}/#sigma_{2}   7.52921e-01   1.16719e-02   6.66117e-06   1.13680e-01
+   3  Amp          2.94237e-01   1.01067e-03   3.95778e-06  -2.33228e-01
+   4  Frac         8.21542e-01   4.23905e-02   1.41896e-04   4.82523e-03
+   5  Mean        -2.02056e-02   3.15688e-04   9.54027e-07   8.99987e-01
+Info in <TUnixSystem::(null)>: Next BCID
+ FCN=185.506 FROM MIGRAD    STATUS=CONVERGED     153 CALLS         154 TOTAL
+                     EDM=4.68424e-07    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   0.4 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.25231e-01   2.49759e-04  -1.28467e-05  -3.21380e+00
+   2  #sigma_{1}/#sigma_{2}   1.00000e+00   9.29633e-04  -7.42406e-10   1.04018e-02
+   3  Amp          3.09231e-01   1.02608e-03   9.05574e-05   3.84265e-01
+   4  Frac         5.62193e-01   7.72178e-01  -2.18369e-01   1.64221e-10
+   5  Mean        -2.18141e-02   3.30352e-04  -2.73850e-06  -5.41350e-01
+ FCN=34.4555 FROM MIGRAD    STATUS=CONVERGED     240 CALLS         241 TOTAL
+                     EDM=2.256e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  #Sigma       1.23580e-01   3.06398e-04   5.62094e-07  -5.90859e-02
+   2  #sigma_{1}/#sigma_{2}   7.23371e-01   1.88127e-02   7.84396e-06  -3.38900e-05
+   3  Amp          3.13739e-01   1.14035e-03   4.13557e-06  -5.15958e-03
+   4  Frac         9.04057e-01   2.81738e-02   8.88243e-05  -9.43639e-05
+   5  Mean        -2.18231e-02   3.31114e-04   9.62447e-07   3.11586e-02
+Info in <TUnixSystem::(null)>: Next BCID
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =  1.29606e-16
+NDf                       =           20
+Edm                       =  2.28809e-23
+NCalls                    =          307
+#Sigma                    = -1.56722e-05   +/-   3.08396e-11 
+#sigma_{1}/#sigma_{2}     =      1.01603   +/-   1.46908e-08  	 (limited)
+Amp                       =     0.220002   +/-   1.2857e-08   	 (limited)
+Frac                      =     0.692391   +/-   1.65946e-09  	 (limited)
+Mean                      = -2.08518e-05   +/-   3.31575e-09 
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  0.000126031
+NCalls                    =          163
+#Sigma                    =  3.22072e-06   +/-   0.00198818  
+#sigma_{1}/#sigma_{2}     =      9.90595   +/-   2.07759e-08  	 (limited)
+Amp                       =         0.22   +/-   3.75418      	 (limited)
+Frac                      =            1   +/-   0.711014     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  7.77959e-06
+NCalls                    =          285
+#Sigma                    =  3.22072e-06   +/-   0.0011623   
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   6.94621      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =   7.3807e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00110289  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =            0
+NDf                       =           20
+Edm                       =  8.58449e-05
+NCalls                    =          275
+#Sigma                    =  3.22072e-06   +/-   0.00113505  
+#sigma_{1}/#sigma_{2}     =      8.85109   +/-   8.12019      	 (limited)
+Amp                       =     0.220005   +/-   3.75161      	 (limited)
+Frac                      =     0.999999   +/-   0.711496     	 (limited)
+Mean                      =  -7.1016e-05   +/-   1.41421     

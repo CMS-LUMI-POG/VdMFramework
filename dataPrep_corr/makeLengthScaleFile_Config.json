@@ -1,11 +1,11 @@
 {
-"AnalysisDir": "../Fill3563_Feb142013",
+"AnalysisDir": "../Fill4266_Aug252015",
 "Comment" : "Where to find the correction factors in json format",
 "InputDataDir" : "corrData",
 "Comment": "Length scale scan fill",
-"FillLS": "3563",
+"FillLS": "4266",
 "Comment" : "Target VdM fill",
-"Fill" : "3563",
+"Fill" : "4266",
 "Comment": "This is relative to <AnalysisDir>",
 "OutputSubDir": "corr"
 }

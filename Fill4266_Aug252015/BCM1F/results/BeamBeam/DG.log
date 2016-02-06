@@ -1,0 +1,1262 @@
+ 
+Now open input graphs file:  Fill4266_Aug252015/BCM1F/graphs/graphs_4266_BeamBeam.pkl
+------>>>>
+Now fitting BCID  1
+graph title 1_X_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 1_X_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_851
+------>>>>
+Now fitting BCID  891
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 10_Y_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_2674
+------>>>>
+Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 2_Y_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_2674
+------>>>>
+Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 3_Y_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 4_X_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_51
+------>>>>
+Now fitting BCID  91
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_171
+------>>>>
+Now fitting BCID  211
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_811
+------>>>>
+Now fitting BCID  851
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_971
+------>>>>
+Now fitting BCID  1011
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1711
+------>>>>
+Now fitting BCID  1751
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1831
+------>>>>
+Now fitting BCID  1871
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2411
+------>>>>
+Now fitting BCID  2451
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2451
+------>>>>
+Now fitting BCID  2674
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 5_X_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 6_Y_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1
+------>>>>
+Now fitting BCID  51
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_291
+------>>>>
+Now fitting BCID  771
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_811
+------>>>>
+Now fitting BCID  851
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_851
+------>>>>
+Now fitting BCID  891
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_971
+------>>>>
+Now fitting BCID  1011
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1631
+------>>>>
+Now fitting BCID  1671
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1711
+------>>>>
+Now fitting BCID  1751
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1751
+------>>>>
+Now fitting BCID  1791
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1791
+------>>>>
+Now fitting BCID  1831
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 7_X_sum
+------>>>>
+Now fitting BCID  1
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 8_Y_sum
+------>>>>
+Now fitting BCID  1
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1
+------>>>>
+Now fitting BCID  51
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_51
+------>>>>
+Now fitting BCID  91
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_91
+------>>>>
+Now fitting BCID  131
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_131
+------>>>>
+Now fitting BCID  171
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_171
+------>>>>
+Now fitting BCID  211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_211
+------>>>>
+Now fitting BCID  251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_251
+------>>>>
+Now fitting BCID  291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_291
+------>>>>
+Now fitting BCID  771
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_771
+------>>>>
+Now fitting BCID  811
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_811
+------>>>>
+Now fitting BCID  851
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_851
+------>>>>
+Now fitting BCID  891
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_891
+------>>>>
+Now fitting BCID  931
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_931
+------>>>>
+Now fitting BCID  971
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_971
+------>>>>
+Now fitting BCID  1011
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1011
+------>>>>
+Now fitting BCID  1631
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1631
+------>>>>
+Now fitting BCID  1671
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1671
+------>>>>
+Now fitting BCID  1711
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1711
+------>>>>
+Now fitting BCID  1751
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1751
+------>>>>
+Now fitting BCID  1791
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1791
+------>>>>
+Now fitting BCID  1831
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1831
+------>>>>
+Now fitting BCID  1871
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_1871
+------>>>>
+Now fitting BCID  2211
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2211
+------>>>>
+Now fitting BCID  2251
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2251
+------>>>>
+Now fitting BCID  2291
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2291
+------>>>>
+Now fitting BCID  2331
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2331
+------>>>>
+Now fitting BCID  2371
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2371
+------>>>>
+Now fitting BCID  2411
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2411
+------>>>>
+Now fitting BCID  2451
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2451
+------>>>>
+Now fitting BCID  2674
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_2674
+------>>>>
+Now fitting BCID  sum
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+graph title 9_X_sum

@@ -45,7 +45,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_851
 ------>>>>
 Now fitting BCID  891
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_891
 ------>>>>
@@ -122,6 +121,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_sum
 ------>>>>
@@ -182,7 +182,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_971
 ------>>>>
 Now fitting BCID  1011
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_1011
 ------>>>>
@@ -195,6 +194,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_1671
 ------>>>>
 Now fitting BCID  1711
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_1711
 ------>>>>
@@ -235,7 +235,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_2371
 ------>>>>
 Now fitting BCID  2411
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_2411
 ------>>>>
@@ -248,7 +247,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_2674
 ------>>>>
 Now fitting BCID  sum
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_sum
 ------>>>>
@@ -257,7 +255,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_1
 ------>>>>
 Now fitting BCID  51
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_51
 ------>>>>
@@ -266,7 +263,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_91
 ------>>>>
 Now fitting BCID  131
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_131
 ------>>>>
@@ -299,15 +295,16 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_851
 ------>>>>
 Now fitting BCID  891
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_891
 ------>>>>
 Now fitting BCID  931
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_931
 ------>>>>
 Now fitting BCID  971
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_971
 ------>>>>
@@ -340,7 +337,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_1831
 ------>>>>
 Now fitting BCID  1871
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_1871
 ------>>>>
@@ -349,6 +345,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_2211
 ------>>>>
 Now fitting BCID  2251
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_2251
 ------>>>>
@@ -369,7 +366,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_2411
 ------>>>>
 Now fitting BCID  2451
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_2451
 ------>>>>
@@ -394,12 +390,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_91
 ------>>>>
 Now fitting BCID  131
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_131
 ------>>>>
 Now fitting BCID  171
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_171
 ------>>>>
@@ -428,7 +422,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_851
 ------>>>>
 Now fitting BCID  891
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_891
 ------>>>>
@@ -445,7 +438,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_1011
 ------>>>>
 Now fitting BCID  1631
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_1631
 ------>>>>
@@ -486,7 +478,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_2291
 ------>>>>
 Now fitting BCID  2331
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_2331
 ------>>>>
@@ -495,7 +486,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_2371
 ------>>>>
 Now fitting BCID  2411
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_2411
 ------>>>>
@@ -508,7 +498,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_2674
 ------>>>>
 Now fitting BCID  sum
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_sum
 ------>>>>
@@ -533,7 +522,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_171
 ------>>>>
 Now fitting BCID  211
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_211
 ------>>>>
@@ -602,7 +590,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_1871
 ------>>>>
 Now fitting BCID  2211
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_2211
 ------>>>>
@@ -623,7 +610,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_2371
 ------>>>>
 Now fitting BCID  2411
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_2411
 ------>>>>
@@ -648,6 +634,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_51
 ------>>>>
 Now fitting BCID  91
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_91
 ------>>>>
@@ -690,6 +677,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_851
 ------>>>>
 Now fitting BCID  891
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_891
 ------>>>>
@@ -709,6 +697,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_1011
 ------>>>>
 Now fitting BCID  1631
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_1631
 ------>>>>
@@ -722,10 +711,12 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_1711
 ------>>>>
 Now fitting BCID  1751
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_1751
 ------>>>>
 Now fitting BCID  1791
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_1791
 ------>>>>
@@ -762,6 +753,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_2371
 ------>>>>
 Now fitting BCID  2411
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_2411
 ------>>>>
@@ -771,12 +763,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_2451
 ------>>>>
 Now fitting BCID  2674
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_2674
 ------>>>>
 Now fitting BCID  sum
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_sum
 ------>>>>
@@ -785,19 +775,21 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_1
 ------>>>>
 Now fitting BCID  51
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_51
 ------>>>>
 Now fitting BCID  91
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_91
 ------>>>>
 Now fitting BCID  131
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_131
 ------>>>>
 Now fitting BCID  171
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_171
 ------>>>>
@@ -806,12 +798,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_211
 ------>>>>
 Now fitting BCID  251
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_251
 ------>>>>
 Now fitting BCID  291
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_291
 ------>>>>
@@ -837,7 +827,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_931
 ------>>>>
 Now fitting BCID  971
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_971
 ------>>>>
@@ -863,7 +852,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_1751
 ------>>>>
 Now fitting BCID  1791
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_1791
 ------>>>>
@@ -881,6 +869,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2211
 ------>>>>
 Now fitting BCID  2251
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2251
 ------>>>>
@@ -889,18 +878,22 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2291
 ------>>>>
 Now fitting BCID  2331
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2331
 ------>>>>
 Now fitting BCID  2371
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2371
 ------>>>>
 Now fitting BCID  2411
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2411
 ------>>>>
 Now fitting BCID  2451
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2451
 ------>>>>
@@ -909,6 +902,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_sum
 ------>>>>
@@ -963,10 +957,12 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_811
 ------>>>>
 Now fitting BCID  851
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_851
 ------>>>>
 Now fitting BCID  891
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_891
 ------>>>>
@@ -981,6 +977,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_971
 ------>>>>
 Now fitting BCID  1011
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1011
 ------>>>>
@@ -995,7 +992,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1671
 ------>>>>
 Now fitting BCID  1711
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1711
 ------>>>>
@@ -1010,11 +1006,11 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1791
 ------>>>>
 Now fitting BCID  1831
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1831
 ------>>>>
 Now fitting BCID  1871
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_1871
 ------>>>>
@@ -1049,7 +1045,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_2411
 ------>>>>
 Now fitting BCID  2451
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_2451
 ------>>>>
@@ -1058,6 +1053,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_sum
 ------>>>>
@@ -1066,7 +1062,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1
 ------>>>>
 Now fitting BCID  51
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_51
 ------>>>>
@@ -1076,10 +1071,12 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_91
 ------>>>>
 Now fitting BCID  131
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_131
 ------>>>>
 Now fitting BCID  171
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_171
 ------>>>>
@@ -1092,6 +1089,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_251
 ------>>>>
 Now fitting BCID  291
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_291
 ------>>>>
@@ -1116,12 +1114,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_931
 ------>>>>
 Now fitting BCID  971
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_971
 ------>>>>
 Now fitting BCID  1011
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1011
 ------>>>>
@@ -1134,11 +1130,11 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1671
 ------>>>>
 Now fitting BCID  1711
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1711
 ------>>>>
 Now fitting BCID  1751
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1751
 ------>>>>
@@ -1147,7 +1143,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1791
 ------>>>>
 Now fitting BCID  1831
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_1831
 ------>>>>
@@ -1164,6 +1159,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_2251
 ------>>>>
 Now fitting BCID  2291
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_2291
 ------>>>>
@@ -1172,7 +1168,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_2331
 ------>>>>
 Now fitting BCID  2371
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_2371
 ------>>>>
@@ -1194,7 +1189,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_sum
 ------>>>>
 Now fitting BCID  1
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_1
 ------>>>>
@@ -1251,7 +1245,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_971
 ------>>>>
 Now fitting BCID  1011
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_1011
 ------>>>>
@@ -1260,7 +1253,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_1631
 ------>>>>
 Now fitting BCID  1671
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_1671
 ------>>>>
@@ -1305,7 +1297,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_2371
 ------>>>>
 Now fitting BCID  2411
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_2411
 ------>>>>
@@ -1318,5 +1309,6 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_sum

@@ -1,7 +1,7 @@
 (dp0
 S'Angle'
 p1
-S'0.0'
+S'9999'
 p2
 sS'Scan_4'
 p3
@@ -3621,11 +3621,11 @@ asS'ScanTimeWindows'
 p1492
 (lp1493
 (lp1494
-I1440463385
-aI1440464453
+I1440463274
+aI1440464388
 aa(lp1495
-I1440464723
-aI1440465800
+I1440464627
+aI1440465733
 aa(lp1496
 I1440466014
 aI1440467085
@@ -3656,7 +3656,7 @@ S'proton'
 p1505
 sS'BetaStar'
 p1506
-S'1917.0'
+S'19.17'
 p1507
 sS'ParticleTypeB1'
 p1508
@@ -4092,11 +4092,11 @@ Rp1686
 aF0.61156
 aasS'Date'
 p1687
-S'Aug252015'
+S'Aug242015'
 p1688
 sS'InputDIPFile'
 p1689
-S'/Users/grothe/data/VdM/Aug2015/beamPositions/vdm_343bccdf-e950-4c38-943b-db731911dc07.csv'
+S'/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/15_08_25/beamPositions/vdm_343bccdf-e950-4c38-943b-db731911dc07.csv'
 p1690
 sS'FilledBunchesB2'
 p1691

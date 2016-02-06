@@ -173,13 +173,13 @@ if __name__ == '__main__':
                     print "fitstatus Xscan for bx", bx, fitstatusDict[XscanID][bx]
                 if fitstatusDict[YscanID][bx] >0:
                     print "fitstatus Yscan for bx", bx, fitstatusDict[YscanID][bx]
-
-                if chi2Dict[XscanID][bx] >100:
-                    print "chi2 Xscan for bx", bx, chi2Dict[XscanID][bx]
-                    considerInMean = False
-                if chi2Dict[YscanID][bx] >100:
-                    print "chi2 Yscan for bx", bx, chi2Dict[YscanID][bx]
-                    considerInMean = False
+                ## FIXME I hacked it 
+                ###if chi2Dict[XscanID][bx] >100:
+                ###    print "chi2 Xscan for bx", bx, chi2Dict[XscanID][bx]
+                ###    considerInMean = False
+                ###if chi2Dict[YscanID][bx] >100:
+                ###    print "chi2 Yscan for bx", bx, chi2Dict[YscanID][bx]
+                ###    considerInMean = False
 
 #                printall(bx, CapSigmaX, CapSigmaY, peakX, peakY, xsec[bx], xsecErr[bx])
 

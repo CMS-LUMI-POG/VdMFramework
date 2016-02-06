@@ -12,6 +12,8 @@ from makeGraphsFileII import doMakeGraphsFile
 from makeGraphs2D import doMakeGraphs2D
 from vdmFitterII import doRunVdmFitter
 
+r.gROOT.SetBatch(r.kTRUE)
+
 ConfigFile = sys.argv[1]
 
 Config=open(ConfigFile)

@@ -156,10 +156,13 @@ class vdmInputData:
         self.avrgFbctB2 = [[] for a in range(len(self.collidingBunches))]
         for i, bx in enumerate(self.collidingBunches):
             for j in range(len(self.displacement)):
-                value = self.avrgFbctB1PerSP[j][str(bx)]
-                self.avrgFbctB1[i].append(value)
-                value = self.avrgFbctB2PerSP[j][str(bx)]
-                self.avrgFbctB2[i].append(value)
+                try:
+                  value = self.avrgFbctB1PerSP[j][str(bx)]
+                  self.avrgFbctB1[i].append(value)
+                  value = self.avrgFbctB2PerSP[j][str(bx)]
+                  self.avrgFbctB2[i].append(value)
+                except:
+                  print "self.displacement is longer than avrgFbctB1PerSP"
             self.avrgFbctB1PerBX[bx] = self.avrgFbctB1[i]
             self.avrgFbctB2PerBX[bx] = self.avrgFbctB2[i]
 
@@ -168,8 +171,11 @@ class vdmInputData:
         self.sumCollAvrgFbctB2 = [0.0 for a in range(self.nSP)]
         try:
             for j in range(len(self.displacement)):
-                self.sumCollAvrgFbctB1[j] = self.avrgFbctB1PerSP[j]['sum']
-                self.sumCollAvrgFbctB2[j] = self.avrgFbctB2PerSP[j]['sum']
+                try:
+                  self.sumCollAvrgFbctB1[j] = self.avrgFbctB1PerSP[j]['sum']
+                  self.sumCollAvrgFbctB2[j] = self.avrgFbctB2PerSP[j]['sum']
+                except:
+                  print "self.displacement is longer than avrgFbctB1PerSP"
         except KeyError, e:
             print 'KeyError in inputDataReader- reason "%s"' % str(e)
 
@@ -205,9 +211,12 @@ class vdmInputData:
         usedCollidingBunches = []
         for i, bx in enumerate(self.collidingBunches):
             for j in range(self.nSP):
-                if str(bx) in self.lumiPerSP[j]:
-                    if bx not in usedCollidingBunches:
-                        usedCollidingBunches.append(bx)
+                try:
+                    if str(bx) in self.lumiPerSP[j]:
+                        if bx not in usedCollidingBunches:
+                            usedCollidingBunches.append(bx)
+                except:
+                    print "problem with",j
         self.usedCollidingBunches = usedCollidingBunches
 
 # this is the natural order for analysis
@@ -216,19 +225,24 @@ class vdmInputData:
         for i, bx in enumerate(self.usedCollidingBunches):
             for j in range(self.nSP):
 #                print self.lumiPerSP[j]
-                value = self.lumiPerSP[j][str(bx)]
-                self.lumi[i].append(value)
-                valueErr = self.lumiErrPerSP[j][str(bx)]
-                self.lumiErr[i].append(valueErr)
+                try:
+                    value = self.lumiPerSP[j][str(bx)]
+                    self.lumi[i].append(value)
+                    valueErr = self.lumiErrPerSP[j][str(bx)]
+                    self.lumiErr[i].append(valueErr)
+                except:
+                    print "problem with",j
             self.lumiPerBX[bx] = self.lumi[i]
             self.lumiErrPerBX[bx] = self.lumiErr[i]
 
         self.sumLumi = [0.0 for a in range(self.nSP)]
         self.sumLumiErr = [0.0 for a in range(self.nSP)]
         for j in range(self.nSP):
-            self.sumLumi[j] = self.lumiPerSP[j]['sum'] 
-            self.sumLumiErr[j] = self.lumiErrPerSP[j]['sum'] 
-
+            try:
+                self.sumLumi[j] = self.lumiPerSP[j]['sum'] 
+                self.sumLumiErr[j] = self.lumiErrPerSP[j]['sum'] 
+            except:
+                print "problem with",j
         return
         
     

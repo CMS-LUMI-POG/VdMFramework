@@ -19,7 +19,7 @@
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs",
-"makeLengthScaleFile": true,
+"makeLengthScaleFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",

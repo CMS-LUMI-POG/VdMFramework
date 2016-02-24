@@ -1,4 +1,5 @@
 import ROOT as r
+import math
 
 def showAvailableFits():
 
@@ -161,7 +162,7 @@ def Residuals(g,ff):
         if ye[i]!=0:
             dev = (y[i]-val)/ye[i]
         else:
-            dev=(y[i]-val)/sqrt(val)
+            dev=0
         res.SetPoint(i,x[i],dev)
         res.SetPointError(i,0,1)
         

@@ -5,8 +5,8 @@
 "AnalysisDir": "Fill4266_Aug252015",
 "CorrLater" : ["noCorr", "LengthScale", "Ghosts", "Satellites", "BeamBeam"],
 "Corr" : ["noCorr"],
-"Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["BeamBeam"],
+"Corr" : ["BeamBeam","LengthScale"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -117,8 +117,8 @@
 "vdmFitterConfig":
   {
   "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs",
-  "InputGraphsFile" : "graphs/graphs_4266_BeamBeam_LengthScale.pkl",
   "InputGraphsFile" : "graphs/graphs_4266_BeamBeam.pkl",
+  "InputGraphsFile" : "graphs/graphs_4266_BeamBeam_LengthScale.pkl",
   "FitName" : "DG",
   "FitConfigFile" : "fits/DG_Config.json"
   }

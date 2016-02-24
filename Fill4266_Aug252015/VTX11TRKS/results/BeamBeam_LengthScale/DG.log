@@ -121,6 +121,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_sum
 ------>>>>
 Now fitting BCID  51
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_51
 ------>>>>

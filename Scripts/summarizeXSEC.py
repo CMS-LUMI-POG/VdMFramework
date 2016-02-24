@@ -4,6 +4,8 @@ import numpy
 import ROOT
 import math
 
+ROOT.gROOT.SetBatch(ROOT.kTRUE)
+
 filename=sys.argv[1]
 file=open(filename)
 fits=pickle.load(file)
@@ -42,24 +44,26 @@ for fit in fits:
             if float(fit[xsecErrInd])<1.0:
                 continue
             #print scans.index(fit[0]),PCCBCIDs.index(fit[2])
-            xsecs[0].append(float(fit[xsecInd]))
-            xsecs[1].append(float(fit[xsecErrInd]))
+            thisXsec=1.011*float(fit[xsecInd])/1e6
+            thisXsecErr=float(fit[xsecErrInd])/1e6
+            xsecs[0].append(thisXsec)
+            xsecs[1].append(thisXsecErr)
             xsecs[2].append(1./(xsecs[1][-1]*xsecs[1][-1]))
             #print iScan,offset
-            #xsecsPerScan[fit[0]][0].append(float(fit[xsecInd])/1e6)
-            #xsecsPerScan[fit[0]][1].append(float(fit[xsecErrInd])/1e6)
-            xsecsPerScan[fit[0]][0].append(float(fit[xsecInd]))
-            xsecsPerScan[fit[0]][1].append(float(fit[xsecErrInd]))
+            xsecsPerScan[fit[0]][0].append(thisXsec)
+            xsecsPerScan[fit[0]][1].append(thisXsecErr)
+            #xsecsPerScan[fit[0]][0].append(float(fit[xsecInd]))
+            #xsecsPerScan[fit[0]][1].append(float(fit[xsecErrInd]))
             xsecsPerScan[fit[0]][2].append(1/(xsecsPerScan[fit[0]][1][-1]*xsecsPerScan[fit[0]][1][-1]))
-            #xsecsPerBCID[fit[2]][0].append(float(fit[xsecInd])/1e6)
-            #xsecsPerBCID[fit[2]][1].append(float(fit[xsecErrInd])/1e6)
-            xsecsPerBCID[fit[2]][0].append(float(fit[xsecInd]))
-            xsecsPerBCID[fit[2]][1].append(float(fit[xsecErrInd]))
+            xsecsPerBCID[fit[2]][0].append(thisXsec)
+            xsecsPerBCID[fit[2]][1].append(thisXsecErr)
+            #xsecsPerBCID[fit[2]][0].append(float(fit[xsecInd]))
+            #xsecsPerBCID[fit[2]][1].append(float(fit[xsecErrInd]))
             xsecsPerBCID[fit[2]][2].append(1/(xsecsPerScan[fit[0]][1][-1]*xsecsPerScan[fit[0]][1][-1]))
             iScan=scans.index(fit[0])
             offset=(PCCBCIDs.index(fit[2])-2)*0.05
-            graphs[fit[2]].SetPoint(iScan,iScan+offset+1,float(fit[xsecInd])/1e6)
-            graphs[fit[2]].SetPointError(iScan,0,float(fit[xsecErrInd])/1e6)
+            graphs[fit[2]].SetPoint(iScan,iScan+offset+1,thisXsec)
+            graphs[fit[2]].SetPointError(iScan,0,thisXsecErr)
             
         except:
             #print "not doing this"
@@ -67,24 +71,25 @@ for fit in fits:
 
 #print numpy.mean(xsecs[0])
 #print numpy.std(xsecs[0])
-print numpy.ma.average(xsecs[0],weights=xsecs[2])
+# FIXME x-y correlation by hand!
+overallxsec=numpy.ma.average(xsecs[0],weights=xsecs[2])
 sumofweights=0
 for weight in xsecs[2]:
     sumofweights=sumofweights+weight
 totalError=1/math.sqrt(sumofweights)
-print totalError
+print overallxsec,totalError
 
 
-sys.exit(0)
 
 graphPerScan=ROOT.TGraphErrors()
-graphPerScan.SetTitle(";Scan Pair;Weighted Average #sigma_{Vis} [Barn]")
+graphPerScan.SetTitle(";Scan Pair;#sigma_{Vis} (Barn)")
 graphPerScan.SetMarkerColor(417)
 graphPerScan.SetMarkerStyle(20)
 
 iPoint=0
 for fit in xsecsPerScan:
     print fit,
+    # FIXME x-y correlation by hand!
     average=numpy.ma.average(xsecsPerScan[fit][0],weights=xsecsPerScan[fit][2])
     sumofweights=0
     for weight in xsecsPerScan[fit][2]:
@@ -99,13 +104,14 @@ for fit in xsecsPerScan:
 
 
 graphPerBCID=ROOT.TGraphErrors()
-graphPerBCID.SetTitle(";BCID;Weighted Average #sigma_{Vis} [Barn]")
+graphPerBCID.SetTitle(";BCID;#sigma_{Vis} (Barn)")
 graphPerBCID.SetMarkerColor(417)
 graphPerBCID.SetMarkerStyle(20)
 
 iPoint=0
 for fit in xsecsPerBCID:
     print fit,
+    # FIXME x-y correlation by hand!
     average=numpy.ma.average(xsecsPerBCID[fit][0],weights=xsecsPerBCID[fit][2])
     sumofweights=0
     for weight in xsecsPerBCID[fit][2]:
@@ -121,8 +127,8 @@ for fit in xsecsPerBCID:
 
 
 multigraph=ROOT.TMultiGraph()
-multigraph.SetTitle(";Scan Pair;#sigma_{Vis} [Barn]")
-leg=ROOT.TLegend(0.4,0.15,0.6,0.35)
+multigraph.SetTitle(";Scan Pair;#sigma_{Vis} (Barn)")
+leg=ROOT.TLegend(0.45,0.15,0.65,0.43)
 leg.SetBorderSize(0)
 leg.SetFillColor(0)
 for bcid in PCCBCIDs:
@@ -130,24 +136,40 @@ for bcid in PCCBCIDs:
     leg.AddEntry(graphs[bcid],"BX = "+bcid,"p")
 
 
+text=ROOT.TLatex(0.72,0.88,"2015  (13TeV)")
+text.SetNDC()
+text.SetTextFont(62)
+text.SetTextSize(0.05)
+text2=ROOT.TLatex(0.15,0.88,"CMS #bf{#scale[0.75]{#it{Preliminary}}}")
+text2.SetNDC()
+text2.SetTextSize(0.05)
+text2.SetTextFont(62)
 
 can=ROOT.TCanvas("can","",800,600)
 multigraph.Draw("AP")
-multigraph.SetMinimum(8.85)
-multigraph.SetMaximum(9.1)
-multigraph.GetXaxis().SetRangeUser(0.5,5.5)
+multigraph.SetMinimum(8.84)
+multigraph.SetMaximum(9.16)
+multigraph.GetXaxis().SetRangeUser(0.6,5.4)
+multigraph.GetXaxis().SetNdivisions(5)
+#multigraph.GetYaxis().SetNdivisions(20)
+text.Draw("same")
+text2.Draw("same")
 leg.Draw("same")
 can.Update()
 can.SaveAs("xsecs_PCC.png")
-raw_input()
+can.SaveAs("xsecs_PCC.C")
 
 graphPerBCID.Draw("AP")
+text.Draw("same")
+text2.Draw("same")
 can.Update()
 can.SaveAs("xsecsPerBCID_PCC.png")
-raw_input()
+can.SaveAs("xsecsPerBCID_PCC.C")
 
 graphPerScan.Draw("AP")
+text.Draw("same")
+text2.Draw("same")
 can.Update()
 can.SaveAs("xsecsPerScan_PCC.png")
-raw_input()
+can.SaveAs("xsecsPerScan_PCC.C")
 

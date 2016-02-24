@@ -152,10 +152,13 @@ class vdmInputData:
         self.avrgFbctB2 = [[] for a in range(len(self.collidingBunches))]
         for i, bx in enumerate(self.collidingBunches):
             for j in range(len(self.displacement)):
-                value = self.avrgFbctB1PerSP[j][str(bx)]
-                self.avrgFbctB1[i].append(value)
-                value = self.avrgFbctB2PerSP[j][str(bx)]
-                self.avrgFbctB2[i].append(value)
+                try:
+                    value = self.avrgFbctB1PerSP[j][str(bx)]
+                    self.avrgFbctB1[i].append(value)
+                    value = self.avrgFbctB2PerSP[j][str(bx)]
+                    self.avrgFbctB2[i].append(value)
+                except:
+                    print "self.displacement is longer than self.avrgFbctB1PerSP"
             self.avrgFbctB1PerBX[bx] = self.avrgFbctB1[i]
             self.avrgFbctB2PerBX[bx] = self.avrgFbctB2[i]
 

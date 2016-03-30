@@ -48,6 +48,10 @@
   `Create pull request`
   h) Not yet finalized! Someone has to review and merge into CMS-LUMI-POG's "master", before you see your nice work be released. Stay tuned and follow the discussion on the pull request page
 
+10. Keep your master in sync with CMS-LUMI-POG/VdMFramework's master
+  a) git checkout master
+  b) git push YOURGITUSERNAME master
+
 
 ##Framework Instructions (edited by Georgios)
 To be continued...

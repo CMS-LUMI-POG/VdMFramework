@@ -38,7 +38,9 @@
   in the part of [remote "YOURGITUSERNAME"].
 
 9. Make a pull request (PR) with your changes. The easiest way is to do it interactively on your github web interface
+  
   a) Go to YOUR VdMFramework repository, i.e. https://github.com/YOURGITUSERNAME/VdMFramework
+  
   b) You will see the indication 'New pull request' within the green context; you can click on it
   c) In the new screen of 'Comparing changes' there would be four instances, i.e. (BASE FORK, BASE) and (HEAD FORK, COMPARE)
   d) Select as BASE FORK "CMS-LUMI-POG/VdMFramework" and BASE "master"

@@ -66,73 +66,81 @@ svn co svn+ssh://username@svn.cern.ch/reps/VdMframework/work/Monika
  ```
 on December 14th, 2015
 
+Here, there are some (slightly outdated) illustrated instructions:
 
 ```
 https://indico.cern.ch/event/433686/attachments/1126803/1609016/Tutorial_VdM_July2015.pdf
 ```
-****Running the Driver****
-The framework is centrally steered by the vdmDriverII.py. 
-What you are running and in which order is defined by passing a json file to the driver. For our example we take the 4634_Configs/vdmDriverII_Config_PCC_4634.json. The user by editing such a .json file can enanble/dissable with boolean flags the functionality of the driver. Currently no parsing is available, thus the user has to open and edit the .json with an editor. 
 
-More specifically, the  vdmDriverII.py  can handle the macros below (with the order currently listed in vdmDriverII_Config_PCC_4634.json ):
+****Running the Driver****
+
+The framework is centrally steered by the `vdmDriverII.py`. What you are running and in which order is defined by passing a json file to the driver.  The user by editing such a .json file can enanble/dissable with boolean flags the functionality of the driver.
+
+For our example, we take here the `4634_Configs/vdmDriverII_Config_PCC_4634.json`, meant for the LHC fill 4634 and using the Pixel Cluster Counting (PCC) luminometer. Currently *no parsing* is available, thus the user has to *open* and *edit* the .json file with an editor. 
+
+More specifically, the  vdmDriverII.py can handle the macros below (with the order currently listed in vdmDriverII_Config_PCC_4634.json ):
+
 a) makeScanFileII.py
+
 b) dataPrepII_PCC/makePCCRateFile.py; this is specific to the luminometer handled by the .json file 
+
 c) makeBeamCurrentFileII.py
+
 d) for this iteration we ignore the makeBeamBeamFile till makeLengthScaleFile part (FIXME)
+
 e) makeGraphsFileII.py
+
 f) makeGraphs2D.py 
+
 h) vdmFitterII.py
 
-Note that the driver can handle all functionalities above at once, i.e. set all booleans to true, but for the time being it is reccommended to enable its feautres separarely, as explained in the following.
+Note that the driver can handle all functionalities above at once, i.e. set all booleans to true, but for the time being it is *recommended* to enable its feautres separarely, as explained in the following.
 
-0th order edit in the  4634_Configs/vdmDriverII_Config_PCC_4634.json file is to place everywhere your lxplus initials, e.g.  /g/gkrintir → your lxplus initiials
+0th order edit in the  4634_Configs/vdmDriverII_Config_PCC_4634.json file is to place *everywhere* your lxplus initials, e.g.  
+
+```
+/g/gkrintir → your lxplus initiials
+
+```
 
 The driver then runs with: 
 
+```
  python vdmDriverII.py 4634_Configs/vdmDriverII_Config_PCC_4634.json
+```
 
-In the version give to you, the driver is enabled to run from step b (in the list described above) i.e. "makeRateFile": true and false everywhere. Also, the input file for making the rate file is
+Let us assume a version of vdmDriverII_Config_PCC_4634.json in which the driver is enabled to run sequentially, step by step, starting from step *a* (in the list described above). i.e. `"“makeScanFile": true` and false everywhere. For step *a* make sure *before* you run the driver to execute on your terminal:
 
- /afs/cern.ch/user/g/gkrintir/public/ForMassimo/ZeroBias2.root
- 
-Step a is already done and the output is stored in Fill4634_Nov192015/cond/Scan_4634.*, with *=csv, pkl.  If you want to try it alone,  set “makeScanFile": true, and make sure before you run the driver to execute on your terminal:
-
+```
 eosmount ~/tempeos
+```
 
+Also, please make sure that the `"BetaStar"`, `"Angle"`, `"EnergyB1"` and `"EnergyB1"` parameters have been correctly set up. Info can be found on `https://cmswbm.web.cern.ch/cmswbm/cmsdb/servlet/FillReport`. Once step *a* is done, the output is stored in `Fill4634_Nov192015/cond/Scan_4634.*`, with *=csv, pkl. 
+
+Moving now to step *b*, i.e. `"makeRateFile": true` and false everywherethe, the input file for making the rate file can be found in `/afs/cern.ch/user/g/gkrintir/public/ForMassimo/ZeroBias2.root` (*FIXME*). To note that this .root file is the ouput of the `VdMPrep/makeVdMMiniTree.py` macro in the `CMS-LUMI-POG/PCCTools` repository.
  
-Now, i.e. after having executed the "makeRateFile": true, you should see the output of this step stored in  Fill4634_Nov192015/LuminometerData/Rates_PCC_4634.*, *=csv, pkl. 
+Now, i.e. after having executed with `"makeRateFile": true`, you should see the output stored in  `Fill4634_Nov192015/LuminometerData/Rates_PCC_4634.*`, *=csv, pkl. 
 
-The next step is to create the graph file, which will be the input of the subsequent fit step. To do this, dissable the  “makeScanFile” and "makeRateFile", and enable "makeGraphsFile": true. 
+The next step is to create the graph file, which will be the input of the subsequent fit step. To do this, dissable the “makeScanFile” and "makeRateFile", and enable `"makeGraphsFile": true`. The output of this step is stored in `Fill4634_Nov192015/PCC/graphs/graphs_4634_noCorr.*`, * = pkl, root 
 
-The output of this step is stored in 
-
-Fill4634_Nov192015/PCC/graphs/graphs_4634_noCorr.*, * = pkl, root 
-
-And now the fitting step! Again, disable "makeGraphsFile".  and enable "runVdmFitter": true. The output of this step is stored in
- 
-Fill4634_Nov192015/PCC/results/noCorr/ 
-
-and
-
-plotstmp (just under the VdMFramework/)
-
+And now the fitting step! Again, disable "makeGraphsFile",  and enable `"runVdmFitter": true`. The output of this step is stored in `Fill4634_Nov192015/PCC/results/noCorr/` and `plotstmp` (just under the VdMFramework/ directory).
 
 You are done! What is left is simply to illustrate the fitting results. 
 
 ****Plot the results****
+
 This is a two step process, i.e. 
 
-1) python calculateCalibrationConstant.py 4634_Configs/calculateCalibrationConstant_Config_PCC_4634.json
+1) `python calculateCalibrationConstant.py 4634_Configs/calculateCalibrationConstant_Config_PCC_4634.json`
 
-This will create and store the output in
- Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.* , *=csv, pkl. 
+This will create and store the output in `Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.*`, *=csv, pkl. 
 
 2) Run
 
-python Scripts/summarizeXSEC.py Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.pkl
+`python Scripts/summarizeXSEC.py Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.pkl`
 
-and the plots will be stored under VdMFramework/ as 
+and the plots will be stored under the VdMFramework/ directory as 
 
- xsecs_PCC.png, xsecsPerBCID_PCC.png & xsecsPerScan_PCC.png along with the .C source files 
+`xsecs_PCC.png, xsecsPerBCID_PCC.png, and xsecsPerScan_PCC.png` along with their .C source files for further editing, if needed.
 
 

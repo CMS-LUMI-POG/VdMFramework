@@ -12,7 +12,7 @@
 
 3. It is recommnened at this stage to checkout a new local branch in which you start to develop/edit files. This is done with
    `git checkout -b LOCAL_BRANCHNAME origin/REMOTE_BRANCHNAME`
-   The name of LOCAL_BRANCHNAME could be whatever. For the list of available remote branches, you can simply type `git branch -a`.
+   The name of LOCAL_BRANCHNAME could be whatever. For the list of available remote (and local) branches, you can simply type `git branch -a`.
 
 4. Now, if you want to further release the local changes, the following steps (5-9) have to be done. Make a remote to your fork 
    `git remote add YOURGITUSERNAME http://github.com/YOURGITUSERNAME/VdMFramework`
@@ -51,17 +51,88 @@
   
   f) An automatic message will be created. There should be 'Able to merge. These branches can be automatically merged.' If not the changes that you are trying to push cannot be automatically adapted. Furhter work will be needed, so for that case better communicate with Chris/Jakob on how to proceed
   
-  g) If step g has been successful, simply leave a comment if you think the description you added during step 7 (in the commit command) is not sufficient, and the push 
+  g) If step g has been successful, simply leave a comment if you think the description you added during step 7 (in the commit command) is not sufficient, and then push 
   `Create pull request`
   
   h) Not yet finalized! Someone has to review and merge into CMS-LUMI-POG's "master", before you see your nice work be released. Stay tuned and follow the discussion on the pull request page
 
 
 
-##Framework Instructions (edited by Georgios)
-To be continued...
-
+##Framework Instructions
 
 Migrated from
+ ```	 
 svn co svn+ssh://username@svn.cern.ch/reps/VdMframework/work/Monika
+ ```
 on December 14th, 2015
+
+
+```
+https://indico.cern.ch/event/433686/attachments/1126803/1609016/Tutorial_VdM_July2015.pdf
+```
+****Running the Driver****
+The framework is centrally steered by the vdmDriverII.py. 
+What you are running and in which order is defined by passing a json file to the driver. For our example we take the 4634_Configs/vdmDriverII_Config_PCC_4634.json. The user by editing such a .json file can enanble/dissable with boolean flags the functionality of the driver. Currently no parsing is available, thus the user has to open and edit the .json with an editor. 
+
+More specifically, the  vdmDriverII.py  can handle the macros below (with the order currently listed in vdmDriverII_Config_PCC_4634.json ):
+a) makeScanFileII.py
+b) dataPrepII_PCC/makePCCRateFile.py; this is specific to the luminometer handled by the .json file 
+c) makeBeamCurrentFileII.py
+d) for this iteration we ignore the makeBeamBeamFile till makeLengthScaleFile part (FIXME)
+e) makeGraphsFileII.py
+f) makeGraphs2D.py 
+h) vdmFitterII.py
+
+Note that the driver can handle all functionalities above at once, i.e. set all booleans to true, but for the time being it is reccommended to enable its feautres separarely, as explained in the following.
+
+0th order edit in the  4634_Configs/vdmDriverII_Config_PCC_4634.json file is to place everywhere your lxplus initials, e.g.  /g/gkrintir → your lxplus initiials
+
+The driver then runs with: 
+
+ python vdmDriverII.py 4634_Configs/vdmDriverII_Config_PCC_4634.json
+
+In the version give to you, the driver is enabled to run from step b (in the list described above) i.e. "makeRateFile": true and false everywhere. Also, the input file for making the rate file is
+
+ /afs/cern.ch/user/g/gkrintir/public/ForMassimo/ZeroBias2.root
+ 
+Step a is already done and the output is stored in Fill4634_Nov192015/cond/Scan_4634.*, with *=csv, pkl.  If you want to try it alone,  set “makeScanFile": true, and make sure before you run the driver to execute on your terminal:
+
+eosmount ~/tempeos
+
+ 
+Now, i.e. after having executed the "makeRateFile": true, you should see the output of this step stored in  Fill4634_Nov192015/LuminometerData/Rates_PCC_4634.*, *=csv, pkl. 
+
+The next step is to create the graph file, which will be the input of the subsequent fit step. To do this, dissable the  “makeScanFile” and "makeRateFile", and enable "makeGraphsFile": true. 
+
+The output of this step is stored in 
+
+Fill4634_Nov192015/PCC/graphs/graphs_4634_noCorr.*, * = pkl, root 
+
+And now the fitting step! Again, disable "makeGraphsFile".  and enable "runVdmFitter": true. The output of this step is stored in
+ 
+Fill4634_Nov192015/PCC/results/noCorr/ 
+
+and
+
+plotstmp (just under the VdMFramework/)
+
+
+You are done! What is left is simply to illustrate the fitting results. 
+
+****Plot the results****
+This is a two step process, i.e. 
+
+1) python calculateCalibrationConstant.py 4634_Configs/calculateCalibrationConstant_Config_PCC_4634.json
+
+This will create and store the output in
+ Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.* , *=csv, pkl. 
+
+2) Run
+
+python Scripts/summarizeXSEC.py Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.pkl
+
+and the plots will be stored under VdMFramework/ as 
+
+ xsecs_PCC.png, xsecsPerBCID_PCC.png & xsecsPerScan_PCC.png along with the .C source files 
+
+

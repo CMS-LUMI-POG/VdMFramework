@@ -57,7 +57,9 @@ def addScanInfoToTree(chain, inData, intermediateFile):
             eta = time.localtime(time_now + time_left)
             print "  %3.0f%% (ETA: %s)" % \
                   (100. * index / num_entries, time.strftime("%H:%M:%S", eta))
+        
         timestamp = data.timeStamp
+        #print timestamp
 
         i = None
         j = None
@@ -65,9 +67,10 @@ def addScanInfoToTree(chain, inData, intermediateFile):
 
         for (i, in_data)  in enumerate(inData):
             time_window = [in_data.tStart[0], in_data.tStop[-1]]
+            #print time_window
             if (timestamp >= time_window[0]) and (timestamp <= time_window[1]):
                 for (j, point) in enumerate(in_data.sp):
-##                    print in_data.tStart[j], in_data.tStop[j]
+                    #print in_data.tStart[j], in_data.tStop[j]
 ##                    print j, point
                     if (timestamp >= in_data.tStart[j]) and (timestamp <= in_data.tStop[j]):
                         scan_point = point
@@ -113,10 +116,12 @@ def fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID):
 
     maxNoBCIDinLHC = 3564
     histBx = r.TH1F("histBx", "BCID actually pesent in pixel data tree", maxNoBCIDinLHC, 1., maxNoBCIDinLHC + 1.)
+    #pcc_tree.Print()
     pcc_tree.Draw("BXid >> histBx")
     PCC_bcid_test = []
     for i in xrange(1, maxNoBCIDinLHC+1):
         if histBx.GetBinContent(i) > 0:
+            print histBx.GetBinContent(i)
             PCC_bcid_test.append(i)
             
     print "In PCC tree find these bcid with PCC data: ", PCC_bcid_test
@@ -139,6 +144,7 @@ def fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID):
     time_start = time.time()
 
     for (i, data) in enumerate(pcc_tree):
+        #print data
         if i and not (i % step):
             time_now = time.time()
             time_per_evt = (time_now - time_start) / i
@@ -198,7 +204,6 @@ def doMakePCCRateFile(ConfigInfo):
     inData1.GetScanInfo(InputScanFile)
     inData = []
     inData.append(inData1)
-
     scanNames = inData1.scanNamesAll
 
 # For the remaining scans:
@@ -216,6 +221,7 @@ def doMakePCCRateFile(ConfigInfo):
 
     chain = r.TChain(PCCTreeName)
     for name in InputPCCFiles:
+        print name
         chain.Add(name)
     numFiles = chain.GetListOfFiles().GetEntries()
 
@@ -234,11 +240,13 @@ def doMakePCCRateFile(ConfigInfo):
 # PixelLumiTupler and the VdM scan information.
     in_file = r.TFile.Open(intermediateFile, "READ")
     pcc_tree = in_file.Get(sub_tree_name)
+    #pcc_tree = chain
     tree_scan_info = in_file.Get(scan_info_tree_name)
+    #print type(tree_scan_info)
 
-    if not pcc_tree or not tree_scan_info:
-        print >> "ERROR Did not find both VdM trees - Exit program"
-        sys.exit(1)
+    #if not pcc_tree or not tree_scan_info:
+    #    print >> "ERROR Did not find both VdM trees - Exit program"
+    #    sys.exit(1)
 
     clusters = []
     clusters = fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID)
@@ -290,7 +298,6 @@ if __name__ == '__main__':
 
     table = {}
     csvtable = []
-
     table, csvtable = doMakePCCRateFile(ConfigInfo)
 
     with open(OutputSubDir+'/Rates_PCC_'+str(Fill)+'.pkl', 'wb') as f:

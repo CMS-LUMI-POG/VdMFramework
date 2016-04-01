@@ -1,0 +1,12 @@
+{
+"Fill": "4634",
+"InputPCCFiles": ["/store/group/comm_luminosity/5TeV/PCC/ZeroBias1/crab_CMSSW_7_6_1_PCC_ZeroBias1/160317_223558/0000/pcc_Data_PixVtx_Event_1.root"],
+"Comment": "BCIDs on which trigger read out PCC values",
+"PCC_BCID": [645,1212,2262,2388,2578],
+"AnalysisDir": "../Fill4634_Mar252016",
+"Comment": "The following directories are relative to <AnalysisDir>",
+"InputScanFile" : "cond/Scan_4634.pkl",
+"PCCTreeName": "lumi/tree",
+"OutputSubDir" : "LuminometerData",
+"addScanInfo": false
+}

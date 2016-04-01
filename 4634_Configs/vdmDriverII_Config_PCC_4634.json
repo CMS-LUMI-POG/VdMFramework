@@ -1,0 +1,126 @@
+{
+"Fill": "4634",
+"Date": "Nov192015",
+"Luminometer": "PCC",
+"AnalysisDir": "Fill4634_Nov192015",
+"CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
+"Corr" : ["noCorr"],
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeScanFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
+"makeRateFile": true,
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeBeamCurrentFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeBeamBeamFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGhostsFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeSatellitesFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
+"makeLengthScaleFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphsFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphs2D": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/results/<Corr>", 
+"runVdmFitter": false,
+"makeScanFileConfig":
+	{
+	"InputCentralPath": "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",
+	"InputDIPFile" : "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/vdm/vdm_Fill4634.csv",
+	"ScanNames" : ["X1","Y1","Y2","X2","Y3","X3","IY1","IX1","IY2","IX2"],
+	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
+	"ScanTimeWindows" :[[1447946522, 1447947608],[1447947870, 1447948900],[1447949003, 1447950033],[1447950098, 1447951128],[1447963841, 1447964820],[1447964893, 1447965872],[1447966215,1447966762],[1447966840, 1447967392],[1447967567, 1447968120],[1447968195, 1447968743]],
+	"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
+	"Comment" : "betaStar in cm, angle in microrad",
+	"BetaStar" : 400.0,
+	"Angle" : 170.0,
+	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+	"ParticleTypeB1" : "proton",
+	"ParticleTypeB2" : "proton",
+	"Comment": "Beam energies in MeV", 
+	"EnergyB1" : 2510,
+	"EnergyB2" : 2510,
+	"OutputSubDir" : "cond"
+	},
+"makeRateFileConfig":
+	{	
+	"InputPCCFiles": ["/afs/cern.ch/user/g/gkrintir/public/ForMassimo/ZeroBias2.root"],
+        "Comment": "BCIDs on which trigger read out PCC values",
+        "PCC_BCID": [644,1215,2269,2389,2589],
+        "AnalysisDir": "../Fill4634_Nov192015",
+        "Comment": "The following directories are relative to <AnalysisDir>",
+        "InputScanFile" : "cond/Scan_4634.pkl",
+        "PCCTreeName": "pccminitree",
+        "OutputSubDir" : "LuminometerData",
+        "addScanInfo": true
+	},
+"makeBeamCurrentFileConfig":
+	{
+	"InputCentralPath": "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",	
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_4634.pkl",
+	"OutputSubDir" : "cond",
+	"CalibrateFBCTtoDCCT" : false
+	},
+"makeBeamBeamFileConfig":
+	{
+	"Comment": "Input scan info file is <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_4634.pkl",
+	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_4634.pkl",
+	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
+	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"Scanpairs" : [[1,2],[4,3],[6,5],[8,7],[10,9]],
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGhostsFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeSatellitesFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeLengthScaleFileConfig":
+	{
+	"Comment": "Length scale scan fill",
+	"FillLS": "3563",	
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGraphsFileConfig":
+	{
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_4634.pkl",
+	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_4634.pkl",
+	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4266.pkl",
+	"OutputSubDir" : "graphs"       
+	},
+"makeGraphs2DConfig":
+	{
+	"Comment": "Defines each X/Y pair for which to make 2D graphs", 
+	"Scanpairs" : [[1,2],[4,3],[6,5],[8,7],[10,9]],
+	"Comment": "Input/output directory is <AnalysisDir>/<Luminometer>/graphs",
+	"InOutSubDir": "graphs"
+	},
+"vdmFitterConfig":
+	 {
+	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
+	 "InputGraphsFile" : "graphs/graphs_4634_noCorr.pkl",
+	 "FitName" : "DGConst",
+	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 }
+}

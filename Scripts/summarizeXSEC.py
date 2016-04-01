@@ -13,7 +13,7 @@ fits=pickle.load(file)
 xsecInd=fits[0].index('xsec')
 xsecErrInd=fits[0].index('xsecErr')
 
-PCCBCIDs=["51",'771','1631','2211','2674']
+PCCBCIDs=["644",'1215','2269','2389','2589']
 scans=["1_2","4_3","5_6","7_8","9_10"]
 
 xsecs=[[],[],[]]
@@ -36,8 +36,8 @@ for bcid in PCCBCIDs:
     iColor=iColor+1
 
 for fit in fits:
-    if fit[0] != "5_6" and fit[2] != "sum":
-    #if fit[2] != "sum":
+    #if fit[0] != "5_6" and fit[2] != "sum": #5_6 was a bad one at 13tev
+    if fit[0] != "1_2" and fit[0] != "4_3" and fit[2] != "sum":
         try:
             #if float(fit[xsecInd])<0:
             print fit[0],fit[1],int(fit[2]),fit[xsecInd],fit[xsecErrInd]
@@ -147,8 +147,8 @@ text2.SetTextFont(62)
 
 can=ROOT.TCanvas("can","",800,600)
 multigraph.Draw("AP")
-multigraph.SetMinimum(8.84)
-multigraph.SetMaximum(9.16)
+multigraph.SetMinimum(0.) #8.84
+multigraph.SetMaximum(29.16) #9.16
 multigraph.GetXaxis().SetRangeUser(0.6,5.4)
 multigraph.GetXaxis().SetNdivisions(5)
 #multigraph.GetYaxis().SetNdivisions(20)

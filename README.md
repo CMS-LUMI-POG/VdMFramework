@@ -156,7 +156,7 @@ Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.*, *=csv,
 
 and the plots will be stored under the VdMFramework/ directory as 
 ```
-`xsecs_PCC.png, xsecsPerBCID_PCC.png, and xsecsPerScan_PCC.png` 
+xsecs_PCC.png, xsecsPerBCID_PCC.png, and xsecsPerScan_PCC.png
 ```
 along with their .C source files for further editing, if needed.
 

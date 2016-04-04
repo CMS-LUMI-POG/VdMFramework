@@ -2,7 +2,7 @@ import pickle, csv, sys, json, os
 import ROOT as r
 from vdmUtilities import setupDirStructure
 from makeScanFileII import doMakeScanFile
-#from dataPrepII.makeRateFile import doMakeRateFile
+from dataPrepII.makeRateFile import doMakeRateFile
 from dataPrepII_PCC.makePCCRateFile import doMakePCCRateFile
 from makeBeamCurrentFileII import doMakeBeamCurrentFile
 from dataPrep_corr.makeBeamBeamFile import doMakeBeamBeamFile
@@ -120,7 +120,10 @@ if makeRateFile == True:
     table = {}
     csvtable = []
 
-    table, csvtable = doMakePCCRateFile(makeRateFileConfig)
+    if Luminometer=='PCC':
+        table, csvtable = doMakePCCRateFile(makeRateFileConfig)
+    else:
+        table, csvtable = doMakeRateFile(makeRateFileConfig)
 
     csvfile = open(OutputSubDir+'/Rates_'+ Luminometer + '_'+str(Fill)+'.csv', 'wb')
     writer = csv.writer(csvfile)

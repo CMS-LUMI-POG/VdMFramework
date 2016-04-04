@@ -33,8 +33,8 @@
 	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
 	"ScanTimeWindows" :[[1447946522, 1447947608],[1447947870, 1447948900],[1447949003, 1447950033],[1447950098, 1447951128],[1447963841, 1447964820],[1447964893, 1447965872],[1447966215,1447966762],[1447966840, 1447967392],[1447967567, 1447968120],[1447968195, 1447968743]],
 	"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
-	"Comment" : "betaStar in cm, angle in microrad",
-	"BetaStar" : 400.0,
+	"Comment" : "betaStar in m, angle in microrad",
+	"BetaStar" : 4.0,
 	"Angle" : 170.0,
 	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
 	"ParticleTypeB1" : "proton",
@@ -53,6 +53,7 @@
         "Comment": "The following directories are relative to <AnalysisDir>",
         "InputScanFile" : "cond/Scan_4634.pkl",
         "PCCTreeName": "pccminitree",
+	"datatype": "PCC",
         "OutputSubDir" : "LuminometerData",
         "addScanInfo": true
 	},

@@ -3,6 +3,7 @@ import ROOT as r
 from vdmUtilities import setupDirStructure
 from makeScanFileII import doMakeScanFile
 from dataPrepII.makeRateFile import doMakeRateFile
+from dataPrepII_PCC.makePCCRateFile import doMakePCCRateFile
 from makeBeamCurrentFileII import doMakeBeamCurrentFile
 from dataPrep_corr.makeBeamBeamFile import doMakeBeamBeamFile
 from dataPrep_corr.makeGhostsFile import doMakeGhostsFile
@@ -119,7 +120,10 @@ if makeRateFile == True:
     table = {}
     csvtable = []
 
-    table, csvtable = doMakeRateFile(makeRateFileConfig)
+    if Luminometer=='PCC':
+        table, csvtable = doMakePCCRateFile(makeRateFileConfig)
+    else:
+        table, csvtable = doMakeRateFile(makeRateFileConfig)
 
     csvfile = open(OutputSubDir+'/Rates_'+ Luminometer + '_'+str(Fill)+'.csv', 'wb')
     writer = csv.writer(csvfile)
@@ -418,10 +422,10 @@ if runVdmFitter == True:
     writer.writerows(table)
     csvfile.close()
 
-#    outResults ='./'+ OutputDir + '/'+FitName+'_Functions.pkl'
-#    outFile = open(outResults, 'wb')
-#    pickle.dump(resultsAll, outFile)
-#    outFile.close()
+    outResults ='./'+ OutputDir + '/'+FitName+'_Functions.pkl'
+    outFile = open(outResults, 'wb')
+    pickle.dump(resultsAll, outFile)
+    outFile.close()
 
     outFileMinuit = './'+OutputDir + '/'+FitName+'_Minuit.log'
     os.rename(MinuitLogFile, outFileMinuit)

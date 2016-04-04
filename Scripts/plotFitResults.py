@@ -80,7 +80,7 @@ def addXsecPlots(description, paramName, param, paramErr, ouFileName):
         plot_byBX[i].SetMarkerSize(0.4)
         plot_byBX[i].Draw("P")
             
-    canvas.BuildLegend(0.65,0.8,0.95,0.95,"")
+    canvas.BuildLegend(0.65,0.6,0.95,0.95,"")
     plot_byBX[0].SetTitle(description + " " + paramName)
     canvas.SaveAs(outFileName +'(')
 

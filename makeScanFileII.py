@@ -51,8 +51,10 @@ def doMakeScanFile(ConfigInfo):
     extractedList = df.columns.values.tolist()
 
     if not (columnsList == extractedList):
-        print "Attention: First line in dip csv file not as expected, check file integrity. Exit program."
-        sys.exit(1)
+        print "Attention: First line in dip csv file not as expected, check file integrity."
+        print "extracted list",extractedList
+        print "expected list",columnsList
+        #sys.exit(1)
 
     FillfromDip = df['fill'][0]
 

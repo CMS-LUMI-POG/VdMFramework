@@ -136,19 +136,44 @@ def getCurrents(datapath, scanpt):
     else:
         dcct1 = float(beam1df.mean())
         dcct2 = float(beam2df.mean())
+
 # attention: LHC bcid's start at 1, not at 0
-        ## FIXME SUPER HACKED
+
         ## In 4266 BCID 2674 is 3% too low in FBCT
-        for idx, bcid in enumerate(filledBunches1):
-            if bcid+1==2674:
-                fbct1[str(bcid+1)] = 1.03*bx1df[bcid].mean()
-            else:
-                fbct1[str(bcid+1)] = bx1df[bcid].mean()
-        for idx, bcid in enumerate(filledBunches2):
-            if bcid==2674:
-                fbct2[str(bcid+1)] = 1.03*bx2df[bcid].mean()
-            else:
+        if fill == 4266:
+
+            for idx, bcid in enumerate(filledBunches1):
+                if bcid+1==2674:
+                    fbct1[str(bcid+1)] = 1.03*bx1df[bcid].mean()
+                else:
+                    fbct1[str(bcid+1)] = bx1df[bcid].mean()
+
+            for idx, bcid in enumerate(filledBunches2):
+                if bcid+1==2674:
+                    fbct2[str(bcid+1)] = 1.03*bx2df[bcid].mean()
+                else:
+                    fbct2[str(bcid+1)] = bx2df[bcid].mean()
+
+        ## In 4634 even BCIDs are 4% too high in FBCT
+        elif fill == 4634:
+
+            for idx, bcid in enumerate(filledBunches1):
+                if (bcid+1)%2 == 0:
+                    fbct1[str(bcid+1)] = 1.04*bx1df[bcid].mean()
+                else:
+                    fbct1[str(bcid+1)] = bx1df[bcid].mean()
+
+            for idx, bcid in enumerate(filledBunches2):
                 fbct2[str(bcid+1)] = bx2df[bcid].mean()
+
+        else:
+
+            for idx, bcid in enumerate(filledBunches1):
+                fbct1[str(bcid+1)] = bx1df[bcid].mean()
+
+            for idx, bcid in enumerate(filledBunches2):
+                fbct2[str(bcid+1)] = bx2df[bcid].mean()
+
 
     return dcct1, dcct2, fbct1, fbct2
 

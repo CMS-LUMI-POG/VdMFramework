@@ -29,14 +29,14 @@
 	{
 	"InputCentralPath": "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",
 	"InputDIPFile" : "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/vdm/vdm_Fill4634.csv",
-	"ScanNames" : ["X1","Y1","Y2","X2","Y3","X3","IY1","IX1","IY2","IX2"],
+	"ScanNames" : ["Y1","X1","Y2","X2","IY1","IX1","IY2","IX2"],
 	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
-	"ScanTimeWindows" :[[1447946522, 1447947608],[1447947870, 1447948900],[1447949003, 1447950033],[1447950098, 1447951128],[1447963841, 1447964820],[1447964893, 1447965872],[1447966215,1447966762],[1447966840, 1447967392],[1447967567, 1447968120],[1447968195, 1447968743]],
+	"ScanTimeWindows" :[[1447947870, 1447948900],[1447950098, 1447951128],[1447963841, 1447964820],[1447964893, 1447965872],[1447966215,1447966762],[1447966840, 1447967392],[1447967567, 1447968120],[1447968195, 1447968743]],
 	"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
 	"Comment" : "betaStar in m, angle in microrad",
 	"BetaStar" : 4.0,
 	"Angle" : 170.0,
-	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
 	"ParticleTypeB1" : "proton",
 	"ParticleTypeB2" : "proton",
 	"Comment": "Beam energies in MeV", 
@@ -73,7 +73,7 @@
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4634.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
 	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
-	"Scanpairs" : [[1,2],[4,3],[6,5],[8,7],[10,9]],
+	"Scanpairs" : [[2,1],[4,3],[6,5],[8,7]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
 	},
@@ -113,7 +113,7 @@
 "makeGraphs2DConfig":
 	{
 	"Comment": "Defines each X/Y pair for which to make 2D graphs", 
-	"Scanpairs" : [[1,2],[4,3],[6,5],[8,7],[10,9]],
+	"Scanpairs" : [[2,1],[4,3],[6,5],[8,7]],
 	"Comment": "Input/output directory is <AnalysisDir>/<Luminometer>/graphs",
 	"InOutSubDir": "graphs"
 	},

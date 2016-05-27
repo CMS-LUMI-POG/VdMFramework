@@ -46,7 +46,8 @@ def doMakeScanFile(ConfigInfo):
 
 # sanity checks
 
-    columnsList = ['fill', 'run', 'ls', 'nb', 'sec', 'msec', 'acqflag', 'step', 'beam', 'ip', 'scanstatus', 'plane', 'progress', 'nominal_separation', 'read_nominal_B1sepPlane', 'read_nominal_B1xingPlane', 'read_nominal_B2sepPlane', 'read_nominal_B2xingPlane', 'set_nominal_B1sepPlane', 'set_nominal_B1xingPlane', 'set_nominal_B2sepPlane', 'set_nominal_B2xingPlane']
+    columnsList = ['fill', 'run', 'ls', 'nb', 'sec', 'msec', 'acqflag', 'step', 'beam', 'ip', 'scanstatus', 'plane', 'progress', 'nominal_separation', 'read_nominal_B1sepPlane', 'read_nominal_B1xingPlane', 'read_nominal_B2sepPlane', 'read_nominal_B2xingPlane', 'set_nominal_B1sepPlane', 'set_nominal_B1xingPlane', 'set_nominal_B2sepPlane', 'set_nominal_B2xingPlane', 'bpm_5LDOROS_B1Names', 'bpm_5LDOROS_B1hPos', 'bpm_5LDOROS_B1vPos', 'bpm_5LDOROS_B1hErr', 'bpm_5LDOROS_B1vErr', 'bpm_5RDOROS_B1Names', 'bpm_5RDOROS_B1hPos', 'bpm_5RDOROS_B1vPos', 'bpm_5RDOROS_B1hErr', 'bpm_5RDOROS_B1vErr', 'bpm_5LDOROS_B2Names', 'bpm_5LDOROS_B2hPos', 'bpm_5LDOROS_B2vPos', 'bpm_5LDOROS_B2hErr', 'bpm_5LDOROS_B2vErr', 'bpm_5RDOROS_B2Names', 'bpm_5RDOROS_B2hPos', 'bpm_5RDOROS_B2vPos', 'bpm_5RDOROS_B2hErr', 'bpm_5RDOROS_B2vErr', 'atlas_totInst']
+
 
     extractedList = df.columns.values.tolist()
 

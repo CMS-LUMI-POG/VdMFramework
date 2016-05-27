@@ -1,0 +1,10 @@
+(dp0
+S'LS_ScaleY'
+p1
+V0.995
+p2
+sS'LS_ScaleX'
+p3
+V0.996
+p4
+s.

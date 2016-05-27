@@ -2,8 +2,6 @@
 "Fill" : "4634",
 "AnalysisDir" : "Fill4634_Nov192015",
 "Luminometer": "PCC",
-"Corr" : ["BeamBeam"],
-"Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
 "FitName" : "DGConst",
@@ -25,5 +23,5 @@
 "Comment": "For pPb, as determined in Sep 2012 pilot run, taking into account that Pb ion is stripped of all its 82 electrons: 6.36/115.8*82", 
 "OldNormalization": 10.2, 
 "FormulaToUse": "1D-Gaussian-like",
-"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]]
+"Scanpairs" : [[2,1],[4,3],[6,5],[8,7]]
 }

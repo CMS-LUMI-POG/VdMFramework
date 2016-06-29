@@ -1,24 +1,16 @@
-import ROOT as r
+import ROOT
 from inputDataReader import *
 import sys, json, pickle
 
 
-def ClusterCount(data):
+def GetCount(data,DataType):
 
-    """This is the method to be called on an event stored by the
-    PixelLumiTupler to compute the number of pixel clusters to be used
-    for the lumi analysis.
-    """
+    if DataType=="VTX":
+        count=data.nVtx
+    else:
+        count=data.nCluster
 
-    # Excludes the innermost barrel layer.
-#    num_clus = data.nPixelClustersB[1] + \
-#               data.nPixelClustersB[2] + \
-#               data.nPixelClustersF[0] + \
-#               data.nPixelClustersF[1]
-
-    num_clus = data.nCluster
-
-    return num_clus
+    return count
 
 
 
@@ -26,17 +18,17 @@ def addScanInfoToTree(chain, inData, intermediateFile):
 
 # adapted from build_pixel_scan_tree.py
 
-    out_file = r.TFile.Open(intermediateFile, "RECREATE")
+    out_file = ROOT.TFile.Open(intermediateFile, "RECREATE")
     sub_tree = chain.CloneTree(0)
 
-    r.gROOT.ProcessLine("struct ScanInfo {" \
+    ROOT.gROOT.ProcessLine("struct ScanInfo {" \
                       "Int_t fScanIndex;" \
                       "Int_t fPointIndex;};")
     from ROOT import ScanInfo
     tmp_scan_info = ScanInfo()
     print tmp_scan_info
 
-    tree_scan_info = r.TTree("tree_scan_info", "tree_scan_info")
+    tree_scan_info = ROOT.TTree("tree_scan_info", "tree_scan_info")
     tree_scan_info.Branch("scan_info", tmp_scan_info,
                           "scanIndex/I:" \
                           "pointIndex/I")
@@ -49,6 +41,9 @@ def addScanInfoToTree(chain, inData, intermediateFile):
     step = num_entries / 100
     time_start = time.time()
 
+    #chain.SetBranchStatus("*",0)
+    #chain.SetBranchStatus("timeStamp",1)
+
     for (index, data) in enumerate(chain):
         if index and not (index % step):
             time_now = time.time()
@@ -57,7 +52,7 @@ def addScanInfoToTree(chain, inData, intermediateFile):
             eta = time.localtime(time_now + time_left)
             print "  %3.0f%% (ETA: %s)" % \
                   (100. * index / num_entries, time.strftime("%H:%M:%S", eta))
-        
+
         timestamp = data.timeStamp
         #print timestamp
 
@@ -109,13 +104,13 @@ def addScanInfoToTree(chain, inData, intermediateFile):
 
 
 
-def fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID):
+def fillCounts(pcc_tree, tree_scan_info, inData, PCC_BCID, DataType):
 
 # sanity check: determine which bcid are actually present in the tree
 # typically, PCC data is available only for 5 out of all colliding bx
 
     maxNoBCIDinLHC = 3564
-    histBx = r.TH1F("histBx", "BCID actually pesent in pixel data tree", maxNoBCIDinLHC, 1., maxNoBCIDinLHC + 1.)
+    histBx = ROOT.TH1F("histBx", "BCID actually pesent in pixel data tree", maxNoBCIDinLHC, 1., maxNoBCIDinLHC + 1.)
     #pcc_tree.Print()
     pcc_tree.Draw("BXid >> histBx")
     PCC_bcid_test = []
@@ -143,6 +138,11 @@ def fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID):
     step = num_entries / 100
     time_start = time.time()
 
+    #pcc_tree.SetBranchStatus("*",0)
+    #pcc_tree.SetBranchStatus("timeStamp",1)
+    #pcc_tree.SetBranchStatus("nCluster",1)
+    #pcc_tree.SetBranchStatus("nVtx",1)
+
     for (i, data) in enumerate(pcc_tree):
         #print data
         if i and not (i % step):
@@ -154,7 +154,7 @@ def fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID):
                   (100. * i / num_entries, time.strftime("%H:%M:%S", eta))
         if data.scanIndex < 0:
             print "WARNING Found scanIndex < 0. Should this happen?"
-        num_clus = ClusterCount(data)
+        num_clus = GetCount(data,DataType)
         clusters[data.scanIndex][data.pointIndex][data.BXid].append(num_clus)
 
     with open('clusterCounts.pkl', 'wb') as f:
@@ -193,12 +193,15 @@ def extractPCCRates(clusters, PCC_BCID, in_data):
 def doMakePCCRateFile(ConfigInfo):
     
     InputPCCFiles = ConfigInfo['InputPCCFiles']
-    AnalysisDir = ConfigInfo['AnalysisDir']
+    AnalysisDir   = ConfigInfo['AnalysisDir']
     InputScanFile = AnalysisDir + "/" + ConfigInfo['InputScanFile']
-    PCCTreeName = ConfigInfo['PCCTreeName']
-    PCC_BCID = ConfigInfo['PCC_BCID']
-    addScanInfo = False
-    addScanInfo = ConfigInfo['addScanInfo']
+    PCCTreeName   = ConfigInfo['PCCTreeName']
+    PCC_BCID      = ConfigInfo['PCC_BCID']
+    addScanInfo   = False
+    addScanInfo   = ConfigInfo['addScanInfo']
+    DataType      = ConfigInfo['DataType']
+
+    print DataType
 
     inData1 = vdmInputData(1)
     inData1.GetScanInfo(InputScanFile)
@@ -219,7 +222,7 @@ def doMakePCCRateFile(ConfigInfo):
             print "Exit program"
             sys.exit(1)
 
-    chain = r.TChain(PCCTreeName)
+    chain = ROOT.TChain(PCCTreeName)
     for name in InputPCCFiles:
         print name
         chain.Add(name)
@@ -228,7 +231,7 @@ def doMakePCCRateFile(ConfigInfo):
     print "Chain contains " + str(numFiles) + " files"
     print "Chain contains events", chain.GetEntries()
 
-    intermediateFile = "combinedTree.root"
+    intermediateFile = "/tmp/combinedTree.root"
     if addScanInfo == True:
         addScanInfoToTree(chain, inData, intermediateFile)
 
@@ -238,7 +241,7 @@ def doMakePCCRateFile(ConfigInfo):
 
 # Read in the combined tree containing both the tree from the
 # PixelLumiTupler and the VdM scan information.
-    in_file = r.TFile.Open(intermediateFile, "READ")
+    in_file = ROOT.TFile.Open(intermediateFile, "READ")
     pcc_tree = in_file.Get(sub_tree_name)
     #pcc_tree = chain
     tree_scan_info = in_file.Get(scan_info_tree_name)
@@ -249,7 +252,7 @@ def doMakePCCRateFile(ConfigInfo):
     #    sys.exit(1)
 
     clusters = []
-    clusters = fillClusterCounts(pcc_tree, tree_scan_info, inData, PCC_BCID)
+    clusters = fillCounts(pcc_tree, tree_scan_info, inData, PCC_BCID, DataType)
 
     with open('clusterCounts.pkl', 'rb') as f:
         clusters = pickle.load(f)

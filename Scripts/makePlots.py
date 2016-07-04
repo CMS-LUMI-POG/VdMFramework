@@ -3,6 +3,77 @@ import ROOT as r
 import sys, json
 from vdmUtilities import makeCorrString
 
+#error-less plotmaking function implementing a ratio between two params
+def ratioPlots(description, paramName, param1, param2,ouFileName):
+    noScans = len(param1)
+
+    canvas = r.TCanvas()
+
+    marker = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+    color = [2,3,4,6,7,2,3,4,6,7]
+
+    plot = r.TGraphErrors()
+    plot.SetMarkerStyle(8)
+    plot.SetMarkerSize(0.4)
+    plot.SetTitle(description + " " + paramName)
+    plot.GetXaxis().SetTitle('Scan number')
+    plot.GetYaxis().SetTitle(paramName)
+
+#        XorY = scan[scan.keys()[0]]
+
+    i = 0
+    for scan in param1:
+        scanno= int(scan.strip("Scan_"))
+        for bcid in param1[scan]:
+            try:
+                value = int(bcid)
+            except: TypeError
+            else:
+                plot.SetPoint(i, scanno, param1[scan][bcid] / param2[scan][bcid])
+                i = i+1
+
+    plot.GetXaxis().SetTitle('Scan')
+    plot.GetYaxis().SetTitle(paramName)
+    plot.Draw("AP")
+    canvas.SaveAs(outFileName +'(')
+
+    max = plot.GetHistogram().GetMaximum()
+    min = plot.GetHistogram().GetMinimum()
+
+    plot_byBX=[r.TGraphErrors() for i in range(noScans)]
+
+    for scan in param1:
+        scanno= int(scan.strip("Scan_"))
+        i = 0
+        for bcid in param1[scan]:
+            try:
+                value = int(bcid)
+            except: TypeError
+            else:
+                plot_byBX[int(scanno)-1].SetPoint(i, int(bcid), param1[scan][bcid] / param2[scan][bcid])
+                i = i+1
+
+    plot_byBX[0].SetMaximum(max*1.1)
+    plot_byBX[0].SetMinimum(min)
+    plot_byBX[0].SetMarkerColor(color[0])        
+    plot_byBX[0].SetMarkerStyle(marker[0])
+    plot_byBX[0].SetMarkerSize(0.4)
+    
+    plot_byBX[0].SetTitle(description + " " + paramName + " Scan  1")
+    plot_byBX[0].GetXaxis().SetTitle('BCID')
+    plot_byBX[0].GetYaxis().SetTitle(paramName)
+    plot_byBX[0].Draw("AP")
+    for i in range(1,noScans):
+        plot_byBX[i].SetTitle(description + " " + paramName +" " + " Scan " +str(i+1))
+        plot_byBX[i].SetMarkerColor(color[i])        
+        plot_byBX[i].SetMarkerStyle(marker[i])
+        plot_byBX[i].SetMarkerSize(0.4)
+        plot_byBX[i].Draw("P")
+        
+    canvas.BuildLegend(0.65,0.6,0.95,0.95,"")
+    plot_byBX[0].SetTitle(description + " " + paramName)
+    canvas.SaveAs(outFileName +'(')
+
 def addXsecPlots(description, paramName, param, paramErr, ouFileName):
 
     noScanPairs = len(param)
@@ -85,6 +156,8 @@ def addXsecPlots(description, paramName, param, paramErr, ouFileName):
 
 
 
+
+# where description string, paranName string, param is a dictionary so is paramErr
 def addPlots(description, paramName, param, paramErr, ouFileName):
 
     noScans = len(param)
@@ -233,5 +306,13 @@ if __name__ == '__main__':
     canvas = r.TCanvas()
     addXsecPlots(description, paramName, param, paramErr, outFileName) 
 
+    # plot chi2 / ndof
+    paramName = "chi2 / ndof"
+    param1 = fitResult.getFitParam("chi2")
+    param2 = fitResult.getFitParam("ndof")
+    canvas = r.TCanvas()
+    ratioPlots(description, paramName, param1, param2, outFileName)
+
     canvas = r.TCanvas()
     canvas.SaveAs(outFileName +']')
+

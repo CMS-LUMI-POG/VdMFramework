@@ -21,7 +21,7 @@ def addXsecPlots(description, paramName, param, paramErr, ouFileName):
     plot.SetTitle(description + " " + paramName)
     plot.GetXaxis().SetTitle('Scan number')
     plot.GetYaxis().SetTitle(paramName)
-    
+
     i = 0
     scanpairno = 0
     scanpairList = []
@@ -65,21 +65,21 @@ def addXsecPlots(description, paramName, param, paramErr, ouFileName):
 
     plot_byBX[0].SetMaximum(max)
     plot_byBX[0].SetMinimum(min)
-    plot_byBX[0].SetMarkerColor(color[0])        
+    plot_byBX[0].SetMarkerColor(color[0])
     plot_byBX[0].SetMarkerStyle(marker[0])
     plot_byBX[0].SetMarkerSize(0.4)
-    
+
     plot_byBX[0].SetTitle(description + " " + paramName + " scan pair " + scanpairList[0])
     plot_byBX[0].GetXaxis().SetTitle('BCID')
     plot_byBX[0].GetYaxis().SetTitle(paramName)
     plot_byBX[0].Draw("AP")
     for i in range(1,noScanPairs):
         plot_byBX[i].SetTitle(description + " " + paramName +" scan pair " + scanpairList[i])
-        plot_byBX[i].SetMarkerColor(color[i])        
+        plot_byBX[i].SetMarkerColor(color[i])
         plot_byBX[i].SetMarkerStyle(marker[i])
         plot_byBX[i].SetMarkerSize(0.4)
         plot_byBX[i].Draw("P")
-            
+
     canvas.BuildLegend(0.65,0.6,0.95,0.95,"")
     plot_byBX[0].SetTitle(description + " " + paramName)
     canvas.SaveAs(outFileName +'(')
@@ -140,21 +140,21 @@ def addPlots(description, paramName, param, paramErr, ouFileName):
 
     plot_byBX[0].SetMaximum(max*1.1)
     plot_byBX[0].SetMinimum(min)
-    plot_byBX[0].SetMarkerColor(color[0])        
+    plot_byBX[0].SetMarkerColor(color[0])
     plot_byBX[0].SetMarkerStyle(marker[0])
     plot_byBX[0].SetMarkerSize(0.4)
-    
+
     plot_byBX[0].SetTitle(description + " " + paramName + " Scan  1")
     plot_byBX[0].GetXaxis().SetTitle('BCID')
     plot_byBX[0].GetYaxis().SetTitle(paramName)
     plot_byBX[0].Draw("AP")
     for i in range(1,noScans):
         plot_byBX[i].SetTitle(description + " " + paramName +" " + " Scan " +str(i+1))
-        plot_byBX[i].SetMarkerColor(color[i])        
+        plot_byBX[i].SetMarkerColor(color[i])
         plot_byBX[i].SetMarkerStyle(marker[i])
         plot_byBX[i].SetMarkerSize(0.4)
         plot_byBX[i].Draw("P")
-            
+
     canvas.BuildLegend(0.65,0.8,0.95,0.95,"")
     plot_byBX[0].SetTitle(description + " " + paramName)
     canvas.SaveAs(outFileName +'(')
@@ -177,7 +177,7 @@ if __name__ == '__main__':
     InputFitResultsFile = ConfigInfo['InputFitResultsFile']
 
     corrFull = makeCorrString(Corr)
-    InputFitResultsFile = AnalysisDir + "/" + Luminometer + "/results/" + corrFull + "/" + InputFitResultsFile 
+    InputFitResultsFile = AnalysisDir + "/" + Luminometer + "/results/" + corrFull + "/" + InputFitResultsFile
 
     InputXsecResultsFile = AnalysisDir + "/" + Luminometer + "/results/" + corrFull + "/" + 'LumiCalibration_'+ Luminometer+ '_'+ FitName + "_" + str(Fill)+'.pkl'
 
@@ -194,7 +194,7 @@ if __name__ == '__main__':
     paramErrName = "xsecErr"
     param = xsecResult.getFitParam(paramName)
     paramErr = xsecResult.getFitParam(paramErrName)
-    addXsecPlots(description, paramName, param, paramErr, outFileName) 
+    addXsecPlots(description, paramName, param, paramErr, outFileName)
 
 # Fit function parameters come in pairs of: value, valueErr
 # Hand over value, valuerErr dictionaries to plotAll
@@ -207,7 +207,7 @@ if __name__ == '__main__':
             lasterridx = idx
     fitlist = paramlist[:(lasterridx+1)]
     otherlist = paramlist[(lasterridx+1):]
-    
+
 # pair fit function parameters with their errors
     fiterrpairs = zip(fitlist[0::2], fitlist[1::2])
 
@@ -218,7 +218,7 @@ if __name__ == '__main__':
         param = fitResult.getFitParam(value)
         paramErr = fitResult.getFitParam(err)
         canvas = r.TCanvas()
-        addPlots(description, paramName, param, paramErr, outFileName) 
+        addPlots(description, paramName, param, paramErr, outFileName)
 
     import copy
     for entry in otherlist:
@@ -228,25 +228,30 @@ if __name__ == '__main__':
         for a in paramErr:
             for b in paramErr[a]:
                 paramErr[a][b] = 0.0
-        addPlots(description, paramName, param, paramErr, outFileName) 
+        addPlots(description, paramName, param, paramErr, outFileName)
 
 
 # chi/ndof plot
 
     paramName = "chi2/ndof"
-    chi2 = fitResult.getFitParam("chi2")
-    ndof = fitResult.getFitParam("ndof")
+    param = fitResult.getFitParam("chi2")
+    chi2  = fitResult.getFitParam("chi2")
+    ndof  = fitResult.getFitParam("ndof")
     for a in chi2:
         for b in chi2[a]:
             num = chi2[a][b]
             denom = ndof[a][b]
-            param[a][b] = num/denom
+            try:
+                param[a][b] = num/denom
+            except ZeroDivisionError:
+                # dummy zero value
+                param[a][b] = 0
     paramErr = copy.deepcopy(param)
     for a in paramErr:
         for b in paramErr[a]:
             paramErr[a][b] = 0.0
-    addPlots(description, paramName, param, paramErr, outFileName) 
-
+    canvas = r.TCanvas()
+    addPlots(description, paramName, param, paramErr, outFileName)
 
     canvas = r.TCanvas()
     canvas.SaveAs(outFileName +']')

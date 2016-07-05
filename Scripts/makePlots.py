@@ -249,8 +249,8 @@ if __name__ == '__main__':
             try:
                 param[a][b] = num/denom
             except ZeroDivisionError:
-                # dummy zero value
-                param[a][b] = 0
+                # dummy -999 value
+                param[a][b] = -999
     paramErr = copy.deepcopy(param)
     for a in paramErr:
         for b in paramErr[a]:

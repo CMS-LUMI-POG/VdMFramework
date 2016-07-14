@@ -40,10 +40,9 @@ if 'set_nominal_B2xingPlane' in fieldKey:
 iScanPoint=0
 curX=0
 curY=0
+epsilon=1.e-10
 for line in beamPositionLines:
     items=line.split(",")
-    #if items[fieldKey.index('nominal_separation_plane')]  is 'NONE':
-    #    continue
     try:
         if args.runs!="":
             if items[fieldKey.index('run')] not in args.runs:
@@ -52,9 +51,9 @@ for line in beamPositionLines:
         dy=float(items[fieldKey.index('set_nominal_B2sepPlane')])-float(items[fieldKey.index('set_nominal_B1sepPlane')])
         if dx==0 and dy==0:
             continue
-        elif abs(dx)<1.e-10 and dy==0:
+        elif abs(dx)<epsilon and dy==0:
             continue
-        elif dx==0 and abs(dy)<1.e-10:
+        elif dx==0 and abs(dy)<epsilon:
             continue
 
         if len(scanPoints.keys())==0:
@@ -72,14 +71,14 @@ for line in beamPositionLines:
     except:
         print "fail",line
 
-print iScanPoint
+print 'Total number of Scan Points', iScanPoint
 scans={}
 iScan=0
 lastTime=0
 for scanPoint in range(iScanPoint):
-    print scanPoint,scanPoints[scanPoint]
+    print 'ScanPoint:', scanPoint,scanPoints[scanPoint]
     if len(scans.keys())==0:
-        print "no keys, insert one"
+        print "---no keys, insert one"
         if scanPoints[scanPoint][0]==0:
             scans[iScan]=["Y",scanPoints[scanPoint][2],scanPoints[scanPoint][3]]
         if scanPoints[scanPoint][1]==0:
@@ -87,21 +86,21 @@ for scanPoint in range(iScanPoint):
     else:
         newScan=False
         if scans[iScan][0]=="Y" and scanPoints[scanPoint][1]==0:
-            print "Y scan ends... X begins"
+            print "---Y scan ends... X begins"
             newScan=True
         elif scans[iScan][0]=="X" and scanPoints[scanPoint][0]==0:
-            print "X scan ends... Y begins"
+            print "---X scan ends... Y begins"
             newScan=True
         elif int(scanPoints[scanPoint][2])-lastTime>100:
-            print "It's been awhile"
+            print "---It's been awhile"
             newScan=True
 
         if newScan:
             scans[iScan][2]=lastTime
             iScan=iScan+1
-            if scanPoints[scanPoint][0]==0:
+            if scanPoints[scanPoint][0]<epsilon:
                 scans[iScan]=["Y",scanPoints[scanPoint][2],scanPoints[scanPoint][3]]
-            if scanPoints[scanPoint][1]==0:
+            if scanPoints[scanPoint][1]<epsilon:
                 scans[iScan]=["X",scanPoints[scanPoint][2],scanPoints[scanPoint][3]]
     
     lastTime=int(scanPoints[scanPoint][3])
@@ -109,9 +108,11 @@ for scanPoint in range(iScanPoint):
 scans[iScan][2]=lastTime
 iScan=iScan+1
 
+print 
+
 for scan in range(iScan):
     duration=scans[scan][2]-scans[scan][1]
-    print scan,scans[scan],duration,"seconds",
+    print "Scan Found:", scan,scans[scan],duration,"seconds",
     if duration<700:
         print "short?"
     else:

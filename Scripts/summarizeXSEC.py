@@ -14,7 +14,7 @@ parser.add_argument("-u", "--units", default="Barn", help="Barn, mB, uB (Default
 parser.add_argument("-l", "--label", default="PCC",  help="Label for file (Default:  PCC)")
 parser.add_argument("-r", "--range", default="",  help="Range for y-axis of plots (Default:  none)")
 parser.add_argument("-a", "--allbcids", default=0,  help="Use all bcids (Default:  0)")
-parser.add_argument("--plotlabel",  default="2016  (13TeV)", help="Label for the upper right.  Default:  2016  (13TeV)")
+parser.add_argument("--plotlabel",  default="2016  (13 TeV)", help="Label for the upper right.  Default:  2016  (13 TeV)")
 args=parser.parse_args()
 
 
@@ -27,11 +27,12 @@ fits=pickle.load(file)
 xsecInd=fits[0].index('xsec')
 xsecErrInd=fits[0].index('xsecErr')
 
-BCIDs=["644",'1215','2269','2389','2589']
-scans=["1_2","4_3","5_6","7_8","9_10"]
+BCIDs=[]
+if '5 TeV' in args.plotlabel:
+    BCIDs=["644",'1215','2269','2389','2589']
 
-BCIDs=['41', '281', '872', '1783', '2063']
-scans=["1_2","4_3","5_6","7_8","9_10"]
+if '13 TeV' in args.plotlabel:
+    BCIDs=['41', '281', '872', '1783', '2063']
 
 if args.allbcids !=0:
     for fit in fits:
@@ -39,6 +40,12 @@ if args.allbcids !=0:
             BCIDs.append(fit[2])
     BCIDs.sort()
     
+
+scans=[]
+for fit in fits:
+    if fit[0] not in scans:
+        scans.append(fit[0])
+scans.sort()
     
 
 

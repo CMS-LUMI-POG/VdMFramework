@@ -41,8 +41,6 @@ def addScanInfoToTree(chain, inData, intermediateFile):
     step = num_entries / 100
     time_start = time.time()
 
-    #chain.SetBranchStatus("*",0)
-    #chain.SetBranchStatus("timeStamp",1)
 
     for (index, data) in enumerate(chain):
         if index and not (index % step):
@@ -138,10 +136,6 @@ def fillCounts(pcc_tree, tree_scan_info, inData, PCC_BCID, DataType):
     step = num_entries / 100
     time_start = time.time()
 
-    #pcc_tree.SetBranchStatus("*",0)
-    #pcc_tree.SetBranchStatus("timeStamp",1)
-    #pcc_tree.SetBranchStatus("nCluster",1)
-    #pcc_tree.SetBranchStatus("nVtx",1)
 
     for (i, data) in enumerate(pcc_tree):
         #print data
@@ -200,8 +194,6 @@ def doMakePCCRateFile(ConfigInfo):
     addScanInfo   = False
     addScanInfo   = ConfigInfo['addScanInfo']
     DataType      = ConfigInfo['DataType']
-
-    print DataType
 
     inData1 = vdmInputData(1)
     inData1.GetScanInfo(InputScanFile)

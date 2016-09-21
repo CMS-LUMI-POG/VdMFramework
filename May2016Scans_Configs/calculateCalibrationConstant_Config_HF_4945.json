@@ -1,7 +1,7 @@
 {
 "Fill" : "4945",
 "AnalysisDir" : "Fill4945_May182016",
-"Luminometer": "PLT",
+"Luminometer": "HF",
 "Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
@@ -9,7 +9,7 @@
 "InputFitResultsFile" : "DGConst_FitResults.pkl",
 "LuminometerSettings":
 	{
-	"LuminometerName": "PLT",
+	"LuminometerName": "HF",
 	"Comment": "defaults to settings in luminometer.py", 
 	"Comment": "needs to be set for non-default settings or for new luminometer",
 	"LuminometerDescription": "default",

@@ -1,10 +1,9 @@
 {
 "Fill": "4945",
 "Date": "May182016",
-"Luminometer": "PCC",
+"Luminometer": "VTX",
 "AnalysisDir": "Fill4945_May182016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
-"Corr" : ["BeamBeam"],
 "Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
@@ -54,7 +53,7 @@
   "Comment": "The following directories are relative to <AnalysisDir>",
   "InputScanFile" : "cond/Scan_4945.pkl",
   "PCCTreeName": "pccminitree",
-	"DataType": "PCC",
+	"DataType": "VTX",
   "OutputSubDir" : "LuminometerData",
   "addScanInfo": true
 	},
@@ -64,7 +63,7 @@
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4945.pkl",
 	"OutputSubDir" : "cond",
-	"CalibrateFBCTtoDCCT" : true
+	"CalibrateFBCTtoDCCT" : false
 	},
 "makeBeamBeamFileConfig":
 	{
@@ -73,8 +72,8 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4945.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
-	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
-	"Scanpairs" : [[1,2],[3,4]],
+	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
+	"Scanpairs" : [[1,2],[3.4]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
 	},
@@ -108,7 +107,7 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4945.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4945.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_VTX_4945.pkl",
 	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
@@ -122,7 +121,7 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4945_noCorr.pkl",
-	 "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 "FitName" : "DG",
+	 "FitConfigFile" : "fits/DG_Config.json"
 	 }
 }

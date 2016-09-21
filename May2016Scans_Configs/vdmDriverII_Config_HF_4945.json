@@ -1,15 +1,14 @@
 {
 "Fill": "4945",
 "Date": "May182016",
-"Luminometer": "PCC",
+"Luminometer": "HF",
 "AnalysisDir": "Fill4945_May182016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
-"Corr" : ["BeamBeam"],
 "Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": false,
+"makeRateFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -47,16 +46,11 @@
 	},
 "makeRateFileConfig":
 	{	
-	"InputPCCFiles": ["/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/PCC/VdM/May182016_273591/PCC_VdM_ZeroBias1to8_273591_ProMay212016_Event_AlwaysTrue_VdMMiniTrees.root"],
-  "Comment": "BCIDs on which trigger read out PCC values",
-  "PCC_BCID": [41,281,872,1783,2063],
-  "AnalysisDir": "../Fill4945_May182016",
-  "Comment": "The following directories are relative to <AnalysisDir>",
-  "InputScanFile" : "cond/Scan_4945.pkl",
-  "PCCTreeName": "pccminitree",
-	"DataType": "PCC",
-  "OutputSubDir" : "LuminometerData",
-  "addScanInfo": true
+	"Comment": "The following directories are relative to <AnalysisDir>",
+	"InputScanFile": "cond/Scan_4945.pkl",
+	"InputLumiDir" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4945_18May16/compressed/central",
+	"RateTable": "hflumi",
+	"OutputSubDir": "LuminometerData"
 	},
 "makeBeamCurrentFileConfig":
 	{
@@ -64,7 +58,7 @@
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4945.pkl",
 	"OutputSubDir" : "cond",
-	"CalibrateFBCTtoDCCT" : true
+	"CalibrateFBCTtoDCCT" : false
 	},
 "makeBeamBeamFileConfig":
 	{
@@ -73,8 +67,8 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4945.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
-	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
-	"Scanpairs" : [[1,2],[3,4]],
+	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
+	"Scanpairs" : [[1,2]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
 	},
@@ -108,7 +102,7 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4945.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4945.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_HF_4945.pkl",
 	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
@@ -123,6 +117,6 @@
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4945_noCorr.pkl",
 	 "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 "FitConfigFile" : "fits/DGConst_Config.json"
 	 }
 }

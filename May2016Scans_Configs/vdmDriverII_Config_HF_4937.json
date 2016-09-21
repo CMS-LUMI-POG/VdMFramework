@@ -1,7 +1,7 @@
 {
 "Fill": "4937",
 "Date": "May172016",
-"Luminometer": "PLT",
+"Luminometer": "HF",
 "AnalysisDir": "Fill4937_May172016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
 "Corr" : ["noCorr"],
@@ -49,7 +49,7 @@
 	"Comment": "The following directories are relative to <AnalysisDir>",
 	"InputScanFile": "cond/Scan_4937.pkl",
 	"InputLumiDir" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",
-	"RateTable": "pltlumizero",
+	"RateTable": "hflumi",
 	"OutputSubDir": "LuminometerData"
 	},
 "makeBeamCurrentFileConfig":
@@ -102,7 +102,7 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4937.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PLT_4937.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_HF_4937.pkl",
 	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":

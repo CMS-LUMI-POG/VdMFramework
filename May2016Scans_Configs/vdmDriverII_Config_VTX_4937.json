@@ -1,7 +1,7 @@
 {
 "Fill": "4937",
 "Date": "May172016",
-"Luminometer": "PLT",
+"Luminometer": "VTX",
 "AnalysisDir": "Fill4937_May172016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
 "Corr" : ["noCorr"],
@@ -36,21 +36,26 @@
 	"Comment" : "betaStar in m, angle in microrad",
 	"BetaStar" : 19.17,
 	"Angle" : 9999,
-	"Offset" : [0.0,0.0],
+	"Offset" : [0.0,0.0,0.0,0.0],
 	"ParticleTypeB1" : "proton",
 	"ParticleTypeB2" : "proton",
 	"Comment": "Beam energies in MeV", 
-	"EnergyB1" : 9999,
-	"EnergyB2" : 9999,
+	"EnergyB1" : 6500,
+	"EnergyB2" : 6500,
 	"OutputSubDir" : "cond"
 	},
 "makeRateFileConfig":
 	{	
-	"Comment": "The following directories are relative to <AnalysisDir>",
-	"InputScanFile": "cond/Scan_4937.pkl",
-	"InputLumiDir" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",
-	"RateTable": "pltlumizero",
-	"OutputSubDir": "LuminometerData"
+	"InputPCCFiles": ["/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/PCC/VdM/May182016_273531_vdmminitrees.root"],
+  "Comment": "BCIDs on which trigger read out PCC values",
+  "PCC_BCID": [81,875,1610,1690,1730],
+  "AnalysisDir": "../Fill4937_May172016",
+  "Comment": "The following directories are relative to <AnalysisDir>",
+  "InputScanFile" : "cond/Scan_4937.pkl",
+  "PCCTreeName": "pccminitree",
+	"DataType": "VTX",
+  "OutputSubDir" : "LuminometerData",
+  "addScanInfo": true
 	},
 "makeBeamCurrentFileConfig":
 	{
@@ -67,8 +72,8 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4937.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
-	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
-	"Scanpairs" : [[1,2]],
+	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"Scanpairs" : [[1,2],[3,4]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
 	},
@@ -102,7 +107,7 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4937.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PLT_4937.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_VTX_4937.pkl",
 	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
@@ -116,7 +121,7 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4937_noCorr.pkl",
-	 "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config.json"
+	 "FitName" : "DG",
+	 "FitConfigFile" : "fits/DG_Config.json"
 	 }
 }

@@ -1,0 +1,28 @@
+{
+"Fill" : "4954",
+"AnalysisDir" : "Fill4954_May272016",
+"Luminometer": "PLT",
+"Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["noCorr"],
+"Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
+"FitName" : "DGConst",
+"InputFitResultsFile" : "DGConst_FitResults.pkl",
+"LuminometerSettings":
+	{
+	"LuminometerName": "PLT",
+	"Comment": "defaults to settings in luminometer.py", 
+	"Comment": "needs to be set for non-default settings or for new luminometer",
+	"LuminometerDescription": "default",
+	"WhatIsMeasured": "default",
+	"NormalizationGraphs": "default",
+	"OldNormAvailable": "default"
+	},
+"Comment": "Total inelastic cross section in microbarn, for pp at 8TeV",
+"Total_inel_Xsec": 72700, 
+"Comment": "Use negative number to make clear that no old normalization is available",
+"Comment": "For low energy pp: 10.2; for pp at 8TeV, as determined in April 2012 scan: 6.36",
+"Comment": "For pPb, as determined in Sep 2012 pilot run, taking into account that Pb ion is stripped of all its 82 electrons: 6.36/115.8*82", 
+"OldNormalization": 10.2, 
+"FormulaToUse": "1D-Gaussian-like",
+"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]]
+}

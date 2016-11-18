@@ -1,9 +1,10 @@
 {
 "Fill" : "4945",
-"AnalysisDir" : "Fill4945_May142016",
+"AnalysisDir" : "Fill4945_May182016",
 "Luminometer": "PCC",
 "Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
+"Corr" : ["BeamBeam"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
 "FitName" : "DGConst",
 "InputFitResultsFile" : "DGConst_FitResults.pkl",

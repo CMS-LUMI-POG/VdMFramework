@@ -1,6 +1,6 @@
 {
-"Fill" : "4945",
-"AnalysisDir" : "Fill4945_May182016",
+"Fill" : "4954",
+"AnalysisDir" : "Fill4954_May272016",
 "Luminometer": "PLT",
 "Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
@@ -24,5 +24,5 @@
 "Comment": "For pPb, as determined in Sep 2012 pilot run, taking into account that Pb ion is stripped of all its 82 electrons: 6.36/115.8*82", 
 "OldNormalization": 10.2, 
 "FormulaToUse": "1D-Gaussian-like",
-"Scanpairs" : [[1,2],[3,4]]
+"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]]
 }

@@ -1,15 +1,16 @@
 {
 "Fill" : "4945",
 "AnalysisDir" : "Fill4945_May182016",
-"Luminometer": "PLT",
+"Luminometer": "VTX",
 "Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["BeamBeam"],
 "Corr" : ["noCorr"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
-"FitName" : "DGConst",
-"InputFitResultsFile" : "DGConst_FitResults.pkl",
+"FitName" : "DG",
+"InputFitResultsFile" : "DG_FitResults.pkl",
 "LuminometerSettings":
 	{
-	"LuminometerName": "PLT",
+	"LuminometerName": "VTX",
 	"Comment": "defaults to settings in luminometer.py", 
 	"Comment": "needs to be set for non-default settings or for new luminometer",
 	"LuminometerDescription": "default",

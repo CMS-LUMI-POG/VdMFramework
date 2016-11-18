@@ -6,11 +6,11 @@
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
 "Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeScanFile": true,
+"makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeBeamCurrentFile": true,
+"makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeBeamBeamFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -27,8 +27,8 @@
 "runVdmFitter": true,
 "makeScanFileConfig":
 	{
-	"InputCentralPath": "/afs/cern.ch/work/k/krose/vdm/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",		
-	"InputDIPFile" : "/afs/cern.ch/work/k/krose/vdm/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/beamData/vdm_4a4e6fbc-c0df-4b7c-ba76-084b268ba25a_short.csv",
+	"InputCentralPath": "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",		
+	"InputDIPFile" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/beamData/vdm_4a4e6fbc-c0df-4b7c-ba76-084b268ba25a_short.csv",
 	"ScanNames" : ["X1","Y1","X2","Y2"],
 	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
 	"ScanTimeWindows" :[[1463496496,1463497514],[1463497746,1463498773],[1463499141,1463500158],[1463500380,1463501398]],
@@ -48,13 +48,13 @@
 	{	
 	"Comment": "The following directories are relative to <AnalysisDir>",
 	"InputScanFile": "cond/Scan_4937.pkl",
-	"InputLumiDir" : "/afs/cern.ch/work/k/krose/vdm/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",
+	"InputLumiDir" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",
 	"RateTable": "pltlumizero",
 	"OutputSubDir": "LuminometerData"
 	},
 "makeBeamCurrentFileConfig":
 	{
-	"InputCentralPath": "/afs/cern.ch/work/k/krose/vdm/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",	
+	"InputCentralPath": "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4937_Im_17May2016/central",	
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4937.pkl",
 	"OutputSubDir" : "cond",
@@ -116,7 +116,7 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4937_noCorr.pkl",
-	 "FitName" : "DG",
-	 "FitConfigFile" : "fits/DG_Config.json"
+	 "FitName" : "DGConst",
+	 "FitConfigFile" : "fits/DGConst_Config.json"
 	 }
 }

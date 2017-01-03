@@ -15,7 +15,7 @@
    The name of LOCAL_BRANCHNAME could be whatever. For the list of available remote (and local) branches, you can simply type `git branch -a`.
 
 4. Now, if you want to further release the local changes, the following steps (5-9) have to be done. Make a remote to your fork 
-   `git remote add YOURGITUSERNAME http://github.com/YOURGITUSERNAME/VdMFramework`
+   `git remote add YOURGITUSERNAME git@github.com:YOURGITUSERNAME/VdMFramework.git'
 
 5. Make sure that your remote repositoty has been added
     `git remote -v'
@@ -29,15 +29,8 @@
     `git push YOURGITUSERNAME LOCAL_BRANCHNAME`
     It is also possible to give to the remote repository a different name with
      `git push YOURGITUSERNAME LOCAL_BRANCHNAME:NEW_BRANCHNAME`
-8. If step 8 fails, i.e. if git complains with 
-  "error: The requested URL returned error: 403 Forbidden while accessing https://github.com/YOURGITUSERNAME/VdMFramework.git/info/refs
-  fatal: HTTP request failed"
 
-  then simply add in the .git/config file the line:
-  ` pushurl = git@github.com:YOURGITUSERNAME/VdMFramework.git `
-  in the part of [remote "YOURGITUSERNAME"].
-
-9. Make a pull request (PR) with your changes. The easiest way is to do it interactively on your github web interface
+8. Make a pull request (PR) with your changes. The easiest way is to do it interactively on your github web interface
   
   a) Go to YOUR VdMFramework repository, i.e. https://github.com/YOURGITUSERNAME/VdMFramework
   

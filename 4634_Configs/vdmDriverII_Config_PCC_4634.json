@@ -8,7 +8,7 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -24,7 +24,7 @@
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphs2D": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/results/<Corr>", 
-"runVdmFitter": false,
+"runVdmFitter": true,
 "makeScanFileConfig":
 	{
 	"InputCentralPath": "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",
@@ -121,7 +121,8 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4634_noCorr.pkl",
-	 "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 "FitName" : "SimCapSigma_PCCAndVtx",
+	 "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
+	 "PlotsTempPath": [["./plotstmp/1/"], ["./plotstmp/2/"]]
 	 }
 }

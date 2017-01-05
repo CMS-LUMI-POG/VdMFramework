@@ -125,6 +125,6 @@
 	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
 	 "FitName" : "SimCapSigma_PCCAndVtx",
 	 "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
-	 "PlotsTempPath": [["./plotstmp/1/"], ["./plotstmp/2/"]]
+	 "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
 	 }
 }

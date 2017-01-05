@@ -1,5 +1,7 @@
 import ROOT as r
 import math
+import array
+import copy
 
 def showAvailableFits():
 
@@ -169,12 +171,15 @@ def Residuals(g,ff):
     return res
 
 
-def doPlot1D(graph,fList, fill): 
+def doPlot1D(graph,fList, fill, tempPath): 
 
 # fList is a list of functions that is returned by doFit() in xxx_Fit.py
 # for 1D fit functions is usually the full fit function and a list of the various components, for example 
 # for a DG plus const fit, the components are firstGauss, secondGauss, const
 # for 2D fits, the fList usually has as first element the 1D projections of the 2D fit function
+
+    new_flist = copy.deepcopy(fList)
+    new_graph =copy.deepcopy(graph)
 
     r.gROOT.SetBatch()	
     r.gROOT.SetStyle("Plain")
@@ -192,24 +197,23 @@ def doPlot1D(graph,fList, fill):
     p2.SetLogy()
     p2.Draw()
     p1.Draw()
-    c.Update()
+
     
 # Convention: first entry in list is full fit function, second to len-1 is the various signal components, last entry is background function    
     
-    ff = fList[0]
-    fComponent = {}
-    for i in range(1,len(fList)):
-        fComponent[i-1] = fList[i]
+    fittedFunctions = {}
+    for i in range(0,len(new_flist)):
+        fittedFunctions[i] = new_flist[i]
 
 # Convention: Amplitude is called "Amp" in full fit function
-    peak = ff.GetParameter("Amp")
+    peak = new_flist[0].GetParameter("Amp")
 
 # Convention: CapSigma, if it can be defined, is called "#Sigma"; if it is not defined for the fit function, root returns 1e-300 as value
-    sigma = ff.GetParameter("#Sigma")
-    m = ff.GetParNumber("#Sigma")
-    sigmaE = ff.GetParError(m)
+    sigma = new_flist[0].GetParameter("#Sigma")
+    m = new_flist[0].GetParNumber("#Sigma")
+    sigmaE = new_flist[0].GetParError(m)
 
-    title = graph.GetTitle()
+    title = new_graph.GetTitle()
     title_comps = title.split('_')
     scan = title_comps[0]
     type = title_comps[1]
@@ -219,11 +223,11 @@ def doPlot1D(graph,fList, fill):
 
 # determine minimum rate in graph to set range of y axis for display 
 
-    import array
+    p2.cd()
 
-    n = graph.GetN()
+    n = new_graph.GetN()
     y = array.array('d',[])
-    y = graph.GetY()
+    y = new_graph.GetY()
     locmin = r.TMath.LocMin(n,y)
     minval = y[locmin]
     yval = []
@@ -236,33 +240,19 @@ def doPlot1D(graph,fList, fill):
             yval.remove(minval)
             minval =  min(yval)
 
-    graph.SetTitle("Scan " + scan + ": " + type + "-plane BCID " + bcid)
-    graph.GetYaxis().SetTitle("L / (N1*N2) [a.u.]")
-    graph.GetYaxis().SetRangeUser(minval,10*peak)
-    graph.GetXaxis().SetTitle("#Delta [mm]")
-    graph.SetMarkerStyle(8)
-    graph.GetYaxis().SetLabelFont(63)
-    graph.GetYaxis().SetLabelSize(16)
-    graph.GetYaxis().SetTitleFont(63)
-    graph.GetYaxis().SetTitleSize(18)
-    graph.GetYaxis().SetTitleOffset(1.5)
-    graph.GetXaxis().SetNdivisions(0)
+    new_graph.SetTitle("Scan " + scan + ": " + type + "-plane BCID " + bcid)
+    new_graph.GetYaxis().SetTitle("L / (N1*N2) [a.u.]")
+    new_graph.GetYaxis().SetRangeUser(minval,10*peak)
+    new_graph.GetXaxis().SetTitle("#Delta [mm]")
+    new_graph.SetMarkerStyle(8)
+    new_graph.GetYaxis().SetLabelFont(63)
+    new_graph.GetYaxis().SetLabelSize(16)
+    new_graph.GetYaxis().SetTitleFont(63)
+    new_graph.GetYaxis().SetTitleSize(18)
+    new_graph.GetYaxis().SetTitleOffset(1.5)
+    new_graph.GetXaxis().SetNdivisions(0)
+    new_graph.Draw('AP')
 
-    res = Residuals(graph,ff)
-    res.GetXaxis().SetLabelFont(63)
-    res.GetXaxis().SetLabelSize(16)
-    res.GetYaxis().SetLabelFont(63)
-    res.GetYaxis().SetLabelSize(16)
-    res.GetXaxis().SetTitleFont(63)
-    res.GetXaxis().SetTitleSize(18)
-    res.GetXaxis().SetTitleOffset(3)
-    res.GetYaxis().SetTitleFont(63)
-    res.GetYaxis().SetTitleSize(18)
-    res.GetYaxis().SetTitleOffset(1.5)
-
-    p2.cd()
-    graph.Draw('AP')
-    p2.Update()
 
 #    print "STATS", graph.GetListOfFunctions().FindObject("stats")
 #    print "STATS", graph.GetListOfFunctions().Print()
@@ -273,18 +263,20 @@ def doPlot1D(graph,fList, fill):
 # 1D function as set in xx_2D_Fit.py are displayed in the stat box
 
 #    if graph.GetListOfFunctions().Print("Q") == None:
-    if graph.GetListOfFunctions().FindObject("stats") == None:
-        graph.GetListOfFunctions().Add(ff)
+    if new_graph.GetListOfFunctions().FindObject("stats") == None:
+        new_graph.GetListOfFunctions().Add(new_flist[0])
                 
-    xmin = graph.GetXaxis().GetXmin()
-    xmax = graph.GetXaxis().GetXmax()
+    xmin = new_graph.GetXaxis().GetXmin()
+    xmax = new_graph.GetXaxis().GetXmax()
         
-    for i in range(len(fComponent)):
-        fComponent[i].SetRange(xmin, xmax)
-        fComponent[i].SetRange
-        fComponent[i].SetLineColor(i+2)
-        fComponent[i].Draw("sames")
-
+    for i in range(len(fittedFunctions)):
+        fittedFunctions[i].SetRange(xmin, xmax)
+        fittedFunctions[i].SetRange
+        if (i==0):
+            fittedFunctions[i].SetLineColor(1)
+        else:
+            fittedFunctions[i].SetLineColor(i+1)
+        fittedFunctions[i].Draw("sames")
 
     pad = r.TPaveText(0.15,0.75,0.35,0.88,"NDC")
     pad.SetTextAlign(12) # left alignment
@@ -298,28 +290,38 @@ def doPlot1D(graph,fList, fill):
     pad2 = r.TPaveText(0.4,0.2,0.6,0.3,"NDC")
     pad2.SetTextSize(0.04)
     pad2.SetFillColor(0)
-    if ff.GetParNumber("#Sigma") > 0:
+    if new_flist[0].GetParNumber("#Sigma") > 0:
         pad2.AddText("#Sigma = "+str(round(1e3*sigma,3))+ "#pm" + str(round(1e3*sigmaE,3))+ "[#mum]")
         pad2.Draw("same")
-
+        
     p2.Draw() 
     c.Update()
 
     p1.cd()
+
+    res = Residuals(new_graph,new_flist[0])
+    res.GetXaxis().SetLabelFont(63)
+    res.GetXaxis().SetLabelSize(16)
+    res.GetYaxis().SetLabelFont(63)
+    res.GetYaxis().SetLabelSize(16)
+    res.GetXaxis().SetTitleFont(63)
+    res.GetXaxis().SetTitleSize(18)
+    res.GetXaxis().SetTitleOffset(3)
+    res.GetYaxis().SetTitleFont(63)
+    res.GetYaxis().SetTitleSize(18)
+    res.GetYaxis().SetTitleOffset(1.5)
     res.SetMarkerStyle(8)
     res.GetXaxis().SetTitle("#Delta [mm]")
     res.GetYaxis().SetTitle("Residuals [#sigma]")
     res.Draw("AP")
-    c.Update()
-    p1.Update()
 
     try:
-        c.SaveAs("./plotstmp/"+graph.GetName()+".ps")
+        c.SaveAs(tempPath[0]+new_graph.GetName()+".ps")
     except ValueError:
         print "vdmUtilities: problem saving .ps file, maybe temporary directory to store pdf files not available"
 
     try:
-        c.SaveAs("./plotstmp/"+graph.GetName()+".root")
+        c.SaveAs(tempPath[0]+new_graph.GetName()+".root")
     except ValueError:
         print "vdmUtilities: problem saving .root file, maybe temporary directory to store pdf files not available"
 

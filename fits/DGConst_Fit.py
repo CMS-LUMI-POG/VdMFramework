@@ -161,10 +161,10 @@ class DGConst_Fit(FitManager.FitProvider):
         return [functions, fit]
 
 
-    def doPlot(self, graph, functions, fill):
+    def doPlot(self, graph, functions, fill, tempPath):
         
         canvas =  r.TCanvas()
-        canvas = doPlot1D(graph, functions, fill)
+        canvas = doPlot1D(graph, functions, fill, tempPath)
         return canvas
 
 

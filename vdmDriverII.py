@@ -360,7 +360,7 @@ if runVdmFitter == True:
 
     FitName = vdmFitterConfig['FitName']
     FitConfigFile = vdmFitterConfig['FitConfigFile']
-    InputGraphsFile = AnalysisDir + '/' + Luminometer + '/' + vdmFitterConfig['InputGraphsFile']
+    PlotsTempPath = vdmFitterConfig['PlotsTempPath']
 
     corrFull = ""
     for entry in Corr:
@@ -370,15 +370,40 @@ if runVdmFitter == True:
     if  not corrFull:
         corrFull = "noCorr"
 
-    OutputDir = './' + AnalysisDir + '/' + Luminometer + '/results/' + corrFull + '/'
+    InputGraphsFiles = []
+    OutputDirs = []
+    if 'InputGraphsFile' in vdmFitterConfig:
+        InputGraphsFile = AnalysisDir + '/' + Luminometer + '/' + vdmFitterConfig['InputGraphsFile']
+        if (corrFull not in InputGraphsFile):
+            raw_input("InputGraphsFile extension different than the Correction to be applied!!; Press ENTER to continue.")
+        InputGraphsFiles.append(InputGraphsFile)
+    else:
+        defaultGraphsFile = 'graphs' + '/' + 'graphs_' + Fill + '_' + corrFull + '.pkl'
+        InputGraphsFile = AnalysisDir + '/' + Luminometer + '/' +  defaultGraphsFile
+        InputGraphsFiles.append(InputGraphsFile)
 
-    if not os.path.isdir(OutputDir):
-        print "Requested output directory ", OutputDir , " does not exist."
-        print "Please check if input for chosen corrections is available."
-        sys.exit(1)
+    OutputDir = './' + AnalysisDir + '/' + Luminometer + '/results/' + corrFull + '/'
+    OutputDirs.append(OutputDir)
+    
+    if 'Sim' in FitConfigFile:
+        if 'InputSimGraphsFile' in vdmFitterConfig:
+            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' + vdmFitterConfig['InputSimGraphsFile']
+            InputGraphsFiles.append(InputSimGraphsFile)
+        else:
+            defaultSimGraphsFile = 'graphs' + '/' + 'graphs_' + Fill + '_' + corrFull + '.pkl'
+            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' +  defaultSimGraphsFile
+            InputGraphsFiles.append(InputSimGraphsFile)
+        OutputDir = './' + AnalysisDir + '/' + 'VTX' + '/results/' + corrFull + '/'
+        OutputDirs.append(OutputDir)
+
+    for OutputDir in OutputDirs:
+        if not os.path.isdir(OutputDir):
+            print "Requested output directory ", OutputDir , " does not exist."
+            print "Please check if input for chosen corrections is available."
+            sys.exit(1)
 
     print " "
-    print "ATTENTION: Output will be written into ", OutputDir
+    print "ATTENTION: Output will be written into ", OutputDirs[0]
     print "Please check there for log files."
 
     print " "
@@ -398,56 +423,59 @@ if runVdmFitter == True:
         os.remove(MinuitLogFile)
 
 # needs to be the same name as assumed in vdmUtilities, where it is ./plotstmp
-    PlotsPath = './plotstmp/'
-    if not os.path.isdir(PlotsPath):
-        os.mkdir(PlotsPath, 0755)
-    else:
-        filelist = os.listdir(PlotsPath)
-        for element in filelist:
-            os.remove(PlotsPath+element)
+    for path in PlotsTempPath:
+        if not os.path.isdir(path[0]):
+            os.makedirs(path[0], 0755)
+        else:
+            filelist = os.listdir(path[0])
+            for element in filelist:
+                if ('ps' or 'root') in element:
+                    os.remove(path[0]+element)
 
     resultsAll = {}
     table = []
 
-    resultsAll, table = doRunVdmFitter(Fill, FitName, InputGraphsFile, OutputDir, FitConfigInfo)
+    resultsAll, table = doRunVdmFitter(Fill, FitName, InputGraphsFiles, OutputDirs[0], PlotsTempPath, FitConfigInfo)
 
-    outResults ='./'+ OutputDir + '/'+FitName+'_FitResults.pkl'
-    outFile = open(outResults, 'wb')
-    pickle.dump(table, outFile)
-    outFile.close()
+    for (i,OutputDir) in enumerate(OutputDirs):
+        outResults ='./'+ OutputDir + '/'+FitName+'_FitResults.pkl'
+        outFile = open(outResults, 'wb')
+        pickle.dump(table[i], outFile)
+        outFile.close()
 
-    import csv
-    csvfile = open('./'+ OutputDir + '/'+FitName+'_FitResults.csv', 'wb')
-    writer = csv.writer(csvfile)
-    writer.writerows(table)
-    csvfile.close()
-
-    outResults ='./'+ OutputDir + '/'+FitName+'_Functions.pkl'
-    outFile = open(outResults, 'wb')
-    pickle.dump(resultsAll, outFile)
-    outFile.close()
-
-    outFileMinuit = './'+OutputDir + '/'+FitName+'_Minuit.log'
+        csvfile = open('./'+ OutputDir + '/'+FitName+'_FitResults.csv', 'wb')
+        writer = csv.writer(csvfile)
+        writer.writerows(table[i])
+        csvfile.close()
+    
+        outResults ='./'+ OutputDir + '/'+FitName+'_Functions.pkl'
+        outFile = open(outResults, 'wb')
+        pickle.dump(resultsAll, outFile)
+        outFile.close()
+        
+    outFileMinuit = './'+OutputDirs[0] + '/'+FitName+'_Minuit.log'
     os.rename(MinuitLogFile, outFileMinuit)
 
-    outPdf = './'+OutputDir + '/'+FitName+'_FittedGraphs.pdf'
-    filelist = os.listdir(PlotsPath)
-    merge =-999.
-    for element in filelist:
-        if element.find(".ps") > 0:
-            merge = +1.
-    if merge > 0:
-        os.system("gs -dNOPAUSE -sDEVICE=pdfwrite -dBATCH -sOutputFile="+outPdf+" " + PlotsPath+"/*.ps")
+    output_FittedGraphs = dict(zip(OutputDirs,PlotsTempPath))
+    for OutputDir in output_FittedGraphs:
+        outPdf = './'+OutputDir + '/'+FitName+'_FittedGraphs.pdf'
+        PlotsPath = output_FittedGraphs[OutputDir][0]
+        filelist = os.listdir(PlotsPath)
+        merge =-999.
+        for element in filelist:
+            if element.find(".ps") > 0:
+                merge = +1.
+        if merge > 0:
+            os.system("gs -dNOPAUSE -sDEVICE=pdfwrite -dBATCH -sOutputFile="+outPdf+" " + PlotsPath+"/*.ps")
 
-    outRoot = './'+OutputDir + '/'+FitName+'_FittedGraphs.root'
-    if os.path.isfile(outRoot):
-        os.remove(outRoot)
-    merge =-999.
-    for element in filelist:
-        if element.find(".root") > 0:
-            merge = +1.
-    if merge > 0:
-        os.system("hadd " + outRoot + "  " + PlotsPath + "*.root")
-
+        outRoot = './'+OutputDir + '/'+FitName+'_FittedGraphs.root'
+        if os.path.isfile(outRoot):
+            os.remove(outRoot)
+        merge =-999.
+        for element in filelist:
+            if element.find(".root") > 0:
+                merge = +1.
+        if merge > 0:
+            os.system("hadd " + outRoot + "  " + PlotsPath + "*.root")
 
 

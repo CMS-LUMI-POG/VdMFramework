@@ -8,9 +8,9 @@
 "Corr" : ["BeamBeam"],
 "Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeScanFile": true,
+"makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -122,8 +122,9 @@
 "vdmFitterConfig":
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
-	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
-	 "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
+	 "FitName" : "SimCapSigma_PCCAndVtx",
+	 "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
+	 "PlotsTempPath": [["./plotstmp/1/"], ["./plotstmp/2/"]]
 	 }
 }

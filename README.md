@@ -137,6 +137,20 @@ And now the fitting step! Again, disable "makeGraphsFile",  and enable `"runVdmF
 Fill4634_Nov192015/PCC/results/noCorr/ and plotstmp/ (just under the VdMFramework/ directory).
 ```
 
+Note that if you have selected as `"FitName" : "SimCapSigma_PCCAndVtx"`, i.e. the option for a simultaneous fit, in the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file, then the output is seprately stored under
+```
+Fill4634_Nov192015/PCC/results/noCorr/ and plotstmp/1/ (just under the VdMFramework/ directory).
+```
+
+and
+
+```
+Fill4634_Nov192015/TrkVtx/results/noCorr/ and plotstmp/2 (just under the VdMFramework/ directory).
+```
+
+The `"PlotsTempPath":` argument inside the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file are configurable and user is free to change them.
+
+
 You are done! What is left is simply to illustrate the fitting results. 
 
 ****Plot the results****

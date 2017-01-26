@@ -5,8 +5,8 @@
 "AnalysisDir": "Fill4266_Aug252015",
 "CorrLater" : ["noCorr", "LengthScale", "Ghosts", "Satellites", "BeamBeam"],
 "Corr" : ["BeamBeam"],
-"Corr" : ["noCorr"],
 "Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -104,6 +104,8 @@
   "Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
   "InputBeamCurrentFile" : "cond/BeamCurrents_4266.pkl",
   "Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
+  "InputLuminometerData" : "LuminometerData/Rates_PCC_4266_24Nov16_noVeto.pkl",
+  "InputLuminometerData" : "LuminometerData/Rates_PCC_4266_24Nov16_2Jan17Veto.pkl",
   "InputLuminometerData" : "LuminometerData/Rates_PCC_4266.pkl",
   "OutputSubDir" : "graphs"
   },
@@ -118,8 +120,8 @@
   {
   "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs",
   "InputGraphsFile" : "graphs/graphs_4266_BeamBeam.pkl",
-  "InputGraphsFile" : "graphs/graphs_4266_noCorr.pkl",
   "InputGraphsFile" : "graphs/graphs_4266_BeamBeam_LengthScale.pkl",
+  "InputGraphsFile" : "graphs/graphs_4266_noCorr.pkl",
   "FitName" : "DGConst",
   "FitConfigFile" : "fits/DGConst_Config_PCC.json"
   }

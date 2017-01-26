@@ -23,8 +23,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 1_X_sum
+Attention: Graph has negative rates for  1_X_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -49,6 +51,7 @@ graph title 10_Y_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 10_Y_sum
+Attention: Graph has negative rates for  10_Y_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -74,6 +77,7 @@ graph title 2_Y_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 2_Y_sum
+Attention: Graph has negative rates for  2_Y_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -98,6 +102,7 @@ graph title 3_Y_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 3_Y_sum
+Attention: Graph has negative rates for  3_Y_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -123,6 +128,7 @@ graph title 4_X_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 4_X_sum
+Attention: Graph has negative rates for  4_X_sum
 ------>>>>
 Now fitting BCID  51
 Fit:0: RuntimeWarning: Abnormal termination of minimization.
@@ -146,9 +152,9 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_2674
 ------>>>>
 Now fitting BCID  sum
-Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 5_X_sum
+Attention: Graph has negative rates for  5_X_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -171,8 +177,10 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 6_Y_sum
+Attention: Graph has negative rates for  6_Y_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -198,6 +206,7 @@ graph title 7_X_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 7_X_sum
+Attention: Graph has negative rates for  7_X_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -222,6 +231,7 @@ graph title 8_Y_2674
 Now fitting BCID  sum
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 8_Y_sum
+Attention: Graph has negative rates for  8_Y_sum
 ------>>>>
 Now fitting BCID  51
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
@@ -244,5 +254,7 @@ TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_2674
 ------>>>>
 Now fitting BCID  sum
+Fit:0: RuntimeWarning: Abnormal termination of minimization.
 TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
 graph title 9_X_sum
+Attention: Graph has negative rates for  9_X_sum

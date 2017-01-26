@@ -48,10 +48,10 @@
 	},
 "makeRateFileConfig":
 	{	
-	"InputPCCFiles": ["/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_vdmminitrees.root"],
+	"InputPCCFiles": ["/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_PromptReco_vdmminitrees.root"],
   "Comment": "BCIDs on which trigger read out PCC values",
   "PCC_BCID": [41,281,872,1783,2063],
-  "AnalysisDir": "../Fill4954_May142016",
+  "AnalysisDir": "../Fill4954_May272016",
   "Comment": "The following directories are relative to <AnalysisDir>",
   "InputScanFile" : "cond/Scan_4954.pkl",
   "PCCTreeName": "pccminitree",
@@ -109,8 +109,10 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954.pkl",
-	"OutputSubDir" : "graphs"       
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_NoVeto.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_2Jan2017Veto.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_PromptReco_NoVeto.pkl",
+  "OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
 	{
@@ -123,8 +125,14 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
-	 "FitName" : "SimCapSigma_PCCAndVtx",
+	 
+   "Comment": "This is for SIM fit--not used because over-written below.",
+   "FitName" : "SimCapSigma_PCCAndVtx",
 	 "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
 	 "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
+	 
+   "Comment": "This is for stand-alone PCC--overwrites above",
+   "FitName" : "DGConst",
+	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
 	 }
 }

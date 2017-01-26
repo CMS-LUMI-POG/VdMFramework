@@ -52,18 +52,15 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
     corrB1 = fB1.GetParameter(0)
     corrB2 = fB2.GetParameter(0)
 
-    if CalibrateFBCTtoDCCT == True:
-
+    if CalibrateFBCTtoDCCT:
         print "Applying FBCT to DCCT calibration"
-        for idx, entry in enumerate(table):
-            old1 = entry[7]
-#            entry[7] = entry[5]/entry[3]*old1
-            entry[7] = corrB1*old1
-            old2 =  entry[8]
-#            entry[8] = entry[6]/entry[4]*old2
-            entry[8] = corrB2*old2
+        for iRow, scanPairData in enumerate(table):
+            for ibx in scanPairData[7]:
+                table[iRow][7][ibx] = corrB1*table[iRow][7][ibx]
+            for ibx in scanPairData[8]:
+                table[iRow][8][ibx] = corrB1*table[iRow][8][ibx]
 
-    return [h_ratioB1, h_ratioB2]
+    return [h_ratioB1, h_ratioB2, table]
 
 
 def getCurrents(datapath, scanpt, fill):
@@ -245,7 +242,7 @@ def doMakeBeamCurrentFile(ConfigInfo):
     outpdf = outpath+'/checkFBCTcalib_'+str(Fill)+'.pdf'
     for i in range(len(ScanNames)):
         key = "Scan_" + str(i+1)
-        [h_ratioB1, h_ratioB2] = checkFBCTcalib(table[key], CalibrateFBCTtoDCCT)
+        [h_ratioB1, h_ratioB2, table[key]] = checkFBCTcalib(table[key], CalibrateFBCTtoDCCT)
         h_ratioB1.Draw("AP")
         canvas.SaveAs(outpdf + '(')
         h_ratioB2.Draw("AP")

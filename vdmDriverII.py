@@ -360,7 +360,7 @@ if runVdmFitter == True:
 
     FitName = vdmFitterConfig['FitName']
     FitConfigFile = vdmFitterConfig['FitConfigFile']
-    PlotsTempPath = vdmFitterConfig['PlotsTempPath']
+    PlotsTempPath = [["./plotstmp/"]]
 
     corrFull = ""
     for entry in Corr:
@@ -386,6 +386,7 @@ if runVdmFitter == True:
     OutputDirs.append(OutputDir)
     
     if 'Sim' in FitConfigFile:
+        PlotsTempPath = vdmFitterConfig['PlotsTempPath']
         if 'InputSimGraphsFile' in vdmFitterConfig:
             InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' + vdmFitterConfig['InputSimGraphsFile']
             InputGraphsFiles.append(InputSimGraphsFile)

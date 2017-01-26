@@ -35,9 +35,14 @@ if '13 TeV' in args.plotlabel:
     BCIDs=['41', '281', '872', '1783', '2063']
 
 if args.allbcids !=0:
+    BCIDs=[]
     for fit in fits:
-        if fit[2] not in BCIDs:
-            BCIDs.append(fit[2])
+        try:
+            thisBCID=int(fit[2])
+            if thisBCID not in BCIDs:
+                BCIDs.append(thisBCID)
+        except:
+            print fit[2],"is not a valid integer/BCID."
     BCIDs.sort()
     
 
@@ -69,11 +74,14 @@ for bcid in BCIDs:
     iColor=(iColor+1)
 
 for fit in fits:
-    if fit[0] != "5_6" and fit[2] != "sum": #5_6 was a bad one at 13tev
+    if  fit[2] != "sum": #5_6 was a bad one at 13tev
+    #if fit[0] != "5_6" and fit[2] != "sum": #5_6 was a bad one at 13tev
     #if fit[0] != "1_2" and fit[0] != "4_3" and fit[2] != "sum":
         try:
             #if float(fit[xsecInd])<0:
             print fit[0],fit[1],int(fit[2]),fit[xsecInd],fit[xsecErrInd]
+            scanPair=fit[0]
+            BCID=int(fit[2])
             if float(fit[xsecErrInd])<1.0:
                 continue
             #print scans.index(fit[0]),BCIDs.index(fit[2])
@@ -84,6 +92,8 @@ for fit in fits:
             elif args.units=="Barn":
                 thisXsec=float(fit[xsecInd])/1e6
                 thisXsecErr=float(fit[xsecErrInd])/1e6
+                if thisXsecErr<0.02:
+                    thisXsecErr=0.02
             elif args.units=="uB":
                 thisXsec=float(fit[xsecInd])
                 thisXsecErr=float(fit[xsecErrInd])
@@ -91,20 +101,16 @@ for fit in fits:
             xsecs[1].append(thisXsecErr)
             xsecs[2].append(1./(xsecs[1][-1]*xsecs[1][-1]))
             #print iScan,offset
-            xsecsPerScan[fit[0]][0].append(thisXsec)
-            xsecsPerScan[fit[0]][1].append(thisXsecErr)
-            #xsecsPerScan[fit[0]][0].append(float(fit[xsecInd]))
-            #xsecsPerScan[fit[0]][1].append(float(fit[xsecErrInd]))
-            xsecsPerScan[fit[0]][2].append(1/(xsecsPerScan[fit[0]][1][-1]*xsecsPerScan[fit[0]][1][-1]))
-            xsecsPerBCID[fit[2]][0].append(thisXsec)
-            xsecsPerBCID[fit[2]][1].append(thisXsecErr)
-            #xsecsPerBCID[fit[2]][0].append(float(fit[xsecInd]))
-            #xsecsPerBCID[fit[2]][1].append(float(fit[xsecErrInd]))
-            xsecsPerBCID[fit[2]][2].append(1/(xsecsPerScan[fit[0]][1][-1]*xsecsPerScan[fit[0]][1][-1]))
-            iScan=scans.index(fit[0])
-            offset=(BCIDs.index(fit[2])- len(BCIDs)/2)*(0.85*(len(BCIDs)>15)+0.5*(len(BCIDs)<16))/float(len(BCIDs))
-            graphs[fit[2]].SetPoint(iScan,iScan+offset+1,thisXsec)
-            graphs[fit[2]].SetPointError(iScan,0,thisXsecErr)
+            xsecsPerScan[scanPair][0].append(thisXsec)
+            xsecsPerScan[scanPair][1].append(thisXsecErr)
+            xsecsPerScan[scanPair][2].append(1/(xsecsPerScan[scanPair][1][-1]*xsecsPerScan[scanPair][1][-1]))
+            xsecsPerBCID[BCID][0].append(thisXsec)
+            xsecsPerBCID[BCID][1].append(thisXsecErr)
+            xsecsPerBCID[BCID][2].append(1/(xsecsPerScan[scanPair][1][-1]*xsecsPerScan[scanPair][1][-1]))
+            iScan=scans.index(scanPair)
+            offset=(BCIDs.index(BCID)- len(BCIDs)/2)*(0.85*(len(BCIDs)>15)+0.5*(len(BCIDs)<16))/float(len(BCIDs))
+            graphs[BCID].SetPoint(iScan,iScan+offset+1,thisXsec)
+            graphs[BCID].SetPointError(iScan,0,thisXsecErr)
             
         except:
             #print "not doing this"
@@ -174,13 +180,14 @@ leg.SetBorderSize(0)
 leg.SetFillColor(0)
 for bcid in BCIDs:
     multigraph.Add(graphs[bcid])
-    leg.AddEntry(graphs[bcid],"BX = "+bcid,"p")
+    leg.AddEntry(graphs[bcid],"BX = "+str(bcid),"p")
 
 
-text=ROOT.TLatex(0.72,0.88,args.plotlabel)
+text=ROOT.TLatex(0.93,0.88,args.plotlabel)
 text.SetNDC()
 text.SetTextFont(62)
 text.SetTextSize(0.05)
+text.SetTextAlign(31)
 text2=ROOT.TLatex(0.15,0.88,"CMS #bf{#scale[0.75]{#it{Preliminary}}}")
 text2.SetNDC()
 text2.SetTextSize(0.05)

@@ -15,7 +15,7 @@
    The name of LOCAL_BRANCHNAME could be whatever. For the list of available remote (and local) branches, you can simply type `git branch -a`.
 
 4. Now, if you want to further release the local changes, the following steps (5-9) have to be done. Make a remote to your fork 
-   `git remote add YOURGITUSERNAME http://github.com/YOURGITUSERNAME/VdMFramework`
+   `git remote add YOURGITUSERNAME git@github.com:YOURGITUSERNAME/VdMFramework.git'
 
 5. Make sure that your remote repositoty has been added
     `git remote -v'

@@ -29,15 +29,8 @@
     `git push YOURGITUSERNAME LOCAL_BRANCHNAME`
     It is also possible to give to the remote repository a different name with
      `git push YOURGITUSERNAME LOCAL_BRANCHNAME:NEW_BRANCHNAME`
-8. If step 8 fails, i.e. if git complains with 
-  "error: The requested URL returned error: 403 Forbidden while accessing https://github.com/YOURGITUSERNAME/VdMFramework.git/info/refs
-  fatal: HTTP request failed"
 
-  then simply add in the .git/config file the line:
-  ` pushurl = git@github.com:YOURGITUSERNAME/VdMFramework.git `
-  in the part of [remote "YOURGITUSERNAME"].
-
-9. Make a pull request (PR) with your changes. The easiest way is to do it interactively on your github web interface
+8. Make a pull request (PR) with your changes. The easiest way is to do it interactively on your github web interface
   
   a) Go to YOUR VdMFramework repository, i.e. https://github.com/YOURGITUSERNAME/VdMFramework
   
@@ -136,6 +129,20 @@ And now the fitting step! Again, disable "makeGraphsFile",  and enable `"runVdmF
 ```
 Fill4634_Nov192015/PCC/results/noCorr/ and plotstmp/ (just under the VdMFramework/ directory).
 ```
+
+Note that if you have selected as `"FitName" : "SimCapSigma_PCCAndVtx"`, i.e. the option for a simultaneous fit, in the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file, then the output is seprately stored under
+```
+Fill4634_Nov192015/PCC/results/noCorr/ and plotstmp/1/ (just under the VdMFramework/ directory).
+```
+
+and
+
+```
+Fill4634_Nov192015/TrkVtx/results/noCorr/ and plotstmp/2 (just under the VdMFramework/ directory).
+```
+
+The `"PlotsTempPath":` argument inside the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file are configurable and user is free to change them.
+
 
 You are done! What is left is simply to illustrate the fitting results. 
 

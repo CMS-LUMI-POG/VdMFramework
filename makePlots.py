@@ -3,6 +3,8 @@ import ROOT as r
 import sys, json
 from vdmUtilities import makeCorrString
 
+r.gROOT.SetBatch(r.kTRUE)
+
 def addXsecPlots(description, paramName, param, paramErr, ouFileName):
 
     noScanPairs = len(param)

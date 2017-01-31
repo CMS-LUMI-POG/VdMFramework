@@ -56,19 +56,23 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
 
         print "Applying FBCT to DCCT calibration"
         for idx, entry in enumerate(table):
-            K1=entry[5]/entry[3]
-            K2=entry[6]/entry[4]
+            #K1=entry[5]/entry[3]
+            #K2=entry[6]/entry[4]
             for key in entry[7].keys():
                 old1 = entry[7][key]
-                entry[7][key] = old1/K1
+                #entry[7][key] = old1/K1
+                entry[7][key] = old1/corrB1
             for key in entry[8].keys():
                 old2 =  entry[8][key]
-                entry[8][key] = old2/K2
+                #entry[8][key] = old2/K2
+                entry[8][key] = old2/corrB2
 
             old1=entry[5]
-            entry[5]=old1/K1
+            #entry[5]=old1/K1
+            entry[5]=old1/corrB1
             old2=entry[6]
-            entry[6]=old2/K2 
+            #entry[6]=old2/K2
+            entry[6]=old2/corrB2
 
     return [h_ratioB1, h_ratioB2]
 
@@ -259,11 +263,11 @@ def doMakeBeamCurrentFile(ConfigInfo):
     canvas.SaveAs(outpdf + ']')
 
     for i in range(len(ScanNames)):
-    key="Scan_"+str(i+1)
-    csvtable.append([str(key)])
-    for idx, entry in enumerate(table[key]):
-        row=[entry[0],entry[1],entry[2],entry[3],entry[4],entry[5],entry[6],entry[7],entry[8]]
-        csvtable.append(row)
+        key="Scan_"+str(i+1)
+        csvtable.append([str(key)])
+        for idx, entry in enumerate(table[key]):
+            row=[entry[0],entry[1],entry[2],entry[3],entry[4],entry[5],entry[6],entry[7],entry[8]]
+            csvtable.append(row)
  
 
     return table, csvtable

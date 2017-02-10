@@ -113,7 +113,7 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_VTX_4954_New.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_VTX_4954.pkl",
 	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":

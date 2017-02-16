@@ -95,7 +95,8 @@
   "InputDataDir" : "dataPrep_corr/corrData",
   "Comment": "This is relative to <AnalysisDir>",
   "OutputSubDir": "corr",
-  "SingleBeamScans": [["X3", 2], ["Y3", 2], ["X4", 1], ["Y4", 1]]
+  "Comment": "Which are the single beam scans and which beam (1 or 2) *moves* in these scans",
+  "SingleBeamScans": [["X3", 1], ["Y3", 1], ["X4", 2], ["Y4", 2]]
   },
 "makeGraphsFileConfig":
   {

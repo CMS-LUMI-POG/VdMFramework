@@ -95,7 +95,9 @@
   "Comment" : "Where to find the correction factors in json format",
   "InputDataDir" : "dataPrep_corr/corrData",
   "Comment": "This is relative to <AnalysisDir>",
-  "OutputSubDir": "corr"
+  "OutputSubDir": "corr",
+  "Comment": "Which are the single beam scans and which beam (1 or 2) *moves* in these scans",
+  "SingleBeamScans": [["X3", 1], ["Y3", 1], ["X4", 2], ["Y4", 2]]
   },
 "makeGraphsFileConfig":
   {
@@ -126,4 +128,3 @@
   "FitConfigFile" : "fits/DGConst_Config_PCC.json"
   }
 }
-

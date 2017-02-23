@@ -4,9 +4,11 @@
 "Luminometer": "PCC",
 "AnalysisDir": "Fill4954_May272016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
-"Corr" : ["BeamBeam","LengthScale"],
-"Corr" : ["BeamBeam"],
 "Corr" : ["noCorr"],
+"Corr" : ["LengthScale"],
+"Corr" : ["LengthScale","BeamBeam"],
+"Corr" : ["BeamBeam"],
+"Corr" : ["BeamBeam","LengthScale"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -14,13 +16,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": false,
+"makeBeamBeamFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
-"makeLengthScaleFile": false,
+"makeLengthScaleFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -29,8 +31,8 @@
 "runVdmFitter": true,
 "makeScanFileConfig":
 	{
-	"InputCentralPath": "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/central",		
-	"InputDIPFile" : "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/beamData/vdm_c88ca21f-8040-4cdd-8f2e-7c30dbe640ca.csv",
+	"InputCentralPath": "/eos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/central",		
+	"InputDIPFile" : "/eos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/beamData/vdm_c88ca21f-8040-4cdd-8f2e-7c30dbe640ca.csv",
 	"ScanNames" : ["X1","Y1","Y2","X2","I1X","I1Y","I2X","I2Y","X3","Y3"],
 	"Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
 	"ScanTimeWindows" :[[1464336285, 1464337268],[1464337522, 1464338508],[1464338769, 1464339757],[1464339948, 1464340930],[1464341247, 1464342231],[1464342677, 1464343658],[1464344429,1464345408],[1464345652,1464346642],[1464350869, 1464351851],[1464352142, 1464353130]],
@@ -48,7 +50,7 @@
 	},
 "makeRateFileConfig":
 	{	
-	"InputPCCFiles": ["/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_PromptReco_vdmminitrees.root"],
+	"InputPCCFiles": ["/eos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_PromptReco_vdmminitrees.root"],
   "Comment": "BCIDs on which trigger read out PCC values",
   "PCC_BCID": [41,281,872,1783,2063],
   "AnalysisDir": "../Fill4954_May272016",
@@ -61,11 +63,11 @@
 	},
 "makeBeamCurrentFileConfig":
 	{
-	"InputCentralPath": "/afs/cern.ch/user/c/capalmer/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/central",	
+	"InputCentralPath": "/eos/cms/store/group/comm_luminosity/VdM/scanFill4954_27May16/compressed/central",	
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4954.pkl",
 	"OutputSubDir" : "cond",
-	"CalibrateFBCTtoDCCT" : false
+	"CalibrateFBCTtoDCCT" : true
 	},
 "makeBeamBeamFileConfig":
 	{
@@ -74,7 +76,10 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
+	"InputCapSigmaFile" : "LengthScale/DGConst_FitResults.pkl",
 	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"InputCapSigmaFile" : "LengthScale/SimCapSigma_PCCAndVtx_FitResults.pkl",
+	"InputCapSigmaFile" : "noCorr/SimCapSigma_PCCAndVtx_FitResults.pkl",
 	"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
@@ -109,9 +114,9 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_PromptReco_NoVeto.pkl",
 	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_NoVeto.pkl",
 	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_2Jan2017Veto.pkl",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_PromptReco_NoVeto.pkl",
   "OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
@@ -125,14 +130,16 @@
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
 	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
-	 
-   "Comment": "This is for SIM fit--not used because over-written below.",
+	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
+   
    "FitName" : "SimCapSigma_PCCAndVtx",
-	 "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
-	 "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
-	 
-   "Comment": "This is for stand-alone PCC--overwrites above",
+   "FitPartner" : "VTX",
+   "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
    "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
+	 "FitConfigFile" : "fits/DGConst_Config_PCC.json",
+   "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
 	 }
 }

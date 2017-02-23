@@ -54,11 +54,25 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
 
     if CalibrateFBCTtoDCCT:
         print "Applying FBCT to DCCT calibration"
-        for iRow, scanPairData in enumerate(table):
-            for ibx in scanPairData[7]:
-                table[iRow][7][ibx] = corrB1*table[iRow][7][ibx]
-            for ibx in scanPairData[8]:
-                table[iRow][8][ibx] = corrB1*table[iRow][8][ibx]
+
+        for idx, entry in enumerate(table):
+            #K1=entry[5]/entry[3]
+            #K2=entry[6]/entry[4]
+            for key in entry[7].keys():
+                old1 = entry[7][key]
+                #entry[7][key] = old1/K1
+                entry[7][key] = old1/corrB1
+            for key in entry[8].keys():
+                old2 =  entry[8][key]
+                #entry[8][key] = old2/K2
+                entry[8][key] = old2/corrB2
+
+            old1=entry[5]
+            #entry[5]=old1/K1
+            entry[5]=old1/corrB1
+            old2=entry[6]
+            #entry[6]=old2/K2
+            entry[6]=old2/corrB2
 
     return [h_ratioB1, h_ratioB2, table]
 
@@ -188,7 +202,7 @@ def doMakeBeamCurrentFile(ConfigInfo):
     outpath = './' + AnalysisDir + '/' + OutputSubDir 
 
     CalibrateFBCTtoDCCT = False
-    CalibrateFBCTtoDCCT = str(ConfigInfo['CalibrateFBCTtoDCCT'])
+    CalibrateFBCTtoDCCT = ConfigInfo['CalibrateFBCTtoDCCT']
 
     with open(InputScanFile, 'rb') as f:
         scanInfo = pickle.load(f)
@@ -209,7 +223,6 @@ def doMakeBeamCurrentFile(ConfigInfo):
         key = "Scan_" + str(i+1)
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
-        csvtable.append([str(key)] )
         for j, sp in enumerate(scanpoints):
             avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrents(InputCentralPath, sp[3:], int(Fill))
 # todo: implement correcting FBCT values in case CalibrateFBCTtoDCCT =True in json
@@ -227,7 +240,6 @@ def doMakeBeamCurrentFile(ConfigInfo):
 #            row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, sumCollavrgfbct1, sumCollavrgfbct2, avrgfbct1, avrgfbct2
             row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, avrgfbct1, avrgfbct2]
             table["Scan_" + str(i+1)].append(row)
-            csvtable.append(row)
 
 
 
@@ -249,6 +261,14 @@ def doMakeBeamCurrentFile(ConfigInfo):
         canvas.SaveAs(outpdf + '(')
 
     canvas.SaveAs(outpdf + ']')
+
+    for i in range(len(ScanNames)):
+        key="Scan_"+str(i+1)
+        csvtable.append([str(key)])
+        for idx, entry in enumerate(table[key]):
+            row=[entry[0],entry[1],entry[2],entry[3],entry[4],entry[5],entry[6],entry[7],entry[8]]
+            csvtable.append(row)
+ 
 
     return table, csvtable
 

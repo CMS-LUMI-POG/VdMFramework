@@ -33,6 +33,7 @@ class vdmInputData:
 # not all colliding bunches are used for all luminometers
 
         self.usedCollidingBunches = []
+        self.usedCollidingBunchesForScan = []
 
         self.scanName = ""
         self.scanNamesAll = []
@@ -85,8 +86,7 @@ class vdmInputData:
 # per scan point
         self.lumiPerSP = []
         self.lumiErrPerSP = []
-
-
+        self.splumiPerBX={}
 
     def GetScanInfo(self, fileName):
 
@@ -105,9 +105,9 @@ class vdmInputData:
         self.particleTypeB2 = table["ParticleTypeB2"]
         self.energyB1 = table["EnergyB1"]
         self.energyB2 = table["EnergyB2"]
-        self.filledBunchesB1 = table["FilledBunchesB1"]
-        self.filledBunchesB2 = table["FilledBunchesB2"]
-        self.collidingBunches = table["CollidingBunches"]
+        #self.filledBunchesB1 = table["FilledBunchesB1"]
+        #self.filledBunchesB2 = table["FilledBunchesB2"]
+        #self.collidingBunches = table["CollidingBunches"]
 
         self.scanNamesAll = table["ScanNames"]
 
@@ -121,8 +121,8 @@ class vdmInputData:
         self.displacement = [entry[5] for entry in self.sp] 
         self.nSP = len(self.displacement)
 
-        for entry in self.collidingBunches:
-            self.spPerBX[entry]= self.displacement
+        #for entry in self.collidingBunches:
+        #    self.spPerBX[entry]= self.displacement
 
         return
     
@@ -149,23 +149,45 @@ class vdmInputData:
             self.sumAvrgFbctB1.append(self.curr[index][5])
             self.sumAvrgFbctB2.append(self.curr[index][6])
 
+# BCID list, colliding bunches, for scanpoints
+        self.collidingBunches=[[] for a in range(self.nSP)]
+        for i in range(self.nSP):
+            BunchListB1PerSP=list(self.avrgFbctB1PerSP[i].keys())
+            BunchListB2PerSP=list(self.avrgFbctB2PerSP[i].keys())
+            CollidingBunchPerSP=[]
+            for j in range(len(BunchListB1PerSP)):
+                if BunchListB1PerSP[j] in BunchListB2PerSP:
+                    if BunchListB1PerSP[j]!='sum':
+                        CollidingBunchPerSP.append(BunchListB1PerSP[j])
+            self.collidingBunches[i]=CollidingBunchPerSP
+
+# SP list for every BCID
+        collidingBunchesForScan=[]
+        for i in range(self.nSP):
+            for j in range(len(self.collidingBunches[i])):
+                if self.collidingBunches[i][j] not in collidingBunchesForScan:
+                    collidingBunchesForScan.append(self.collidingBunches[i][j])
+        self.collidingBunchesForScan=collidingBunchesForScan
 
 # natural order per BX for analysis: curr values only for colliding bunches
 # first index BCID (for colliding bx only), second index SP
-        self.avrgFbctB1 = [[] for a in range(len(self.collidingBunches))]
-        self.avrgFbctB2 = [[] for a in range(len(self.collidingBunches))]
-        for i, bx in enumerate(self.collidingBunches):
-            for j in range(len(self.displacement)):
+        self.avrgFbctB1 = [[] for a in range(len(collidingBunchesForScan))]
+        self.avrgFbctB2 = [[] for a in range(len(collidingBunchesForScan))]
+        spNumberPerBX=[[] for a in range(len(collidingBunchesForScan))]
+        for i, bx in enumerate(collidingBunchesForScan):
+            for j in range(self.nSP):
                 try:
                   value = self.avrgFbctB1PerSP[j][str(bx)]
                   self.avrgFbctB1[i].append(value)
                   value = self.avrgFbctB2PerSP[j][str(bx)]
-                  self.avrgFbctB2[i].append(value)
+                  self.avrgFbctB2[i].append(value)                 
                 except:
                   print "self.displacement is longer than avrgFbctB1PerSP"
+                else:
+                  spNumberPerBX[i].append(j)
             self.avrgFbctB1PerBX[bx] = self.avrgFbctB1[i]
             self.avrgFbctB2PerBX[bx] = self.avrgFbctB2[i]
-
+            self.spPerBX[bx]=spNumberPerBX[i]
 
         self.sumCollAvrgFbctB1 = [0.0 for a in range(self.nSP)]
         self.sumCollAvrgFbctB2 = [0.0 for a in range(self.nSP)]
@@ -179,10 +201,9 @@ class vdmInputData:
         except KeyError, e:
             print 'KeyError in inputDataReader- reason "%s"' % str(e)
 
-
         return
 
-
+####################################################
     def GetLuminometerData(self, fileName):
 
         self.luminometerDataSource = fileName
@@ -200,42 +221,39 @@ class vdmInputData:
             self.lumiPerSP[int(entry[2])-1] = entry[3][0]
             self.lumiErrPerSP[int(entry[2])-1] = entry[3][1]
 
-#        print ">", self.nSP, len(self.lum)
-#        for i, val in enumerate(self.lumiPerSP):
-#            print ">>", i, val
-
 # determine which of the colliding bunches are in fact used
 # for HF should be identical to all colliding ones
 # for PCC should only be subset, typically 5
 
-        usedCollidingBunches = []
-        for i, bx in enumerate(self.collidingBunches):
+        usedCollidingBunches=[]
+        for i, bx in enumerate(self.collidingBunchesForScan):
             for j in range(self.nSP):
                 try:
                     if str(bx) in self.lumiPerSP[j]:
                         if bx not in usedCollidingBunches:
                             usedCollidingBunches.append(bx)
                 except:
-                    print "collisingBunches:  problem with",j
+                    print "problem with ",j
         self.usedCollidingBunches = usedCollidingBunches
 
 # this is the natural order for analysis
         self.lumi = [[] for a in range(len(self.usedCollidingBunches))]
         self.lumiErr = [[] for a in range(len(self.usedCollidingBunches))]
+        SPNumberPerBX=[[] for a in range(len(self.usedCollidingBunches))]
         for i, bx in enumerate(self.usedCollidingBunches):
             for j in range(self.nSP):
-#                print self.lumiPerSP[j]
                 try:
                     value = self.lumiPerSP[j][str(bx)]
                     self.lumi[i].append(value)
                     valueErr = self.lumiErrPerSP[j][str(bx)]
                     self.lumiErr[i].append(valueErr)
                 except:
-                    print "lumi values:  problem with",j
-                    self.lumi[i].append(-999)
-                    self.lumiErr[i].append(-999)
+                    print "problem with",j
+                else:
+                    SPNumberPerBX[i].append(j)
             self.lumiPerBX[bx] = self.lumi[i]
             self.lumiErrPerBX[bx] = self.lumiErr[i]
+            self.splumiPerBX[bx]=SPNumberPerBX[i]
 
         self.sumLumi = [0.0 for a in range(self.nSP)]
         self.sumLumiErr = [0.0 for a in range(self.nSP)]
@@ -244,12 +262,10 @@ class vdmInputData:
                 self.sumLumi[j] = self.lumiPerSP[j]['sum'] 
                 self.sumLumiErr[j] = self.lumiErrPerSP[j]['sum'] 
             except:
-                print "lumi values 2:  problem with",j
-                self.sumLumi[j] = -999
-                self.sumLumiErr[j] = -999
+                print "problem with",j
         return
         
-    
+#############################################    
     def PrintScanInfo(self):
 
         print ""

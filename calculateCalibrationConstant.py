@@ -133,9 +133,9 @@ if __name__ == '__main__':
 
         XscanNumber = entry[0]
         YscanNumber = entry[1]
+        XYbxlist=[]
 
         from collections import defaultdict
-
 
         xsec = defaultdict(float)
         xsecErr = defaultdict(float)
@@ -150,8 +150,16 @@ if __name__ == '__main__':
 #        print "CapSigmaDict[XscanID] for " + XscanID
 #        print CapSigmaDict[XscanID]
 
-
         for bx in CapSigmaDict[XscanID]:
+            if bx in CapSigmaDict[YscanID]:
+                XYbxlist.append(bx)
+
+#        print len(CapSigmaDict[XscanID])
+#        print len(CapSigmaDict[YscanID])
+#        print len(XYbxlist)
+#        print "XYbxlist: ", XYbxlist
+
+        for bx in XYbxlist:
             considerInMean = True
             print "now at bx", bx
             CapSigmaX = [CapSigmaDict[XscanID][bx], CapSigmaErrDict[XscanID][bx]]

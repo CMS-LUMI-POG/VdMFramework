@@ -53,7 +53,7 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
     corrB2 = fB2.GetParameter(0)
 
     if CalibrateFBCTtoDCCT == True:
-
+        
         print "Applying FBCT to DCCT calibration"
         for idx, entry in enumerate(table):
             #K1=entry[5]/entry[3]
@@ -76,9 +76,7 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
 
     return [h_ratioB1, h_ratioB2]
 
-
 def getCurrents(datapath, scanpt, fill):
-
 
 #    print "beginning of getCurrents", scanpt
     filelist = os.listdir(datapath)
@@ -185,11 +183,40 @@ def getCurrents(datapath, scanpt, fill):
             for idx, bcid in enumerate(filledBunches2):
                 fbct2[str(bcid+1)] = bx2df[bcid].mean()
 
+        for idx, bcid in enumerate(filledBunches1):
+            old=filledBunches1[idx]
+            filledBunches1[idx]=old+1
 
-    return dcct1, dcct2, fbct1, fbct2
+        for idx, bcid in enumerate(filledBunches2):
+            old=filledBunches2[idx]
+            filledBunches2[idx]=old+1
 
+        for idx, bcid in enumerate(collBunches):
+            old=collBunches[idx]
+            collBunches[idx]=old+1
 
+    return dcct1, dcct2, fbct1, fbct2, filledBunches1, filledBunches2, collBunches
 
+#####################################
+def checkBCIDLists(FirstScanBCID,ThisScanBCID):
+    
+    lenFirstScanBCID=len(FirstScanBCID)
+    lenThisScanBCID=len(ThisScanBCID)
+
+    if lenFirstScanBCID!=lenThisScanBCID:
+        print("Attention: ThisScan bcid list does not match data in ScanFile")
+        print "ThisScanBCID list contains ", lenThisScanBCID, " bunches, BCID list in ScanFile contains ", lenFirstScanBCID, " bunches"
+        return 0
+    else:
+         for i in range(lenFirstScanBCID):
+            if (FirstScanBCID[i] not in ThisScanBCID):
+                print("Attention: ThisScan bcid list does not match data in ScanFile")
+                print("Error at ThisScanBCID list: bcid=", FirstScanBCID[i], " does not exist")
+                return 0
+
+    return 1
+
+############################
 def doMakeBeamCurrentFile(ConfigInfo):
 
     import csv, pickle
@@ -213,7 +240,7 @@ def doMakeBeamCurrentFile(ConfigInfo):
     CollidingBunches = scanInfo["CollidingBunches"]
     FilledBunchesB1 = scanInfo["FilledBunchesB1"]
     FilledBunchesB2 = scanInfo["FilledBunchesB2"]
-
+ 
     table = {}
     csvtable = []
 #    csvtable.append(["ScanNumber, ScanNames, ScanPointNumber, avrgdcct1, avrgdcct2, sum(avrgfbctB1), sum(avrgfbctB2), sumColl(avrgfbct1), sumColl(avrgfbct2), fbct1 per Bx, fbct2 per BX"])
@@ -224,24 +251,31 @@ def doMakeBeamCurrentFile(ConfigInfo):
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
         for j, sp in enumerate(scanpoints):
-            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrents(InputCentralPath, sp[3:], int(Fill))
-# todo: implement correcting FBCT values in case CalibrateFBCTtoDCCT =True in json
+            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledThisScanB1, FilledThisScanB2, CollidingThisScan = getCurrents(InputCentralPath, sp[3:], int(Fill))
+#Check bcid lists for this scan: is it the same as the data in ScanFile
+            
+            check=checkBCIDLists(FilledBunchesB1,FilledThisScanB1)
+            if check==0:
+                print("checked BCID lists: FilledBunchesB1 as FirstScanBCID and FilledThisScanB1 as ThisScanBCID")
+            check=checkBCIDLists(FilledBunchesB2,FilledThisScanB2)
+            if check==0:
+                print("checked BCID lists: FilledBunchesB2 as FirstScanBCID and FilledThisScanB2 as ThisScanBCID")
+            check=checkBCIDLists(CollidingBunches,CollidingThisScan)
+            if check==0:
+                print("checked BCID lists: CollidingBunches as FirstScanBCID and CollidingThisScan as ThisScanBCID")
 
 #Sums over all filled bunches
-            sumavrgfbct1 = sumCurrents(avrgfbct1, FilledBunchesB1) 
-            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledBunchesB2) 
+            sumavrgfbct1 = sumCurrents(avrgfbct1, FilledThisScanB1) 
+            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledThisScanB2)
 #Sums over all colliding bunches
-            sumCollavrgfbct1 = sumCurrents(avrgfbct1, CollidingBunches) 
-            sumCollavrgfbct2 = sumCurrents(avrgfbct2, CollidingBunches) 
+            sumCollavrgfbct1 = sumCurrents(avrgfbct1, CollidingThisScan) 
+            sumCollavrgfbct2 = sumCurrents(avrgfbct2, CollidingThisScan) 
             avrgfbct1['sum'] = sumCollavrgfbct1
             avrgfbct2['sum'] = sumCollavrgfbct2
 
             print "Scan point", j, sp
-#            row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, sumCollavrgfbct1, sumCollavrgfbct2, avrgfbct1, avrgfbct2
             row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, avrgfbct1, avrgfbct2]
             table["Scan_" + str(i+1)].append(row)
-
-
 
     canvas = ROOT.TCanvas()
 
@@ -268,12 +302,10 @@ def doMakeBeamCurrentFile(ConfigInfo):
         for idx, entry in enumerate(table[key]):
             row=[entry[0],entry[1],entry[2],entry[3],entry[4],entry[5],entry[6],entry[7],entry[8]]
             csvtable.append(row)
- 
 
     return table, csvtable
 
-
-
+##############
 if __name__ == '__main__':
 
     import pickle, csv, sys, json

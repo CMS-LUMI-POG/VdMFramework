@@ -162,7 +162,7 @@ def doMakeGraphsFile(ConfigInfo):
     
         scanNumber = entry.scanNumber
         print "Now at Scan number ", scanNumber
-        nBX = len(entry.collidingBunches)
+        nBX = len(entry.usedCollidingBunches)
         prefix = ''
         if 'X' in entry.scanName:
             prefix = str(scanNumber) +'_X_'
@@ -175,23 +175,34 @@ def doMakeGraphsFile(ConfigInfo):
         graphsList = {}
 
         for i, bx in enumerate(entry.usedCollidingBunches):
-            coord = entry.spPerBX[bx]
-            coorde = [0.0 for a in coord] 
-            coord = array("d",coord)
-            coorde = array("d", coorde)
-            currProduct = [ a*b/1e22 for a,b in zip(entry.avrgFbctB1PerBX[bx],entry.avrgFbctB2PerBX[bx])]
-            lumi = [a/b for a,b in zip(entry.lumi[i],currProduct)]
-            lumie = [a/b for a,b in zip(entry.lumiErr[i],currProduct)]
-            lumie = array("d",lumie)
-            lumi = array("d",lumi)
-            name = prefix +str(bx)
-            graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
-            graph.SetName(name)
-            graph.SetTitle(name)
-            graph.SetMinimum(0.000001)
-            graphsList[bx] = graph
+# BCID's written at small number of SP are omitted
+# to avoid problems in vdmFitter: the number of SP should exceed the minimal number of freedom degrees for fitting
+             if len(entry.spPerBX[bx])>5:
+                coord=[]
+                for j in range(len(entry.spPerBX[bx])):
+                    if entry.spPerBX[bx][j] in entry.splumiPerBX[bx]:
+                        number=entry.spPerBX[bx][j] 
+                        point=entry.displacement[number]
+                        coord.append(point)
+                    else:
+                        print "problem in", str(bx), " ", j
+                coorde = [0.0 for a in coord] 
+                coord = array("d",coord)
+                coorde = array("d", coorde)
+                currProduct = [ a*b/1e22 for a,b in zip(entry.avrgFbctB1PerBX[bx],entry.avrgFbctB2PerBX[bx])]
+                if len(entry.spPerBX[bx])!=len(entry.splumiPerBX[bx]):
+                    print "Attention: bx=", bx, ", number of scanpoints for lumi and currents do not match, normalization is not correct"         
+                lumi = [a/b for a,b in zip(entry.lumi[i],currProduct)]
+                lumie = [a/b for a,b in zip(entry.lumiErr[i],currProduct)]
+                lumie = array("d",lumie)
+                lumi = array("d",lumi)
+                name = prefix +str(bx)
+                graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
+                graph.SetName(name)
+                graph.SetTitle(name)
+                graph.SetMinimum(0.000001)
+                graphsList[int(bx)] = graph
             
-
 # same for the sum, as double check, where sumLumi comes from avgraw
         try:
             coord = entry.displacement
@@ -216,8 +227,7 @@ def doMakeGraphsFile(ConfigInfo):
 
     return corrFull, graphsListAll
 
-    
-
+################################################
 if __name__ == '__main__':
 
     configFile = sys.argv[1]
@@ -233,7 +243,7 @@ if __name__ == '__main__':
 
     graphsListAll = {}
 
-    corrFull, graphsListAll = doMakeGraphsFile(ConfigInfo)
+    corrFull, graphsListAll = doMakeGraphsFile(ConfigInfo) 
 
     outputDir = AnalysisDir +'/' + Luminometer + '/' + OutputSubDir + '/'
     outFileName = 'graphs_' + str(Fill) + corrFull

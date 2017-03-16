@@ -10,12 +10,11 @@ import os
 
 
 
-def getRates(datapath, rateTable , collBunches,scanpt):
+def getRates(datapath, rateTable , scanpt):
 
 #    print "beginning of getCurrents", scanpt
     filelist = os.listdir(datapath)
 
-    beamts = []
     bxdata = []
     avgdata = []
     bxdf = pd.DataFrame()
@@ -23,13 +22,12 @@ def getRates(datapath, rateTable , collBunches,scanpt):
 
     rates = {}
     ratesErr = {}
+    collBunches=[]
 
 # omit very first nibble because it may not be fully contained in VdM scan
     tw = '(timestampsec >' + str(scanpt[0]) + ') & (timestampsec <=' +  str(scanpt[1]) + ')'
-#    print "tw", tw
 
     for file in filelist:
-#        print file
         h5file = tables.open_file(datapath + "/" + file, 'r')
         if rateTable == "hflumi":
             beamtable = h5file.root.hflumi
@@ -57,19 +55,28 @@ def getRates(datapath, rateTable , collBunches,scanpt):
 
         h5file.close()
 
-
-#    print "avgdata", avgdata
     bxdf = pd.DataFrame(bxdata)
-#    print "bxdf", bxdf
-
     avgdf = pd.DataFrame(avgdata)
 
+#list of colliding bunches
+    for file in filelist:
+        h5file = tables.open_file(datapath + "/" + file, 'r')
+        beamtable = h5file.root.beam
+        bunchlist1 = [r['bxconfig1'] for r in beamtable.where(tw)] 
+        bunchlist2 = [r['bxconfig2'] for r in beamtable.where(tw)]        
+
+        if bunchlist1 and bunchlist2:
+            collBunches  = np.nonzero(bunchlist1[0]*bunchlist2[0])[0].tolist()
+
+        h5file.close()
+
+#rates for colliding bunches
     if bxdf.empty:
         print "Attention, rates bxdf empty because timestamp window not contained in file"
     else:
         for idx, bcid in enumerate(collBunches):
-            rates[str(bcid)] = bxdf[bcid-1].mean()
-            ratesErr[str(bcid)] = stats.sem(bxdf[bcid-1])
+            rates[str(bcid+1)] = bxdf[bcid].mean()
+            ratesErr[str(bcid+1)] = stats.sem(bxdf[bcid])
     if avgdf.empty:
         print "Attention, rates avgdf empty because timestamp window not contained in file"
     else:
@@ -100,23 +107,13 @@ def doMakeRateFile(ConfigInfo):
 
     table = {}
 
-
     for i in range(len(ScanNames)):
         key = "Scan_" + str(i+1)
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
         csvtable.append([str(key)] )
         for j, sp in enumerate(scanpoints):
-            rates = getRates(InputLumiDir, RateTable , CollidingBunches, sp[3:])
-# check against avrgraw
-#            sumRate = 0.
-#            sumRateErr = 0.
-#            for key in rate:
-#                sumRate = sumRate+ rate[key]
-#            for key in rateErr:
-#                sumRateErr = sumRateErr + (rateErr[key]/rate[key])**2
-#            sumRateErr = math.sqrt(sumRateErr)
-#            print "Scan point", j, sp
+            rates = getRates(InputLumiDir, RateTable, sp[3:])
             row = [i+1, str(ScanNames[i]), j+1, rates]
             table["Scan_" + str(i+1)].append(row)
             csvtable.append(row[:3])

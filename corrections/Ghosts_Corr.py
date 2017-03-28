@@ -47,12 +47,16 @@ class Ghosts_Corr(CorrectionManager.CorrectionProvider):
         for entry in inData:
 
             for i, bx in enumerate(entry.collidingBunches):
-                currB1 = entry.avrgFbctB1[i]
-                currB2 = entry.avrgFbctB2[i]
+                #currB1 = entry.avrgFbctB1[i]
+                #currB2 = entry.avrgFbctB2[i]
+                currB1 = entry.avrgFbctB1PerBX[bx]
+                currB2 = entry.avrgFbctB2PerBX[bx]
                 currB1_corr = [a * (1-self.GhostsFraction_B1) for a in currB1]
                 currB2_corr = [a * (1-self.GhostsFraction_B2) for a in currB2]
 
-                entry.avrgFbctB1[i] = currB1_corr
-                entry.avrgFbctB2[i] = currB2_corr
+                #entry.avrgFbctB1[i] = currB1_corr
+                #entry.avrgFbctB2[i] = currB2_corr
+                entry.avrgFbctB1PerBX[bx] = currB1_corr
+                entry.avrgFbctB2PerBX[bx] = currB2_corr
 
 

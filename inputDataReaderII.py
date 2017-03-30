@@ -63,15 +63,12 @@ class vdmInputData:
         self.avrgFbctB2PerBX = {}
 
 # BCID lists
-        #self.filledBunchesB1 = []
-        #self.filledBunchesB2 = []
         self.collidingBunches = []
         self.collidingBunchesPerSP=[]
 
 # not all colliding bunches are used for all luminometers
 
         self.usedCollidingBunches = []
-        #self.usedCollidingBunchesForScan = []
 
 # -->> from Luminometer Data file
 
@@ -107,9 +104,6 @@ class vdmInputData:
         self.particleTypeB2 = table["ParticleTypeB2"]
         self.energyB1 = table["EnergyB1"]
         self.energyB2 = table["EnergyB2"]
-        #self.filledBunchesB1 = table["FilledBunchesB1"]
-        #self.filledBunchesB2 = table["FilledBunchesB2"]
-        #self.collidingBunches = table["CollidingBunches"]
 
         self.scanNamesAll = table["ScanNames"]
 
@@ -122,9 +116,6 @@ class vdmInputData:
         self.tStop = [entry[4] for entry in self.sp] 
         self.displacement = [entry[5] for entry in self.sp] 
         self.nSP = len(self.displacement)
-
-        #for entry in self.collidingBunches:
-        #    self.spPerBX[entry]= self.displacement
 
         return
     

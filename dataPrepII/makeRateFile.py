@@ -10,7 +10,7 @@ import os
 
 
 
-def getRates(datapath, rateTable , scanpt):
+def getRates(datapath, rateTable, scanpt):
 
 #    print "beginning of getCurrents", scanpt
     filelist = os.listdir(datapath)
@@ -100,7 +100,7 @@ def doMakeRateFile(ConfigInfo):
 
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
-    CollidingBunches = scanInfo["CollidingBunches"]
+    #CollidingBunches = scanInfo["CollidingBunches"]
 
     csvtable = []
     csvtable.append(["ScanNumber, ScanNames, ScanPointNumber, Rates per bx, RateErr per bx"])

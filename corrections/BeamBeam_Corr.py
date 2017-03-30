@@ -60,7 +60,7 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
             corrXPerBX = {bx:[] for bx in entry.collidingBunches}
             corrYPerBX = {bx:[] for bx in entry.collidingBunches}
             for bx in entry.collidingBunches:
-                print bx
+                #print bx
                 try:
                     for j in range(entry.nSP):
                         valueX = corrXPerSP[j][str(bx)]
@@ -68,14 +68,22 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
                         valueY = corrYPerSP[j][str(bx)]
                         corrYPerBX[bx].append(valueY)
                 except:
-                    print bx,"is missing; don't fill corr per bx"
-            for index in entry.spPerBX:
+                    print bx," is missing; don't fill corr per bx"
+
+            BB_bxList=corrXPerBX.keys()
+            #print BB_bxList
+
+            #for index in entry.spPerBX:
+            for index in BB_bxList:
                 if 'X' in entry.scanName:
                     entry.spPerBX[index] = [a+b for a,b in zip(entry.spPerBX[index], corrXPerBX[index])]
                 if 'Y' in entry.scanName:
                     entry.spPerBX[index] = [a+b for a,b in zip(entry.spPerBX[index], corrYPerBX[index])]                    
 
-            for bx in entry.collidingBunches:
+            entry.usedCollidingBunches=BB_bxList
+
+            #for bx in entry.collidingBunches:
+            for bx in BB_bxList:
                 histo = r.TGraph()
                 histo.SetMarkerStyle(8)
                 histo.SetMarkerSize(0.4)
@@ -94,7 +102,7 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
                     histo.GetYaxis().SetTitle('correction from beam-beam in mm')
                     canvas.SaveAs(pdfName+'(')
                 except:
-                    print bx,"is missing; no BeamBeam corr."
+                    print bx," is missing; no BeamBeam corr."
 
         canvas.SaveAs(pdfName + ']')
                         

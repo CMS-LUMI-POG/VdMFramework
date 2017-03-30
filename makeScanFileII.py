@@ -139,38 +139,6 @@ def doMakeScanFile(ConfigInfo):
             scan[i].append(SP)
             Run[i] = run
 
-#
-# get bunches info from "central" hdf5 file
-#
-
-#    tw = '(timestampsec >' + str(ScanTimeWindows[0][0]) + ') & (timestampsec <=' +  str(ScanTimeWindows[0][1]) + ')'
-#    filelist = os.listdir(InputCentralPath)
-#
-#
-#    notfound = True
-#    for file in filelist:
-#        if notfound:
-#            h5file = tables.open_file(InputCentralPath+"/" + file, 'r')
-#            beamtable = h5file.root.beam
-#            bunchlist1 = [r['bxconfig1'] for r in beamtable.where(tw)] 
-#            bunchlist2 = [r['bxconfig2'] for r in beamtable.where(tw)]        
-#        
-#            if bunchlist1 and bunchlist2:
-#                notfound = False
-# attention: LHC bcid's start at 1, not at 0
-#                filledArr1 = np.nonzero(bunchlist1[0])
-#                filledArr1 = filledArr1 + np.ones_like(filledArr1)
-#                filledBunches1 = filledArr1[0].tolist()
-#                filledArr2 = np.nonzero(bunchlist2[0])
-#                filledArr2 = filledArr2 + np.ones_like(filledArr2)
-#                filledBunches2 = filledArr2[0].tolist() 
-#                collArr = np.nonzero(bunchlist1[0]*bunchlist2[0])
-#                collArr = collArr + np.ones_like(collArr)
-#                collBunches = collArr[0].tolist()
-#
-#            h5file.close()
-
-
     table = {}
 
     table["Fill"] = Fill
@@ -186,10 +154,6 @@ def doMakeScanFile(ConfigInfo):
     table["ParticleTypeB2"] = ParticleTypeB2
     table["EnergyB1"] = EnergyB1
     table["EnergyB2"] = EnergyB2
-    #table["FilledBunchesB1"] = filledBunches1
-    #table["FilledBunchesB2"] = filledBunches2
-    #table["CollidingBunches"] = collBunches
-
 
     csvtable = []
 
@@ -206,9 +170,6 @@ def doMakeScanFile(ConfigInfo):
     csvtable.append(["ParticleTypeB2", ParticleTypeB2])
     csvtable.append(["EnergyB1",EnergyB1 ])
     csvtable.append(["EnergyB2", EnergyB2])
-    #csvtable.append(["FilledBunchesB1", filledBunches1])
-    #csvtable.append(["FilledBunchesB2", filledBunches2])
-    #csvtable.append(["CollidingBunches", collBunches ])
     csvtable.append(["scan number", "scan type", "scan points: number, tStart, tStop, relative displacement"])
 
     for i, scanName in enumerate(ScanNames):

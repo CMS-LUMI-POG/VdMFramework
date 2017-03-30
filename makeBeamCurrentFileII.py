@@ -107,7 +107,6 @@ def getCurrents(datapath, scanpt, fill):
     print "tw", tw
 
     for file in filelist:
-#        print file
         h5file = tables.open_file(datapath + "/" + file, 'r')
         beamtable = h5file.root.beam
         bunchlist1 = [r['bxconfig1'] for r in beamtable.where(tw)] 
@@ -197,25 +196,6 @@ def getCurrents(datapath, scanpt, fill):
 
     return dcct1, dcct2, fbct1, fbct2, filledBunches1, filledBunches2, collBunches
 
-#####################################
-def checkBCIDLists(FirstScanBCID,ThisScanBCID):
-    
-    lenFirstScanBCID=len(FirstScanBCID)
-    lenThisScanBCID=len(ThisScanBCID)
-
-    if lenFirstScanBCID!=lenThisScanBCID:
-        print("Attention: ThisScan bcid list does not match data in ScanFile")
-        print "ThisScanBCID list contains ", lenThisScanBCID, " bunches, BCID list in ScanFile contains ", lenFirstScanBCID, " bunches"
-        return 0
-    else:
-         for i in range(lenFirstScanBCID):
-            if (FirstScanBCID[i] not in ThisScanBCID):
-                print("Attention: ThisScan bcid list does not match data in ScanFile")
-                print("Error at ThisScanBCID list: bcid=", FirstScanBCID[i], " does not exist")
-                return 0
-
-    return 1
-
 ############################
 def doMakeBeamCurrentFile(ConfigInfo):
 
@@ -237,9 +217,9 @@ def doMakeBeamCurrentFile(ConfigInfo):
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
     
-    CollidingBunches = scanInfo["CollidingBunches"]
-    FilledBunchesB1 = scanInfo["FilledBunchesB1"]
-    FilledBunchesB2 = scanInfo["FilledBunchesB2"]
+    #CollidingBunches = scanInfo["CollidingBunches"]
+    #FilledBunchesB1 = scanInfo["FilledBunchesB1"]
+    #FilledBunchesB2 = scanInfo["FilledBunchesB2"]
  
     table = {}
     csvtable = []
@@ -251,25 +231,14 @@ def doMakeBeamCurrentFile(ConfigInfo):
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
         for j, sp in enumerate(scanpoints):
-            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledThisScanB1, FilledThisScanB2, CollidingThisScan = getCurrents(InputCentralPath, sp[3:], int(Fill))
-#Check bcid lists for this scan: is it the same as the data in ScanFile
-            
-            check=checkBCIDLists(FilledBunchesB1,FilledThisScanB1)
-            if check==0:
-                print("checked BCID lists: FilledBunchesB1 as FirstScanBCID and FilledThisScanB1 as ThisScanBCID")
-            check=checkBCIDLists(FilledBunchesB2,FilledThisScanB2)
-            if check==0:
-                print("checked BCID lists: FilledBunchesB2 as FirstScanBCID and FilledThisScanB2 as ThisScanBCID")
-            check=checkBCIDLists(CollidingBunches,CollidingThisScan)
-            if check==0:
-                print("checked BCID lists: CollidingBunches as FirstScanBCID and CollidingThisScan as ThisScanBCID")
+            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledBunchesB1, FilledBunchesB2, CollidingBunches = getCurrents(InputCentralPath, sp[3:], int(Fill))
 
 #Sums over all filled bunches
-            sumavrgfbct1 = sumCurrents(avrgfbct1, FilledThisScanB1) 
-            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledThisScanB2)
+            sumavrgfbct1 = sumCurrents(avrgfbct1, FilledBunchesB1) 
+            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledBunchesB2)
 #Sums over all colliding bunches
-            sumCollavrgfbct1 = sumCurrents(avrgfbct1, CollidingThisScan) 
-            sumCollavrgfbct2 = sumCurrents(avrgfbct2, CollidingThisScan) 
+            sumCollavrgfbct1 = sumCurrents(avrgfbct1, CollidingBunches) 
+            sumCollavrgfbct2 = sumCurrents(avrgfbct2, CollidingBunches) 
             avrgfbct1['sum'] = sumCollavrgfbct1
             avrgfbct2['sum'] = sumCollavrgfbct2
 

@@ -195,8 +195,6 @@ if makeBeamBeamFile == True:
         pickle.dump(table, f)
 
 
-
-
 if makeGhostsFile == True:
     
     makeGhostsFileConfig = ConfigInfo['makeGhostsFileConfig']

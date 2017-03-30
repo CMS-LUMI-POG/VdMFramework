@@ -26,15 +26,6 @@ class vdmInputData:
         self.energyB1 = 0.0
         self.energyB2 = 0.0
 
-        self.filledBunchesB1 = []
-        self.filledBunchesB2 = []
-        self.collidingBunches = []
-
-# not all colliding bunches are used for all luminometers
-
-        self.usedCollidingBunches = []
-        self.usedCollidingBunchesForScan = []
-
         self.scanName = ""
         self.scanNamesAll = []
 
@@ -71,6 +62,16 @@ class vdmInputData:
         self.avrgFbctB1PerBX = {}
         self.avrgFbctB2PerBX = {}
 
+# BCID lists
+        #self.filledBunchesB1 = []
+        #self.filledBunchesB2 = []
+        self.collidingBunches = []
+        self.collidingBunchesPerSP=[]
+
+# not all colliding bunches are used for all luminometers
+
+        self.usedCollidingBunches = []
+        #self.usedCollidingBunchesForScan = []
 
 # -->> from Luminometer Data file
 
@@ -88,6 +89,7 @@ class vdmInputData:
         self.lumiErrPerSP = []
         self.splumiPerBX={}
 
+    ####### -->> Scan_ data reading
     def GetScanInfo(self, fileName):
 
         table = {}
@@ -126,7 +128,7 @@ class vdmInputData:
 
         return
     
-    
+    ####### -->> BeamCurrents_ data reading
     def GetBeamCurrentsInfo(self, fileName):
 
         table = {}
@@ -150,7 +152,7 @@ class vdmInputData:
             self.sumAvrgFbctB2.append(self.curr[index][6])
 
 # BCID list, colliding bunches, for scanpoints
-        self.collidingBunches=[[] for a in range(self.nSP)]
+        self.collidingBunchesPerSP=[[] for a in range(self.nSP)]
         for i in range(self.nSP):
             BunchListB1PerSP=list(self.avrgFbctB1PerSP[i].keys())
             BunchListB2PerSP=list(self.avrgFbctB2PerSP[i].keys())
@@ -159,15 +161,15 @@ class vdmInputData:
                 if BunchListB1PerSP[j] in BunchListB2PerSP:
                     if BunchListB1PerSP[j]!='sum':
                         CollidingBunchPerSP.append(BunchListB1PerSP[j])
-            self.collidingBunches[i]=CollidingBunchPerSP
+            self.collidingBunchesPerSP[i]=CollidingBunchPerSP
 
-# SP list for every BCID
+# BCID list for the scan
         collidingBunchesForScan=[]
         for i in range(self.nSP):
-            for j in range(len(self.collidingBunches[i])):
-                if self.collidingBunches[i][j] not in collidingBunchesForScan:
-                    collidingBunchesForScan.append(self.collidingBunches[i][j])
-        self.collidingBunchesForScan=collidingBunchesForScan
+            for j in range(len(self.collidingBunchesPerSP[i])):
+                if self.collidingBunchesPerSP[i][j] not in collidingBunchesForScan:
+                    collidingBunchesForScan.append(self.collidingBunchesPerSP[i][j])
+        self.collidingBunches=collidingBunchesForScan
 
 # natural order per BX for analysis: curr values only for colliding bunches
 # first index BCID (for colliding bx only), second index SP
@@ -182,9 +184,9 @@ class vdmInputData:
                   value = self.avrgFbctB2PerSP[j][str(bx)]
                   self.avrgFbctB2[i].append(value)                 
                 except:
-                  print "self.displacement is longer than avrgFbctB1PerSP"
+                  print "self.displacement is longer than avrgFbctBPerSP"
                 else:
-                  spNumberPerBX[i].append(j)
+                  spNumberPerBX[i].append(self.displacement[j])
             self.avrgFbctB1PerBX[bx] = self.avrgFbctB1[i]
             self.avrgFbctB2PerBX[bx] = self.avrgFbctB2[i]
             self.spPerBX[bx]=spNumberPerBX[i]
@@ -203,7 +205,7 @@ class vdmInputData:
 
         return
 
-####################################################
+    ######## -->> rates_ data reading
     def GetLuminometerData(self, fileName):
 
         self.luminometerDataSource = fileName
@@ -226,14 +228,14 @@ class vdmInputData:
 # for PCC should only be subset, typically 5
 
         usedCollidingBunches=[]
-        for i, bx in enumerate(self.collidingBunchesForScan):
+        for i, bx in enumerate(self.collidingBunches):
             for j in range(self.nSP):
                 try:
                     if str(bx) in self.lumiPerSP[j]:
                         if bx not in usedCollidingBunches:
                             usedCollidingBunches.append(bx)
                 except:
-                    print "problem with ",j
+                    print "in usedCollidingBunches: BCID ", bx, " is not filled at the scanpoint ", j
         self.usedCollidingBunches = usedCollidingBunches
 
 # this is the natural order for analysis
@@ -248,9 +250,9 @@ class vdmInputData:
                     valueErr = self.lumiErrPerSP[j][str(bx)]
                     self.lumiErr[i].append(valueErr)
                 except:
-                    print "problem with",j
+                    print "in GetLuminometerData: BCID ", bx, "is not filled at the scanpoint ", j
                 else:
-                    SPNumberPerBX[i].append(j)
+                    SPNumberPerBX[i].append(self.displacement[j])
             self.lumiPerBX[bx] = self.lumi[i]
             self.lumiErrPerBX[bx] = self.lumiErr[i]
             self.splumiPerBX[bx]=SPNumberPerBX[i]
@@ -262,10 +264,11 @@ class vdmInputData:
                 self.sumLumi[j] = self.lumiPerSP[j]['sum'] 
                 self.sumLumiErr[j] = self.lumiErrPerSP[j]['sum'] 
             except:
-                print "problem with",j
+                print "in GetLuminometerData: BCID ", bx, "is not filled at the scanpoint ", j
+
         return
         
-#############################################    
+    ####### -->> Print Info functions    
     def PrintScanInfo(self):
 
         print ""
@@ -282,9 +285,8 @@ class vdmInputData:
         print "angle", self.angle
         print "particleTypeB1", self.particleTypeB1
         print "particleTypeB2", self.particleTypeB2
-        print "filledBunchesB1", self.filledBunchesB1
-        print "filledBunchesB2", self.filledBunchesB2
-        print "collidingBunches", self.collidingBunches
+        #print "filledBunchesB1", self.filledBunchesB1
+        #print "filledBunchesB2", self.filledBunchesB2
         print "scanNumber", self.scanNumber
         print "complete ScanPoint info table", self.sp
         print "tStart", self.tStart
@@ -297,7 +299,8 @@ class vdmInputData:
         
         print ""
         print" ===="
-        print "PrintBeamCurrentsInfo" 
+        print "PrintBeamCurrentsInfo"
+        print "collidingBunches", self.collidingBunches 
         print "complete current info table", self.curr
         print "avrgDcctB1 per SP", self.avrgDcctB1
         print "avrgDcctB2 per SP", self.avrgDcctB2

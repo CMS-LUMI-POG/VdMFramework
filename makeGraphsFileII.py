@@ -27,57 +27,14 @@ def doMakeGraphsFile(ConfigInfo):
 
     inData1.GetScanInfo(AnalysisDir + '/'+ inputScanFile)
 #inData1.PrintScanInfo()
- 
-#print inData1.fill
-#print inData1.date
-#print inData1.run
-#print inData1.inputDIPFile
-#print inData1.scanName
-#print inData1.scanNamesAll
-#print inData1.scanTimeWindows
-#print inData1.betaStar
-#print inData1.angle
-#print inData1.particleTypeB1
-#print inData1.particleTypeB2
-#print inData1.filledBunchesB1
-#print inData1.filledBunchesB2
-#print inData1.collidingBunches
-#print inData1.scanNumber
-# print inData1.sp
-#print inData1.tStart
-#print inData1.tStop
-#print inData1.displacement
-
 
     inData1.GetBeamCurrentsInfo(AnalysisDir + '/' + inputBeamCurrentFile)
 #    inData1.PrintBeamCurrentsInfo()
-
-#print inData1.curr
-#print inData1.avrgDcctB1
-#print inData1.avrgDcctB2
-#print inData1.sumAvrgFbctB1
-#print inData1.sumAvrgFbctB2
-#print inData1.sumCollAvrgFbctB1
-#print inData1.sumCollAvrgFbctB2
-#print "len(inData1.avrgFbctB1)", len(inData1.avrgFbctB1)
-#print inData1.avrgFbctB1
-#print inData1.avrgFbctB2
-#print "len(inData1.avrgFbctB1PerSP)", len(inData1.avrgFbctB1PerSP)
-#print inData1.avrgFbctB1PerSP
-#print inData1.avrgFbctB2PerSP
 
     inData1.GetLuminometerData(AnalysisDir + '/' + inputLuminometerData)
 #    inData1.PrintLuminometerData()
 #    import sys
 #    sys.exit()
-
-
-#print inData1.lum
-#    print inData1.usedCollidingBunches
-#for entry in inData1.lumiPerSP:
-#    print entry
-#for entry in inData1.lumiErrPerSP:
-#    print entry
 
     Fill = inData1.fill
     
@@ -92,8 +49,6 @@ def doMakeGraphsFile(ConfigInfo):
         inDataNext.GetBeamCurrentsInfo(AnalysisDir + '/' + inputBeamCurrentFile)
         inDataNext.GetLuminometerData(AnalysisDir + '/' + inputLuminometerData)
         inData.append(inDataNext)
-
-
 
 # Apply corrections
 # Note that calibrating SumFBCT to DCCT is done in makeBeamCurrentFile.py if calibration flag in config file is set to true
@@ -128,18 +83,7 @@ def doMakeGraphsFile(ConfigInfo):
         if entry == "BeamBeam":
             corrValueFile = AnalysisDir + '/corr/'+ entry + '_' +Luminometer + '_' + Fill +'.pkl' 
             
-
-#    for element in inData:
-#        print "before current correction B1 ", element.scanNumber
-#        for i, bx in enumerate(element.collidingBunches):
-#            print ">>>", i, element.avrgFbctB1[i]
-
         corrector.doCorr(inData, corrValueFile)
-
-#    for element in inData:
-#        print "after current correction B1 ", element.scanNumber
-#        for i, bx in enumerate(element.collidingBunches):
-#            print ">>>", i, element.avrgFbctB1[i]
 
         corrFull = corrFull + '_' + entry 
 
@@ -175,17 +119,15 @@ def doMakeGraphsFile(ConfigInfo):
         graphsList = {}
 
         for i, bx in enumerate(entry.usedCollidingBunches):
-# BCID's written at small number of SP are omitted
+# BCIDs written at small number of SP are omitted
 # to avoid problems in vdmFitter: the number of SP should exceed the minimal number of freedom degrees for fitting
+
              if len(entry.spPerBX[bx])>5:
                 coord=[]
                 for j in range(len(entry.spPerBX[bx])):
-                    if entry.spPerBX[bx][j] in entry.splumiPerBX[bx]:
-                        number=entry.spPerBX[bx][j] 
-                        point=entry.displacement[number]
-                        coord.append(point)
-                    else:
-                        print "problem in", str(bx), " ", j
+                    point=entry.spPerBX[bx][j] 
+                    coord.append(point)
+
                 coorde = [0.0 for a in coord] 
                 coord = array("d",coord)
                 coorde = array("d", coorde)

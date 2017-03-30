@@ -99,8 +99,7 @@ def doMakeRateFile(ConfigInfo):
         scanInfo = pickle.load(f)
 
     Fill = scanInfo["Fill"]     
-    ScanNames = scanInfo["ScanNames"]     
-    #CollidingBunches = scanInfo["CollidingBunches"]
+    ScanNames = scanInfo["ScanNames"]
 
     csvtable = []
     csvtable.append(["ScanNumber, ScanNames, ScanPointNumber, Rates per bx, RateErr per bx"])

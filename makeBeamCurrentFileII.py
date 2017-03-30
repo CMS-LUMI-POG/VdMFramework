@@ -216,11 +216,7 @@ def doMakeBeamCurrentFile(ConfigInfo):
 
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
-    
-    #CollidingBunches = scanInfo["CollidingBunches"]
-    #FilledBunchesB1 = scanInfo["FilledBunchesB1"]
-    #FilledBunchesB2 = scanInfo["FilledBunchesB2"]
- 
+
     table = {}
     csvtable = []
 #    csvtable.append(["ScanNumber, ScanNames, ScanPointNumber, avrgdcct1, avrgdcct2, sum(avrgfbctB1), sum(avrgfbctB2), sumColl(avrgfbct1), sumColl(avrgfbct2), fbct1 per Bx, fbct2 per BX"])

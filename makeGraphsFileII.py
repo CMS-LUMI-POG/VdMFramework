@@ -123,10 +123,11 @@ def doMakeGraphsFile(ConfigInfo):
 # to avoid problems in vdmFitter: the number of SP should exceed the minimal number of freedom degrees for fitting
 
              if len(entry.spPerBX[bx])>5:
-                coord=[]
-                for j in range(len(entry.spPerBX[bx])):
-                    point=entry.spPerBX[bx][j] 
-                    coord.append(point)
+                coord=entry.spPerBX[bx]
+                #coord=[]
+                #for j in range(len(entry.spPerBX[bx])):
+                #    point=entry.spPerBX[bx][j] 
+                #    coord.append(point)
 
                 coorde = [0.0 for a in coord] 
                 coord = array("d",coord)

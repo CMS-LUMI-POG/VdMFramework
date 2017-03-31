@@ -164,10 +164,10 @@ class vdmInputData:
 
 # natural order per BX for analysis: curr values only for colliding bunches
 # first index BCID (for colliding bx only), second index SP
-        self.avrgFbctB1 = [[] for a in range(len(collidingBunchesForScan))]
-        self.avrgFbctB2 = [[] for a in range(len(collidingBunchesForScan))]
-        spNumberPerBX=[[] for a in range(len(collidingBunchesForScan))]
-        for i, bx in enumerate(collidingBunchesForScan):
+        self.avrgFbctB1 = [[] for a in range(len(self.collidingBunches))]
+        self.avrgFbctB2 = [[] for a in range(len(self.collidingBunches))]
+        spNumberPerBX=[[] for a in range(len(self.collidingBunches))]
+        for i, bx in enumerate(self.collidingBunches):
             for j in range(self.nSP):
                 try:
                   value = self.avrgFbctB1PerSP[j][str(bx)]

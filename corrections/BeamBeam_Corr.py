@@ -1,6 +1,7 @@
 import CorrectionManager
 import ROOT as r
 import sys
+import os
 import pickle
 from vdmUtilities import *
 
@@ -42,13 +43,15 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
         pdfName = configFile[:configFile.index(".pkl")] + ".pdf"
         canvas = r.TCanvas()
         canvas.SetGrid()
-                    
+# buffer for log file                    
+        logbuffer="The list of bunches with incomplete scanpoint lists. These BCIDs are excluded when BeamBeam is applied.\n"
+
 # apply correction here to coordinate, then write back into entry, check if this really changes value in calling function
 
         for entry in inData:
             scanNumber = entry.scanNumber
             key = "Scan_"+str(scanNumber)
-            
+
             corrPerSP  = self.BBcorr[key]        
 
             corrXPerSP = [{} for value in corrPerSP]
@@ -56,11 +59,14 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
             for value in corrPerSP:
                 corrXPerSP[value[2]-1] = value[3]
                 corrYPerSP[value[2]-1] = value[4]
-                
+            
+            logbuffer=logbuffer+key+"\n"
+            exclBXList=[]
+    
             corrXPerBX = {bx:[] for bx in entry.collidingBunches}
             corrYPerBX = {bx:[] for bx in entry.collidingBunches}
-            for bx in entry.collidingBunches:
-                #print bx
+            BB_bxList=[]
+            for i, bx in enumerate(entry.collidingBunches):
                 try:
                     for j in range(entry.nSP):
                         valueX = corrXPerSP[j][str(bx)]
@@ -69,11 +75,12 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
                         corrYPerBX[bx].append(valueY)
                 except:
                     print bx," is missing; don't fill corr per bx"
+                    exclBXList.append(bx)
+                else:
+                    BB_bxList.append(bx)
 
-            BB_bxList=corrXPerBX.keys()
-            #print BB_bxList
+            #BB_bxList=corrXPerBX.keys()
 
-            #for index in entry.spPerBX:
             for index in BB_bxList:
                 if 'X' in entry.scanName:
                     entry.spPerBX[index] = [a+b for a,b in zip(entry.spPerBX[index], corrXPerBX[index])]
@@ -104,5 +111,12 @@ class BeamBeam_Corr(CorrectionManager.CorrectionProvider):
                 except:
                     print bx," is missing; no BeamBeam corr."
 
+            logbuffer=logbuffer+str(exclBXList)+"\n"
+
         canvas.SaveAs(pdfName + ']')
-                        
+        
+        logName = configFile[:configFile.index(".pkl")] + ".log"                
+        excldata=open(logName,'w')
+        excldata.write(logbuffer)
+        excldata.close()
+

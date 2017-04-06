@@ -11,7 +11,31 @@ import math
 from inputDataReaderII import * 
 from vdmUtilities import showAvailableCorrs
 
+###################
+#check for missed data
+def checkScanpointList(vdMData):
+    
+    BCIDListLength=len(vdMData.usedCollidingBunches)
+    SPListLength=vdMData.nSP
+    SPList=vdMData.displacement
+    missedData="BCID:list of missed scanpoints\n"
+    
+    missedSP=[[] for a in range(BCIDListLength)]
+    for i, bx in enumerate(vdMData.usedCollidingBunches):
+        for j, sp in enumerate(SPList):
+            if sp not in vdMData.spPerBX[bx]:
+                missedSP[i].append(j+1)
 
+    for i, bx in enumerate(vdMData.usedCollidingBunches):
+        length=len(missedSP[i])
+        if length!=0:
+            BCID=str(bx)
+            missedSPList=str(missedSP[i])
+            missedData=missedData+BCID+":"+missedSPList+"\n"
+
+    return missedData
+
+###########################
 def doMakeGraphsFile(ConfigInfo):
 
     AnalysisDir = str(ConfigInfo['AnalysisDir'])
@@ -33,8 +57,6 @@ def doMakeGraphsFile(ConfigInfo):
 
     inData1.GetLuminometerData(AnalysisDir + '/' + inputLuminometerData)
 #    inData1.PrintLuminometerData()
-#    import sys
-#    sys.exit()
 
     Fill = inData1.fill
     
@@ -99,6 +121,11 @@ def doMakeGraphsFile(ConfigInfo):
 
 # Now fill graphs for all scans
 # Counting of scans starts with 1
+    missedDataInfo="Information on missed data\n"
+    if "BeamBeam" in corrName:
+        missedDataInfo=missedDataInfo+"BeamBeam has been applied: Only BCIDs with complete scanpoint lists are considered\n See BeamBeam_.log for the list of excluded BCID\n"
+    else:
+        missedDataInfo=missedDataInfo+"BeamBeam has not been applied\n\n"
 
     graphsListAll = {'Scan_'+ str(n+1):{} for n in range(len(inData))} 
 
@@ -113,30 +140,36 @@ def doMakeGraphsFile(ConfigInfo):
         if 'Y' in entry.scanName:
             prefix = str(scanNumber)+'_Y_'
 
+# check for missing data
+        missedDataInfo=missedDataInfo+"Scan_"+prefix+"\n\n"
+        if "BeamBeam" not in corrName:
+            missedSPList=checkScanpointList(entry)
+            missedDataInfo=missedDataInfo+missedSPList+"\n"
+
+        omittedBXList=[]
+        missedDataInfo=missedDataInfo+"Omitted BCID with too short scanpoint list:\n"
     # convert for TGraph
         from array import array
 
         graphsList = {}
 
         for i, bx in enumerate(entry.usedCollidingBunches):
-# BCIDs written at small number of SP are omitted
+# BCIDs written at small number of SP are omitted (the list of short omitted bunches is added to log)            
 # to avoid problems in vdmFitter: the number of SP should exceed the minimal number of freedom degrees for fitting
 
              if len(entry.spPerBX[bx])>5:
                 coord=entry.spPerBX[bx]
-                #coord=[]
-                #for j in range(len(entry.spPerBX[bx])):
-                #    point=entry.spPerBX[bx][j] 
-                #    coord.append(point)
-
                 coorde = [0.0 for a in coord] 
                 coord = array("d",coord)
                 coorde = array("d", coorde)
                 currProduct = [ a*b/1e22 for a,b in zip(entry.avrgFbctB1PerBX[bx],entry.avrgFbctB2PerBX[bx])]
                 if len(entry.spPerBX[bx])!=len(entry.splumiPerBX[bx]):
                     print "Attention: bx=", bx, ", number of scanpoints for lumi and currents do not match, normalization is not correct"         
-                lumi = [a/b for a,b in zip(entry.lumi[i],currProduct)]
-                lumie = [a/b for a,b in zip(entry.lumiErr[i],currProduct)]
+                lumi = [a/b for a,b in zip(entry.lumiPerBX[bx],currProduct)]
+                lumie = [a/b for a,b in zip(entry.lumiErrPerBX[bx],currProduct)]
+                #lumi = [a/b for a,b in zip(entry.lumi[i],currProduct)]
+                #lumie = [a/b for a,b in zip(entry.lumiErr[i],currProduct)]
+
                 lumie = array("d",lumie)
                 lumi = array("d",lumi)
                 name = prefix +str(bx)
@@ -145,7 +178,8 @@ def doMakeGraphsFile(ConfigInfo):
                 graph.SetTitle(name)
                 graph.SetMinimum(0.000001)
                 graphsList[int(bx)] = graph
-            
+             else:
+                omittedBXList.append(bx)
 # same for the sum, as double check, where sumLumi comes from avgraw
         try:
             coord = entry.displacement
@@ -166,9 +200,10 @@ def doMakeGraphsFile(ConfigInfo):
             print 'KeyError in makeGraphsFile- reason "%s"' % str(e)
 
 
-        graphsListAll['Scan_'+ str(scanNumber)]=graphsList 
+        graphsListAll['Scan_'+ str(scanNumber)]=graphsList
+        missedDataInfo=missedDataInfo+str(omittedBXList)+"\n\n" 
 
-    return corrFull, graphsListAll
+    return corrFull, graphsListAll, missedDataInfo
 
 ################################################
 if __name__ == '__main__':
@@ -186,7 +221,7 @@ if __name__ == '__main__':
 
     graphsListAll = {}
 
-    corrFull, graphsListAll = doMakeGraphsFile(ConfigInfo) 
+    corrFull, graphsListAll, missedDataBuffer = doMakeGraphsFile(ConfigInfo) 
 
     outputDir = AnalysisDir +'/' + Luminometer + '/' + OutputSubDir + '/'
     outFileName = 'graphs_' + str(Fill) + corrFull
@@ -205,4 +240,7 @@ if __name__ == '__main__':
     with open(outputDir + outFileName + '.pkl', 'wb') as file:
         pickle.dump(graphsListAll, file)
 
+    misseddata=open(outputDir+"makeGraphsFile_MissedData.log",'w')
+    misseddata.write(missedDataBuffer)
+    misseddata.close()
 

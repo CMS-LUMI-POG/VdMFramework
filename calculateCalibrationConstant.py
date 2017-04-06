@@ -129,6 +129,8 @@ if __name__ == '__main__':
     csvtable.append(["XscanNumber_YscanNumber","Type", "BCID", "xsec", "xsecErr", "normChange", "normChangeErr"] )
     table.append(["XscanNumber_YscanNumber","Type", "BCID", "xsec", "xsecErr", "normChange", "normChangeErr"] )
 
+    logbuffer="CalculateCalibrationConstant - excluded BCIDs\n"
+
     for entry in Scanpairs:
 
         XscanNumber = entry[0]
@@ -145,19 +147,28 @@ if __name__ == '__main__':
         YscanID = 'Scan_'+str(YscanNumber)
         XY_ID = 'Scan_'+str(XscanNumber) + '_'+str(YscanNumber)
 
-#        csvtable.append([XY_ID])
+        logbuffer=logbuffer+"Scanpair:"+XY_ID+"\n"
+        logbuffer=logbuffer+"BCIDs excluded because they are filled only in Scan_X or only in Scan_Y\n"
+        logbuffer=logbuffer+"ScanID: list of excluded BCIDs\n"
 
-#        print "CapSigmaDict[XscanID] for " + XscanID
-#        print CapSigmaDict[XscanID]
+        XexclBX=[]
+        YexclBX=[]
 
         for bx in CapSigmaDict[XscanID]:
             if bx in CapSigmaDict[YscanID]:
                 XYbxlist.append(bx)
+            else:
+                XexclBX.append(bx)
 
-#        print len(CapSigmaDict[XscanID])
-#        print len(CapSigmaDict[YscanID])
-#        print len(XYbxlist)
-#        print "XYbxlist: ", XYbxlist
+        for bx in CapSigmaDict[YscanID]:
+            if bx not in CapSigmaDict[XscanID]:
+                YexclBX.append(bx)
+
+        logbuffer=logbuffer+XscanID+":"+str(XexclBX)+"\n"
+        logbuffer=logbuffer+YscanID+":"+str(YexclBX)+"\n"
+
+        chi2exclBX=[]
+        logbuffer=logbuffer+"BCIDs excluded because chi2 is too high\n"    
 
         for bx in XYbxlist:
             considerInMean = True
@@ -191,22 +202,22 @@ if __name__ == '__main__':
 
 #                printall(bx, CapSigmaX, CapSigmaY, peakX, peakY, xsec[bx], xsecErr[bx])
 
-
-
             normChange = -999. 
             normChangeErr = -999.
 
             if OldNormAvailable:
                 normChange = LHC_revolution_frequency/xsec[bx] * 1/oldNormalization
                 normChangeErr = normChange*xsecErr[bx]/xsec[bx]
-            
+                        
             row = [str(XscanNumber)+"_"+str(YscanNumber), "XY", bx, xsec[bx], xsecErr[bx], normChange, normChangeErr]
             if considerInMean:
                 table.append(row)
                 csvtable.append(row)
             else:
                 print "bcid ", bx, " excluded because chi2 value too high: ", chi2Dict[XscanID][bx], chi2Dict[YscanID][bx]
+                chi2exclBX.append(bx)
 
+        logbuffer=logbuffer+str(chi2exclBX)+"\n"
 # need to name output file such that fit function name in file name
 
 
@@ -219,5 +230,8 @@ if __name__ == '__main__':
     with open(OutputDir+'/LumiCalibration_'+ Luminometer+ '_'+ fit + str(Fill)+'.pkl', 'wb') as f:
         pickle.dump(table, f)
 
-        
+    excldata=open(OutputDir+'/LumiCalibration_'+ Luminometer+ '_'+ fit + str(Fill)+'.log','w')
+    excldata.write(logbuffer)
+    excldata.close()
+       
 

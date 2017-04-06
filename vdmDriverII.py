@@ -292,7 +292,7 @@ if makeGraphsFile == True:
 
     graphsListAll = {}
 
-    corrFull, graphsListAll = doMakeGraphsFile(makeGraphsFileConfig)
+    corrFull, graphsListAll, missedDataBuffer = doMakeGraphsFile(makeGraphsFileConfig)
 
     OutputSubDir = str(makeGraphsFileConfig['OutputSubDir'])
     outputDir = AnalysisDir +'/' + Luminometer + '/' + OutputSubDir + '/'
@@ -312,6 +312,9 @@ if makeGraphsFile == True:
     with open(outputDir + outFileName + '.pkl', 'wb') as file:
         pickle.dump(graphsListAll, file)
 
+    misseddata=open(outputDir+"makeGraphsFile_MissedData.log",'w')
+    misseddata.write(missedDataBuffer)
+    misseddata.close()
 
 if makeGraphs2D == True:
 

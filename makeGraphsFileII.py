@@ -72,6 +72,24 @@ def doMakeGraphsFile(ConfigInfo):
         inDataNext.GetLuminometerData(AnalysisDir + '/' + inputLuminometerData)
         inData.append(inDataNext)
 
+#Check for missing data
+    missedDataInfo="Information on missed data\n"
+    if "BeamBeam" in corrName:
+        missedDataInfo=missedDataInfo+"BeamBeam has been applied: Only BCIDs with complete scanpoint lists are considered\n See BeamBeam_.log for the list of excluded BCID\n"
+    else:
+        missedDataInfo=missedDataInfo+"BeamBeam has not been applied\n\n"
+
+    for entry in inData:
+        scanNumber = entry.scanNumber
+        prefix = ''
+        if 'X' in entry.scanName:
+            prefix = str(scanNumber) +'_X'
+        if 'Y' in entry.scanName:
+            prefix = str(scanNumber)+'_Y'
+        missedDataInfo=missedDataInfo+"Scan_"+prefix+"\n"
+        missedSPList=checkScanpointList(entry)
+        missedDataInfo=missedDataInfo+missedSPList+"\n"
+
 # Apply corrections
 # Note that calibrating SumFBCT to DCCT is done in makeBeamCurrentFile.py if calibration flag in config file is set to true
 
@@ -121,13 +139,9 @@ def doMakeGraphsFile(ConfigInfo):
 
 # Now fill graphs for all scans
 # Counting of scans starts with 1
-    missedDataInfo="Information on missed data\n"
-    if "BeamBeam" in corrName:
-        missedDataInfo=missedDataInfo+"BeamBeam has been applied: Only BCIDs with complete scanpoint lists are considered\n See BeamBeam_.log for the list of excluded BCID\n"
-    else:
-        missedDataInfo=missedDataInfo+"BeamBeam has not been applied\n\n"
-
     graphsListAll = {'Scan_'+ str(n+1):{} for n in range(len(inData))} 
+
+    missedDataInfo=missedDataInfo+"Excluded BCIDs with too short scanpoint list:\n"
 
     for entry in inData:
     
@@ -140,14 +154,7 @@ def doMakeGraphsFile(ConfigInfo):
         if 'Y' in entry.scanName:
             prefix = str(scanNumber)+'_Y_'
 
-# check for missing data
-        missedDataInfo=missedDataInfo+"Scan_"+prefix+"\n\n"
-        if "BeamBeam" not in corrName:
-            missedSPList=checkScanpointList(entry)
-            missedDataInfo=missedDataInfo+missedSPList+"\n"
-
         omittedBXList=[]
-        missedDataInfo=missedDataInfo+"Omitted BCID with too short scanpoint list:\n"
     # convert for TGraph
         from array import array
 
@@ -201,7 +208,7 @@ def doMakeGraphsFile(ConfigInfo):
 
 
         graphsListAll['Scan_'+ str(scanNumber)]=graphsList
-        missedDataInfo=missedDataInfo+str(omittedBXList)+"\n\n" 
+        missedDataInfo=missedDataInfo+"Scan_"+prefix+":"+str(omittedBXList)+"\n" 
 
     return corrFull, graphsListAll, missedDataInfo
 

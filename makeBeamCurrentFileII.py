@@ -191,7 +191,7 @@ def getCurrents(datapath, scanpt, fill):
 
     return dcct1, dcct2, fbct1, fbct2
 
-def getCurrentsFromTimber( scanpt, fill, db):
+def getCurrentsFromTimber( scanpt, fill):
 
 
 #    print "beginning of getCurrents", scanpt
@@ -318,8 +318,11 @@ def doMakeBeamCurrentFile(ConfigInfo):
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
         for j, sp in enumerate(scanpoints):
-            #avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrents(InputCentralPath, sp[3:], int(Fill))
-            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill), db)
+            if (ReadFromTimber):
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill))
+            else:
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrents(InputCentralPath, sp[3:], int(Fill))
+
 # todo: implement correcting FBCT values in case CalibrateFBCTtoDCCT =True in json
 
 #Sums over all filled bunches

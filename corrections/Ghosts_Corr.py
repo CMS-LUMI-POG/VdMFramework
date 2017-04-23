@@ -55,5 +55,3 @@ class Ghosts_Corr(CorrectionManager.CorrectionProvider):
                 entry.avrgFbctB1[i] = currB1_corr
                 entry.avrgFbctB2[i] = currB2_corr
 
-
-

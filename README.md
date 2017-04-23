@@ -159,7 +159,7 @@ Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.*, *=csv,
 
 2) Run
 
-`python Scripts/summarizeXSEC.py Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.pkl`
+`python Scripts/summarizeXSEC.py -f Fill4634_Nov192015/PCC/results/noCorr/LumiCalibration_PCC_DGConst_4634.pkl -a 1`
 
 and the plots will be stored under the VdMFramework/ directory as 
 ```

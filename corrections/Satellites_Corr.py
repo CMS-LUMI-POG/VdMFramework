@@ -61,7 +61,6 @@ class Satellites_Corr(CorrectionManager.CorrectionProvider):
 
                     entry.avrgFbctB1PerBX[bx] = currB1_corr
                     entry.avrgFbctB2PerBX[bx] = currB2_corr
+
                 except:
                     print "BCID ", bx, " is missing: no Satellites correction"
-
-

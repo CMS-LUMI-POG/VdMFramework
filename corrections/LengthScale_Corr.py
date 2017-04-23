@@ -12,7 +12,7 @@ class LengthScale_Corr(CorrectionManager.CorrectionProvider):
     LS_ScaleY1 = -999.
     LS_ScaleX2 = -999.
     LS_ScaleY2 = -999.
-
+    
     SingleBeamScans = []
 
     def GetCorr(self, fileName):

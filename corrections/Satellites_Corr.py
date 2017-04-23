@@ -47,15 +47,22 @@ class Satellites_Corr(CorrectionManager.CorrectionProvider):
         for entry in inData:
 
             for i, bx in enumerate(entry.collidingBunches):
-                currB1 = entry.avrgFbctB1[i]
-                currB2 = entry.avrgFbctB2[i]
+                #currB1 = entry.avrgFbctB1[i]
+                #currB2 = entry.avrgFbctB2[i]
+                currB1 = entry.avrgFbctB1PerBX[bx]
+                currB2 = entry.avrgFbctB2PerBX[bx]
                 corrB1 = self.SatellitesFraction_B1[str(bx)]
                 corrB2 = self.SatellitesFraction_B2[str(bx)]
 
                 currB1_corr = [a * (1-corrB1) for a in currB1]
                 currB2_corr = [a * (1-corrB2) for a in currB2]
-
-                entry.avrgFbctB1[i] = currB1_corr
-                entry.avrgFbctB2[i] = currB2_corr
+                
+                try:
+                    #entry.avrgFbctB1[i] = currB1_corr
+                    #entry.avrgFbctB2[i] = currB2_corr
+                    entry.avrgFbctB1PerBX[bx] = currB1_corr
+                    entry.avrgFbctB2PerBX[bx]] = currB2_corr
+                except:
+                    print "BCID ", bx, " is missing: no Satellites correction"
 
 

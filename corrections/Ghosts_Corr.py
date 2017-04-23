@@ -56,3 +56,4 @@ class Ghosts_Corr(CorrectionManager.CorrectionProvider):
                 entry.avrgFbctB2[i] = currB2_corr
 
 
+                

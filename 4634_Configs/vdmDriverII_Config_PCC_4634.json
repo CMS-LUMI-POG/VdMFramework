@@ -8,9 +8,9 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeBeamCurrentFile": false,
+"makeBeamCurrentFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeBeamBeamFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -59,10 +59,11 @@
 	},
 "makeBeamCurrentFileConfig":
 	{
-	"InputCentralPath": "/afs/cern.ch/user/g/gkrintir/tempeos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",	
+	"InputCentralPath": "/eos/cms/store/group/comm_luminosity/VdM/scanFill4634_151119/central2/localdata/central18/",	
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4634.pkl",
 	"OutputSubDir" : "cond",
+	"ReadFromTimber" : true,
 	"CalibrateFBCTtoDCCT" : false
 	},
 "makeBeamBeamFileConfig":

@@ -7,7 +7,6 @@ import numpy as np
 
 import ROOT
 
-
 def doMakeScanFile(ConfigInfo):
 
     Date = str(ConfigInfo['Date'])
@@ -32,7 +31,6 @@ def doMakeScanFile(ConfigInfo):
     print ""
     
 
-
     if len(ScanNames) != len(ScanTimeWindows):
         print "Attention: number of scan names and number of scan time windows inconsistent. Exit program."
         sys.exit(1)
@@ -46,30 +44,30 @@ def doMakeScanFile(ConfigInfo):
 
 # sanity checks
 
-    columnsList = ['fill', 'run', 'ls', 'nb', 'sec', 'msec', 'acqflag', 'step', 'beam', 'ip', 'scanstatus', 'plane', 'progress', 'nominal_separation', 'read_nominal_B1sepPlane', 'read_nominal_B1xingPlane', 'read_nominal_B2sepPlane', 'read_nominal_B2xingPlane', 'set_nominal_B1sepPlane', 'set_nominal_B1xingPlane', 'set_nominal_B2sepPlane', 'set_nominal_B2xingPlane', 'bpm_5LDOROS_B1Names', 'bpm_5LDOROS_B1hPos', 'bpm_5LDOROS_B1vPos', 'bpm_5LDOROS_B1hErr', 'bpm_5LDOROS_B1vErr', 'bpm_5RDOROS_B1Names', 'bpm_5RDOROS_B1hPos', 'bpm_5RDOROS_B1vPos', 'bpm_5RDOROS_B1hErr', 'bpm_5RDOROS_B1vErr', 'bpm_5LDOROS_B2Names', 'bpm_5LDOROS_B2hPos', 'bpm_5LDOROS_B2vPos', 'bpm_5LDOROS_B2hErr', 'bpm_5LDOROS_B2vErr', 'bpm_5RDOROS_B2Names', 'bpm_5RDOROS_B2hPos', 'bpm_5RDOROS_B2vPos', 'bpm_5RDOROS_B2hErr', 'bpm_5RDOROS_B2vErr', 'atlas_totInst']
-
+    columnsList = ['fill', 'run', 'ls', 'nb', 'sec', 'msec', 'acqflag', 'step', 'beam', 'ip', 'scanstatus', 'plane', 'progress', 'nominal_separation', 'read_nominal_B1sepPlane', 'read_nominal_B1xingPlane', 'read_nominal_B2sepPlane', 'read_nominal_B2xingPlane', 'set_nominal_B1sepPlane', 'set_nominal_B1xingPlane', 'set_nominal_B2sepPlane', 'set_nominal_B2xingPlane', 'bpm_5LDOROS_B1Names', 'bpm_5LDOROS_B1hPos', 'bpm_5LDOROS_B1vPos,bpm_5LDOROS_B1hErr', 'bpm_5LDOROS_B1vErr,bpm_5RDOROS_B1Names', 'bpm_5RDOROS_B1hPos', 'bpm_5RDOROS_B1vPos', 'bpm_5RDOROS_B1hErr', 'bpm_5RDOROS_B1vErr', 'bpm_5LDOROS_B2Names', 'bpm_5LDOROS_B2hPos', 'bpm_5LDOROS_B2vPos', 'bpm_5LDOROS_B2hErr', 'bpm_5LDOROS_B2vErr', 'bpm_5RDOROS_B2Names', 'bpm_5RDOROS_B2hPos', 'bpm_5RDOROS_B2vPos', 'bpm_5RDOROS_B2hErr', 'bpm_5RDOROS_B2vErr', 'atlas_totInst', 'nominal_separation_plane']
 
     extractedList = df.columns.values.tolist()
+    if('nominal_separation_plane' in extractedList):
+        print "nominal_separation_plane in extractedList: this column is used"
+    else:
+        print "nominal_separation_plane not in extractedList: plane column is used"
 
-    if not (columnsList == extractedList):
-        print "Attention: First line in dip csv file not as expected, check file integrity."
-        print "extracted list",extractedList
-        print "expected list",columnsList
+    #if not (columnsList == extractedList):
+       # print "Attention: First line in dip csv file not as expected, check file integrity. Exit program."
         #sys.exit(1)
 
     FillfromDip = df['fill'][0]
 
     if (Fill != str(FillfromDip)):
-            print("Mismatch between fill info from dip and from config file.")
-
-            
-
+            print("Mismatch between fill info from dip and from config file. Exit program.")
+            sys.exit(1)
     
 # check that there is only one fill number in file
 
     fillfromDipmean = df['fill'].mean()
     if not (float(FillfromDip) == fillfromDipmean):
-        print "Attention: Fill number in first row of dip csv file ", FillfromDip, " and mean of the fill number over all rows in the file ", fillfromDipmean, " are different. Check file integrity if you care."
+        print "Attention: Fill number in first row of dip csv file ", FillfromDip, " and mean of the fill number over all rows in the file ", fillfromDipmean, " are different. Check file integrity. Exit program."
+        sys.exit(1)
 
     run = df['run'][0]
 
@@ -80,30 +78,36 @@ def doMakeScanFile(ConfigInfo):
         print "Attention: There appears to be more than one run number in the dip file. Is this intentional ?"
         print "List of all runs in dip file: ", df['run'].drop_duplicates().tolist()
 
+    #fill=int(Fill)
+
     scan = [ [] for entry in ScanNames]
     Run = [0 for entry in ScanNames]
     for i, scanName in enumerate(ScanNames):
         print "Now at scan", scanName
         timeWindow = [ScanTimeWindows[i][0], ScanTimeWindows[i][1]]
 
-
 # get scan point info from dip file
 
         dfPreSelect = df[(df.sec >= timeWindow[0]) & (df.sec <= timeWindow[1]) & (df.ip == 32) & (df.acqflag == 1) & (df.scanstatus == 'ACQUIRING') & (df.step != 9999)]
 
+        if('nominal_separation_plane' in extractedList):
+            SeparationPlane=dfPreSelect.nominal_separation_plane
+        else:
+            SeparationPlane=dfPreSelect.plane
+
 # make sure that preselected df contains at most one X (=CROSSING) and one Y (=SEPARATION) scan
 
         justonescan = False
-        if len(dfPreSelect[dfPreSelect.plane == "CROSSING"].index.tolist()) == 0:
+        if len(dfPreSelect[SeparationPlane == "CROSSING"].index.tolist()) == 0:
             justonescan = True
-        if len(dfPreSelect[dfPreSelect.plane == "SEPARATION"].index.tolist()) == 0:
+        if len(dfPreSelect[SeparationPlane == "SEPARATION"].index.tolist()) == 0:
             justonescan = True
 
         if not(justonescan):
-            minIndexX = dfPreSelect[dfPreSelect.plane == "CROSSING"].index.min()
-            maxIndexX = dfPreSelect[dfPreSelect.plane == "CROSSING"].index.max()
-            minIndexY = dfPreSelect[dfPreSelect.plane == "SEPARATION"].index.min()
-            maxIndexY = dfPreSelect[dfPreSelect.plane == "SEPARATION"].index.max()
+            minIndexX = dfPreSelect[SeparationPlane == "CROSSING"].index.min()
+            maxIndexX = dfPreSelect[SeparationPlane == "CROSSING"].index.max()
+            minIndexY = dfPreSelect[SeparationPlane == "SEPARATION"].index.min()
+            maxIndexY = dfPreSelect[SeparationPlane == "SEPARATION"].index.max()
             if (minIndexX < minIndexY and maxIndexX > maxIndexY) or (minIndexX > minIndexY and maxIndexX < maxIndexY):
                 print "Attention: Time search window given in config file contains more than one X and one Y scan, do not know how to handle this. Exit program"
                 sys.exit(1)
@@ -111,11 +115,9 @@ def doMakeScanFile(ConfigInfo):
         nomSep = []
         dfSP = pd.DataFrame()
         if ("X" in scanName):
-            dfSP = dfPreSelect[dfPreSelect.plane == "CROSSING"]
-            
+            dfSP = dfPreSelect[SeparationPlane == "CROSSING"]           
         if ("Y" in scanName):
-            dfSP = dfPreSelect[dfPreSelect.plane == "SEPARATION"]
-
+            dfSP = dfPreSelect[SeparationPlane == "SEPARATION"]
 
 # cut off zero separation points at very beginning and very end of scan            
         
@@ -142,38 +144,6 @@ def doMakeScanFile(ConfigInfo):
             scan[i].append(SP)
             Run[i] = run
 
-#
-# get bunches info from "central" hdf5 file
-#
-
-    tw = '(timestampsec >' + str(ScanTimeWindows[0][0]) + ') & (timestampsec <=' +  str(ScanTimeWindows[0][1]) + ')'
-    filelist = os.listdir(InputCentralPath)
-
-
-    notfound = True
-    for file in filelist:
-        if notfound:
-            h5file = tables.open_file(InputCentralPath+"/" + file, 'r')
-            beamtable = h5file.root.beam
-            bunchlist1 = [r['bxconfig1'] for r in beamtable.where(tw)] 
-            bunchlist2 = [r['bxconfig2'] for r in beamtable.where(tw)]        
-        
-            if bunchlist1 and bunchlist2:
-                notfound = False
-# attention: LHC bcid's start at 1, not at 0
-                filledArr1 = np.nonzero(bunchlist1[0])
-                filledArr1 = filledArr1 + np.ones_like(filledArr1)
-                filledBunches1 = filledArr1[0].tolist()
-                filledArr2 = np.nonzero(bunchlist2[0])
-                filledArr2 = filledArr2 + np.ones_like(filledArr2)
-                filledBunches2 = filledArr2[0].tolist() 
-                collArr = np.nonzero(bunchlist1[0]*bunchlist2[0])
-                collArr = collArr + np.ones_like(collArr)
-                collBunches = collArr[0].tolist()
-
-            h5file.close()
-
-
     table = {}
 
     table["Fill"] = Fill
@@ -189,10 +159,6 @@ def doMakeScanFile(ConfigInfo):
     table["ParticleTypeB2"] = ParticleTypeB2
     table["EnergyB1"] = EnergyB1
     table["EnergyB2"] = EnergyB2
-    table["FilledBunchesB1"] = filledBunches1
-    table["FilledBunchesB2"] = filledBunches2
-    table["CollidingBunches"] = collBunches
-
 
     csvtable = []
 
@@ -209,9 +175,6 @@ def doMakeScanFile(ConfigInfo):
     csvtable.append(["ParticleTypeB2", ParticleTypeB2])
     csvtable.append(["EnergyB1",EnergyB1 ])
     csvtable.append(["EnergyB2", EnergyB2])
-    csvtable.append(["FilledBunchesB1", filledBunches1])
-    csvtable.append(["FilledBunchesB2", filledBunches2])
-    csvtable.append(["CollidingBunches", collBunches ])
     csvtable.append(["scan number", "scan type", "scan points: number, tStart, tStop, relative displacement"])
 
     for i, scanName in enumerate(ScanNames):

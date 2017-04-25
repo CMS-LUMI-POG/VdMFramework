@@ -1,5 +1,5 @@
 import sys, json, pickle, csv
-from inputDataReader import *
+from inputDataReaderII import *
 
 # calls python script written by T. Pieloni and W. Kozanecki
 # needs shared library errffor.so
@@ -111,29 +111,34 @@ def doMakeBeamBeamFile(ConfigInfo):
         NpList2 = inDataX.avrgFbctB1PerSP
         
         for bx in inDataX.collidingBunches:
-            try:
-                Csigx = CsigxList[str(bx)]
-                Csigy = CsigyList[str(bx)]
-                for i in range(len(sepxList)):
-                    sepx= sepxList[i]
-                    sepy= sepyList[i]
-                    Np1 = NpList1[i][str(bx)]               
-                    Np2 = NpList2[i][str(bx)]
+            lengthX=len(inDataX.spPerBX[bx])
+#            print "bx=", bx, " lengthX=", lengthX, " sepxList=", len(sepxList), " lengthY=", len(inDataY.spPerBX[bx])
+            if(lengthX==len(sepxList)):
+                try:
+                    lengthY=len(inDataY.spPerBX[bx])
+                    if(lengthY==len(inDataY.displacement)):
+                        Csigx = CsigxList[str(bx)]
+                        Csigy = CsigyList[str(bx)]
+                        for i in range(len(sepxList)):
+                            sepx= sepxList[i]
+                            sepy= sepyList[i]
+                            Np1 = NpList1[i][str(bx)]               
+                            Np2 = NpList2[i][str(bx)]
 
 # >>> Effect of beam2 on beam1:
 # sepx and sepy are in mm, deltaOrbitX and deltaOrbitY are in microns
-                    deflectionXB1, deflectionYB1, deltaOrbitXB1, deltaOrbitYB1 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np1, Ep1)
+                            deflectionXB1, deflectionYB1, deltaOrbitXB1, deltaOrbitYB1 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np1, Ep1)
 
 # >>> Effect of beam1 on beam2:
-                    deflectionXB2, deflectionYB2, deltaOrbitXB2, deltaOrbitYB2 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np2, Ep2)
+                            deflectionXB2, deflectionYB2, deltaOrbitXB2, deltaOrbitYB2 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np2, Ep2)
 
 # turn orbitCorr into mm
 
-                    orbitCorrX_xcoord[i][str(bx)] = (deltaOrbitXB1+deltaOrbitXB2)*1e-3
-                    orbitCorrX_ycoord[i][str(bx)] = 0.0
+                            orbitCorrX_xcoord[i][str(bx)] = (deltaOrbitXB1+deltaOrbitXB2)*1e-3
+                            orbitCorrX_ycoord[i][str(bx)] = 0.0
 
-            except KeyError:
-                print "From makeBeambeamFile.py: bx = ", bx, "does not exist in CsigxList, CsigyList" 
+                except KeyError:
+                    print "From makeBeambeamFile.py: bx = ", bx, "does not exist in CsigyList" 
 
 
         csvtable.append([keyx])
@@ -142,8 +147,6 @@ def doMakeBeamBeamFile(ConfigInfo):
             table[keyx].append(row)
             csvtable.append(row)
                         
-
-
 # <<<<<>>>>> For Y scan:
 
         sepyList = inDataY.displacement
@@ -165,31 +168,35 @@ def doMakeBeamBeamFile(ConfigInfo):
         NpList2 = inDataY.avrgFbctB1PerSP
 
         for bx in inDataY.collidingBunches:
-            try:
-                Csigx = CsigxList[str(bx)]
-                Csigy = CsigyList[str(bx)]
-                for i in range(len(sepyList)):
-                    sepx= sepxList[i]
-                    sepy= sepyList[i]
-                    Np1 = NpList1[i][str(bx)]               
-                    Np2 = NpList2[i][str(bx)]
+            lengthY=len(inDataY.spPerBX[bx])
+            if(lengthY==len(sepyList)):
+                try:
+                    lengthX=len(inDataX.spPerBX[bx])
+                    if(lengthX==len(inDataX.displacement)):
+                        Csigx = CsigxList[str(bx)]
+                        Csigy = CsigyList[str(bx)]
+                        for i in range(len(sepyList)):
+                            sepx= sepxList[i]
+                            sepy= sepyList[i]
+                            Np1 = NpList1[i][str(bx)]               
+                            Np2 = NpList2[i][str(bx)]
 
 #                print ">>>"
 #                print Csigx, Csigy, sepx, sepy, betax,betay, tunex, tuney, Np2, Ep2
 
 # >>> Effect of beam2 on beam1:
 # sepx and sepy are in mm, deltaOrbitX and deltaOrbitY are in microns
-                    deflectionXB1, deflectionYB1, deltaOrbitXB1, deltaOrbitYB1 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np1, Ep1)
+                            deflectionXB1, deflectionYB1, deltaOrbitXB1, deltaOrbitYB1 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np1, Ep1)
 
 # >>> Effect of beam1 on beam2:
-                    deflectionXB2, deflectionYB2, deltaOrbitXB2, deltaOrbitYB2 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np2, Ep2)
+                            deflectionXB2, deflectionYB2, deltaOrbitXB2, deltaOrbitYB2 = BB(Csigx,Csigy,sepx,sepy,betax,betay,tunex,tuney,Np2, Ep2)
 
 # turn orbitCorr into mm
-                    orbitCorrY_ycoord[i][str(bx)] = (deltaOrbitYB1+deltaOrbitYB2)*1e-3
-                    orbitCorrY_xcoord[i][str(bx)] = 0.0
+                            orbitCorrY_ycoord[i][str(bx)] = (deltaOrbitYB1+deltaOrbitYB2)*1e-3
+                            orbitCorrY_xcoord[i][str(bx)] = 0.0
 
-            except KeyError:
-                print "From makeBeambeamFile.py: bx = ", bx, "does not exist in CsigxList, CsigyList" 
+                except KeyError:
+                    print "From makeBeambeamFile.py: bx = ", bx, "does not exist in CsigxList" 
 
         csvtable.append([keyy])
         for i in range(len(sepyList)):
@@ -199,7 +206,7 @@ def doMakeBeamBeamFile(ConfigInfo):
 
     return table, csvtable
 
-
+########################################
 
 if __name__ == '__main__':
 

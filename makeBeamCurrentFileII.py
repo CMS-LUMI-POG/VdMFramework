@@ -302,7 +302,11 @@ def doMakeBeamCurrentFile(ConfigInfo):
     outpath = './' + AnalysisDir + '/' + OutputSubDir 
 
     ReadFromTimber = False
-    ReadFromTimber = ConfigInfo['ReadFromTimber']
+    try:
+        if 'ReadFromTimber' in ConfigInfo:
+            ReadFromTimber = ConfigInfo['ReadFromTimber']
+    except:
+        print "makeBeamCurrentFileII: add ReadFromTimber argument in makeBeamCurrentFileConfig"
 
     CalibrateFBCTtoDCCT = False
     CalibrateFBCTtoDCCT = ConfigInfo['CalibrateFBCTtoDCCT']
@@ -313,6 +317,10 @@ def doMakeBeamCurrentFile(ConfigInfo):
 
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
+    
+    CollidingBunches = scanInfo["CollidingBunches"]
+    FilledBunchesB1 = scanInfo["FilledBunchesB1"]
+    FilledBunchesB2 = scanInfo["FilledBunchesB2"]
 
     table = {}
     csvtable = []

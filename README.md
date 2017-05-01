@@ -67,6 +67,8 @@ https://indico.cern.ch/event/433686/attachments/1126803/1609016/Tutorial_VdM_Jul
 
 ****Running the Driver****
 
+Before starts, one has to setup the environment. This can be done through executing `source env.sh`. There is an alternative option, i.e. `source env.sh Timber`, for step (c) below.
+
 The framework is centrally steered by the `vdmDriverII.py`. What you are running and in which order is defined by passing a json file to the driver.  The user by editing such a .json file can enanble/dissable with boolean flags the functionality of the driver.
 
 For our example, we take here the `4634_Configs/vdmDriverII_Config_PCC_4634.json`, meant for the LHC fill 4634 and using the Pixel Cluster Counting (PCC) luminometer. Currently *no parsing* is available, thus the user has to *open* and *edit* the .json file with an editor. 
@@ -77,7 +79,7 @@ a) makeScanFileII.py
 
 b) dataPrepII_PCC/makePCCRateFile.py; this is specific to the luminometer handled by the .json file 
 
-c) makeBeamCurrentFileII.py
+c) makeBeamCurrentFileII.py; add the `"ReadFromTimber" : true` option in the makeBeamCurrentFileConfig fragment to enable reading from Timber database
 
 d) for this iteration we ignore the makeBeamBeamFile till makeLengthScaleFile part (FIXME)
 

@@ -19,8 +19,3 @@ else
     export PATH=/afs/cern.ch/cms/lumi/brilconda-1.1.7/bin:$PATH
     #source /afs/cern.ch/cms/lumi/brilconda-1.1.7/root/bin/thisroot.sh
 fi
-echo "Is your username listed in remote list?"
-echo
-git remote -v
-echo
-echo "If not, do 'git remote add YOURGITUSERNAME git@github.com:YOURGITUSERNAME/VdMFramework.git'."

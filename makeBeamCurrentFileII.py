@@ -55,7 +55,7 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
     corrB1 = fB1.GetParameter(0)
     corrB2 = fB2.GetParameter(0)
 
-    if CalibrateFBCTtoDCCT:
+    if CalibrateFBCTtoDCCT == True:
         print "Applying FBCT to DCCT calibration"
 
         for idx, entry in enumerate(table):
@@ -79,9 +79,7 @@ def checkFBCTcalib(table, CalibrateFBCTtoDCCT):
 
     return [h_ratioB1, h_ratioB2, table]
 
-
 def getCurrents(datapath, scanpt, fill):
-
 
 #    print "beginning of getCurrents", scanpt
     filelist = os.listdir(datapath)
@@ -112,7 +110,6 @@ def getCurrents(datapath, scanpt, fill):
     print "tw", tw
 
     for file in filelist:
-#        print file
         h5file = tables.open_file(datapath + "/" + file, 'r')
         beamtable = h5file.root.beam
         bunchlist1 = [r['bxconfig1'] for r in beamtable.where(tw)] 
@@ -188,8 +185,21 @@ def getCurrents(datapath, scanpt, fill):
             for idx, bcid in enumerate(filledBunches2):
                 fbct2[str(bcid+1)] = bx2df[bcid].mean()
 
+        for idx, bcid in enumerate(filledBunches1):
+            old=filledBunches1[idx]
+            filledBunches1[idx]=old+1
 
-    return dcct1, dcct2, fbct1, fbct2
+        for idx, bcid in enumerate(filledBunches2):
+            old=filledBunches2[idx]
+            filledBunches2[idx]=old+1
+
+        for idx, bcid in enumerate(collBunches):
+            old=collBunches[idx]
+            collBunches[idx]=old+1
+
+
+    return dcct1, dcct2, fbct1, fbct2, filledBunches1, filledBunches2, collBunches
+
 
 def getCurrentsFromTimber( scanpt, fill):
 
@@ -279,7 +289,7 @@ def getCurrentsFromTimber( scanpt, fill):
     return dcct1, dcct2, fbct1_dict, fbct2_dict
 
 
-
+############################
 def doMakeBeamCurrentFile(ConfigInfo):
 
     import csv, pickle
@@ -303,10 +313,6 @@ def doMakeBeamCurrentFile(ConfigInfo):
 
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
-    
-    CollidingBunches = scanInfo["CollidingBunches"]
-    FilledBunchesB1 = scanInfo["FilledBunchesB1"]
-    FilledBunchesB2 = scanInfo["FilledBunchesB2"]
 
     table = {}
     csvtable = []
@@ -321,13 +327,12 @@ def doMakeBeamCurrentFile(ConfigInfo):
             if (ReadFromTimber):
                 avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill))
             else:
-                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrents(InputCentralPath, sp[3:], int(Fill))
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledBunchesB1, FilledBunchesB2, CollidingBunches = getCurrents(InputCentralPath, sp[3:], int(Fill))
 
-# todo: implement correcting FBCT values in case CalibrateFBCTtoDCCT =True in json
 
 #Sums over all filled bunches
             sumavrgfbct1 = sumCurrents(avrgfbct1, FilledBunchesB1) 
-            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledBunchesB2) 
+            sumavrgfbct2 = sumCurrents(avrgfbct2, FilledBunchesB2)
 #Sums over all colliding bunches
             sumCollavrgfbct1 = sumCurrents(avrgfbct1, CollidingBunches) 
             sumCollavrgfbct2 = sumCurrents(avrgfbct2, CollidingBunches) 
@@ -335,11 +340,8 @@ def doMakeBeamCurrentFile(ConfigInfo):
             avrgfbct2['sum'] = sumCollavrgfbct2
 
             print "Scan point", j, sp
-#            row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, sumCollavrgfbct1, sumCollavrgfbct2, avrgfbct1, avrgfbct2
             row = [i+1, str(ScanNames[i]), j+1, avrgdcct1, avrgdcct2, sumavrgfbct1, sumavrgfbct2, avrgfbct1, avrgfbct2]
             table["Scan_" + str(i+1)].append(row)
-
-
 
     canvas = ROOT.TCanvas()
 
@@ -366,12 +368,10 @@ def doMakeBeamCurrentFile(ConfigInfo):
         for idx, entry in enumerate(table[key]):
             row=[entry[0],entry[1],entry[2],entry[3],entry[4],entry[5],entry[6],entry[7],entry[8]]
             csvtable.append(row)
- 
 
     return table, csvtable
 
-
-
+##############
 if __name__ == '__main__':
 
     import pickle, csv, sys, json

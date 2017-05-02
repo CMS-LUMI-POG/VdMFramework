@@ -7,8 +7,6 @@ import pandas as pd
 import json
 import os
 
-import pytimber as pytimber
-db = pytimber.LoggingDB()
 
 def sumCurrents(curr, bcidList):
 
@@ -201,7 +199,7 @@ def getCurrents(datapath, scanpt, fill):
     return dcct1, dcct2, fbct1, fbct2, filledBunches1, filledBunches2, collBunches
 
 
-def getCurrentsFromTimber( scanpt, fill):
+def getCurrentsFromTimber( scanpt, fill, db, pytimber):
 
 
 #    print "beginning of getCurrents", scanpt
@@ -305,6 +303,8 @@ def doMakeBeamCurrentFile(ConfigInfo):
     try:
         if 'ReadFromTimber' in ConfigInfo:
             ReadFromTimber = ConfigInfo['ReadFromTimber']
+            import pytimber as pytimber                                                                                                                                                                 
+            db = pytimber.LoggingDB()
     except:
         print "makeBeamCurrentFileII: add ReadFromTimber argument in makeBeamCurrentFileConfig"
 
@@ -333,7 +333,7 @@ def doMakeBeamCurrentFile(ConfigInfo):
         table["Scan_" + str(i+1)]=[]
         for j, sp in enumerate(scanpoints):
             if (ReadFromTimber):
-                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill))
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill), db, pytimber)
             else:
                 avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledBunchesB1, FilledBunchesB2, CollidingBunches = getCurrents(InputCentralPath, sp[3:], int(Fill))
 

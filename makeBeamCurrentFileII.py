@@ -7,6 +7,7 @@ import pandas as pd
 import json
 import os
 
+
 def sumCurrents(curr, bcidList):
 
     sumCurr = 0.0
@@ -194,7 +195,97 @@ def getCurrents(datapath, scanpt, fill):
             old=collBunches[idx]
             collBunches[idx]=old+1
 
+
     return dcct1, dcct2, fbct1, fbct2, filledBunches1, filledBunches2, collBunches
+
+
+def getCurrentsFromTimber( scanpt, fill, db, pytimber):
+
+
+#    print "beginning of getCurrents", scanpt
+
+    bx1data = []
+    bx2data = []
+
+    beam1data = []
+    beam2data = [] 
+
+# omit very first nibble because it may not be fully contained in VdM scan
+    tw = '(timestampsec >' + str(scanpt[0]) + ') & (timestampsec <=' +  str(scanpt[1]) + ')'
+    print "tw", tw
+
+    import time
+    import os,sys
+    import subprocess
+    import datetime
+    import pytz
+
+    utc_dt0 = datetime.datetime.utcfromtimestamp(scanpt[0])
+    aware_utc_dt0 = utc_dt0.replace(tzinfo=pytz.utc)
+    tz = pytz.timezone('Europe/Brussels')
+    dt0 = aware_utc_dt0.astimezone(tz)
+    dt0 = datetime.datetime.fromtimestamp(scanpt[0], tz)
+    
+    utc_dt1 = datetime.datetime.utcfromtimestamp(scanpt[1])
+    aware_utc_dt1 = utc_dt1.replace(tzinfo=pytz.utc)
+    dt1 = aware_utc_dt1.astimezone(tz)
+    dt1 = datetime.datetime.fromtimestamp(scanpt[1], tz)
+
+    t0=pytimber.parsedate(str(dt0).split('+')[0])
+    t1=pytimber.parsedate(str(dt1).split('+')[0])
+    
+    
+# dcct, i.e. current per beam
+    if fill>=4725: # first fill in 2016
+        ib1="LHC.BCTDC.A6R4.B1:BEAM_INTENSITY_ADC24BIT"
+        ib2="LHC.BCTDC.A6R4.B2:BEAM_INTENSITY_ADC24BIT"
+    else:
+        ib1="LHC.BCTDC.A6R4.B1:BEAM_INTENSITY"
+        ib2="LHC.BCTDC.A6R4.B2:BEAM_INTENSITY"
+
+    data=db.get([ib1,ib2],t0,t1)
+    timestamps,beam1data=data[ib1]
+    timestamps,beam2data=data[ib2]
+        
+    dcct1=beam1data.mean()
+    dcct2=beam2data.mean()
+
+# fbct, ie. current per bx (on timber by default only nominally filled bunches)
+
+    ib1="LHC.BCTFR.A6R4.B1:BUNCH_INTENSITY"
+    ib2="LHC.BCTFR.A6R4.B2:BUNCH_INTENSITY"
+
+    data1=db.get([ib1,ib2],t0,t0+62)
+
+    timestamps,bx1data=data1[ib1]
+    timestamps,bx2data=data1[ib2]
+    fbct1=bx1data.mean(axis=0)
+    fbct2=bx2data.mean(axis=0)
+
+
+
+# attention: LHC bcid's start at 1, not at 0
+    ## In 4266 BCID 2674 is 3% too low in FBCT
+    if fill == 4266:
+        #numpy magic ;D
+        #x[:,1::2] #all even
+        #x[:,::2] #all odd
+        #x[:,[0,2]] # first and third column
+        #x[:,[0]] # first column
+        fbct1[[2673]]=1.03*fbct1[[2673]]
+        fbct2[[2673]]=1.03*fbct1[[2673]]
+
+    ## In 4634 even BCIDs are 4% too high in FBCT
+    elif fill == 4634:
+        fbct1[1::2]=1.04*fbct1[1::2]
+
+    fbct1_dict = dict(enumerate(fbct1.flatten(), 1))
+    fbct2_dict = dict(enumerate(fbct2.flatten(), 1))
+    fbct1_dict  = {str(k):float(v) for k,v in fbct1_dict.items()}
+    fbct2_dict  = {str(k):float(v) for k,v in fbct2_dict.items()}
+
+    return dcct1, dcct2, fbct1_dict, fbct2_dict
+
 
 ############################
 def doMakeBeamCurrentFile(ConfigInfo):
@@ -208,14 +299,28 @@ def doMakeBeamCurrentFile(ConfigInfo):
 
     outpath = './' + AnalysisDir + '/' + OutputSubDir 
 
+    ReadFromTimber = False
+    try:
+        if 'ReadFromTimber' in ConfigInfo:
+            ReadFromTimber = ConfigInfo['ReadFromTimber']
+            import pytimber as pytimber                                                                                                                                                                 
+            db = pytimber.LoggingDB()
+    except:
+        print "makeBeamCurrentFileII: add ReadFromTimber argument in makeBeamCurrentFileConfig"
+
     CalibrateFBCTtoDCCT = False
     CalibrateFBCTtoDCCT = ConfigInfo['CalibrateFBCTtoDCCT']
 
+    
     with open(InputScanFile, 'rb') as f:
         scanInfo = pickle.load(f)
 
     Fill = scanInfo["Fill"]     
     ScanNames = scanInfo["ScanNames"]     
+    
+    CollidingBunches = scanInfo["CollidingBunches"]
+    FilledBunchesB1 = scanInfo["FilledBunchesB1"]
+    FilledBunchesB2 = scanInfo["FilledBunchesB2"]
 
     table = {}
     csvtable = []
@@ -227,7 +332,11 @@ def doMakeBeamCurrentFile(ConfigInfo):
         scanpoints = scanInfo[key]
         table["Scan_" + str(i+1)]=[]
         for j, sp in enumerate(scanpoints):
-            avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledBunchesB1, FilledBunchesB2, CollidingBunches = getCurrents(InputCentralPath, sp[3:], int(Fill))
+            if (ReadFromTimber):
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2 = getCurrentsFromTimber( sp[3:], int(Fill), db, pytimber)
+            else:
+                avrgdcct1, avrgdcct2, avrgfbct1, avrgfbct2, FilledBunchesB1, FilledBunchesB2, CollidingBunches = getCurrents(InputCentralPath, sp[3:], int(Fill))
+
 
 #Sums over all filled bunches
             sumavrgfbct1 = sumCurrents(avrgfbct1, FilledBunchesB1) 

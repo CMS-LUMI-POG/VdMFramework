@@ -58,6 +58,7 @@ class DGConst_Fit(FitManager.FitProvider):
         if LimitRatio_upper > LimitRatio_lower:
             ff.SetParLimits(1, LimitRatio_lower,LimitRatio_upper)
         if LimitPeak_upper > LimitPeak_lower:
+            print "peak limits",LimitPeak_lower,LimitPeak_upper
             ff.SetParLimits(2, LimitPeak_lower,LimitPeak_upper)
         if LimitFrac_upper > LimitFrac_lower:
             ff.SetParLimits(3, LimitFrac_lower,LimitFrac_upper)
@@ -72,6 +73,7 @@ class DGConst_Fit(FitManager.FitProvider):
         r.gROOT.ProcessLine("gSystem->Info(0,\"Next BCID\");")
 
         for j in range(5):
+            print "fit",j
             fit = graph.Fit("ff","S")
             if fit.CovMatrixStatus()==3 and fit.Chi2()/fit.Ndf() < 2: break
 

@@ -2,12 +2,16 @@
 "Fill" : "4954",
 "AnalysisDir" : "Fill4954_May272016",
 "Luminometer": "PCC",
-"Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["LengthScale"],
 "Corr" : ["BeamBeam"],
+"Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
+"Corr" : ["LengthScale","BeamBeam"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
 "FitName" : "DGConst",
 "InputFitResultsFile" : "DGConst_FitResults.pkl",
+"FitName" : "SimCapSigma_PCCAndVtx",
+"InputFitResultsFile" : "SimCapSigma_PCCAndVtx_FitResults.pkl",
 "LuminometerSettings":
 	{
 	"LuminometerName": "PCC",

@@ -4,7 +4,6 @@ import argparse
 import ROOT
 import math
 
-ROOT.gROOT.SetBatch(ROOT.kTRUE)
 
 parser = argparse.ArgumentParser(description='Compare the beam width as measured by two detectors')
 parser.add_argument('--files', type=str, default="", help='The two filenames (comma-spearated)')
@@ -13,6 +12,7 @@ parser.add_argument('--label', type=str, default="", help="Label for output file
 parser.add_argument('--pccbcids', type=int, default=0, help="Use only PCC BCIDs (default 0)")
 
 args = parser.parse_args()
+ROOT.gROOT.SetBatch(ROOT.kTRUE)
 try:
     args.names=args.names.split(",")
 except:
@@ -38,7 +38,7 @@ for filename in filenames:
             continue
         if args.pccbcids==0 or fit[2] in PCCBCIDs:
             beamWidths[filename][(fit[0],fit[1],fit[2])]=(float(fit[capInd]),float(fit[capErrInd]))
-            print fit[0],fit[1],fit[2],fit[capInd],fit[capErrInd]
+            #print fit[0],fit[1],fit[2],fit[capInd],fit[capErrInd]
 
 
 can=ROOT.TCanvas("can","",1200,700)
@@ -59,9 +59,10 @@ for scanKey in beamWidths[filenames[0]]:
     if scanKey in beamWidths[filenames[1]]:
         diff=beamWidths[filenames[1]][scanKey][0]-beamWidths[filenames[0]][scanKey][0]
         ave=0.5*(beamWidths[filenames[1]][scanKey][0]+beamWidths[filenames[0]][scanKey][0])
-        error=math.sqrt(beamWidths[filenames[1]][scanKey][1]*beamWidths[filenames[1]][scanKey][1]+beamWidths[filenames[0]][scanKey][1]*beamWidths[filenames[0]][scanKey][1])
+        error=math.sqrt(beamWidths[filenames[1]][scanKey][1]*beamWidths[filenames[1]][scanKey][1]+beamWidths[filenames[0]][scanKey][1]*beamWidths[filenames[0]][scanKey][1])+0.0001
         pullDist.Fill(diff/error)
         systError.Fill(diff*100/ave)
+        print scanKey,beamWidths[filenames[1]][scanKey][0],beamWidths[filenames[0]][scanKey][0],diff*100/ave
 
 
 can.cd(1)

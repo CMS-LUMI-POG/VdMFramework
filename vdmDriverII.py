@@ -387,14 +387,15 @@ if runVdmFitter == True:
     
     if 'Sim' in FitConfigFile:
         PlotsTempPath = vdmFitterConfig['PlotsTempPath']
+        FitPartner    = vdmFitterConfig['FitPartner']
         if 'InputSimGraphsFile' in vdmFitterConfig:
-            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' + vdmFitterConfig['InputSimGraphsFile']
+            InputSimGraphsFile = AnalysisDir + '/' + FitPartner + '/' + vdmFitterConfig['InputSimGraphsFile']
             InputGraphsFiles.append(InputSimGraphsFile)
         else:
             defaultSimGraphsFile = 'graphs' + '/' + 'graphs_' + Fill + '_' + corrFull + '.pkl'
-            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' +  defaultSimGraphsFile
+            InputSimGraphsFile = AnalysisDir + '/' + FitPartner + '/' +  defaultSimGraphsFile
             InputGraphsFiles.append(InputSimGraphsFile)
-        OutputDir = './' + AnalysisDir + '/' + 'VTX' + '/results/' + corrFull + '/'
+        OutputDir = './' + AnalysisDir + '/' + FitPartner + '/results/' + corrFull + '/'
         OutputDirs.append(OutputDir)
 
     for OutputDir in OutputDirs:

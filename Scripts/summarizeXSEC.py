@@ -74,8 +74,8 @@ for bcid in BCIDs:
     iColor=(iColor+1)
 
 for fit in fits:
-    if  fit[2] != "sum": #5_6 was a bad one at 13tev
-    #if fit[0] != "5_6" and fit[2] != "sum": #5_6 was a bad one at 13tev
+    #if  fit[2] != "sum": #5_6 was a bad one at 13tev
+    if fit[0] != "5_6" and fit[2] != "sum": #5_6 was a bad one at 13tev
     #if fit[0] != "1_2" and fit[0] != "4_3" and fit[2] != "sum":
         try:
             #if float(fit[xsecInd])<0:
@@ -92,11 +92,15 @@ for fit in fits:
             elif args.units=="Barn":
                 thisXsec=float(fit[xsecInd])/1e6
                 thisXsecErr=float(fit[xsecErrInd])/1e6
-                if thisXsecErr<0.02:
-                    thisXsecErr=0.02
             elif args.units=="uB":
                 thisXsec=float(fit[xsecInd])
                 thisXsecErr=float(fit[xsecErrInd])
+
+            if thisXsecErr/thisXsec<0.003:
+                thisXsecErr=thisXsec*0.003
+
+            thisXsec=thisXsec*1.008
+
             xsecs[0].append(thisXsec)
             xsecs[1].append(thisXsecErr)
             xsecs[2].append(1./(xsecs[1][-1]*xsecs[1][-1]))
@@ -125,6 +129,7 @@ for weight in xsecs[2]:
     sumofweights=sumofweights+weight
 totalError=1/math.sqrt(sumofweights)
 print overallxsec,totalError
+print "Mean,RMS",numpy.ma.average(xsecs[0]),numpy.ma.std(xsecs[0])
 
 
 
@@ -175,7 +180,7 @@ for fit in xsecsPerBCID:
 
 multigraph=ROOT.TMultiGraph()
 multigraph.SetTitle(";Scan Pair;#sigma_{Vis} ("+args.units+")")
-leg=ROOT.TLegend(0.7,0.15,0.9,0.43)
+leg=ROOT.TLegend(0.45,0.15,0.65,0.43)
 leg.SetBorderSize(0)
 leg.SetFillColor(0)
 for bcid in BCIDs:

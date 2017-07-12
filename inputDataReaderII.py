@@ -212,11 +212,15 @@ class vdmInputData:
         for i, bx in enumerate(self.collidingBunches):
             for j in range(self.nSP):
                 try:
+                    print bx,j,len(self.lumiPerSP)
                     if str(bx) in self.lumiPerSP[j]:
                         if bx not in usedCollidingBunches:
                             usedCollidingBunches.append(bx)
                 except:
                     print "collisingBunches:  problem with",j
+                    if str(bx) in self.lumiPerSP[j-1]:
+                        if bx not in usedCollidingBunches:
+                            usedCollidingBunches.append(bx)
         self.usedCollidingBunches = usedCollidingBunches
 
 # this is the natural order for analysis
@@ -232,8 +236,10 @@ class vdmInputData:
                     self.lumiErr[i].append(valueErr)
                 except:
                     print "lumi values:  problem with",j
-                    self.lumi[i].append(-999)
-                    self.lumiErr[i].append(-999)
+                    #self.lumi[i].append(-999)
+                    #self.lumiErr[i].append(-999)
+                    self.lumi[i].append(1e-5)
+                    self.lumiErr[i].append(1e-5)
             self.lumiPerBX[bx] = self.lumi[i]
             self.lumiErrPerBX[bx] = self.lumiErr[i]
 

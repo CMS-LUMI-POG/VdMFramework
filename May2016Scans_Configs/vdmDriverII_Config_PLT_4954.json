@@ -4,21 +4,24 @@
 "Luminometer": "PLT",
 "AnalysisDir": "Fill4954_May272016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
+"Corr" : ["BeamBeam"],
+"Corr" : ["LengthScale"],
 "Corr" : ["noCorr"],
+"Corr" : ["LengthScale","BeamBeam"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeScanFile": true,
+"makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
-"makeBeamCurrentFile": true,
+"makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": false,
+"makeBeamBeamFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
-"makeLengthScaleFile": false,
+"makeLengthScaleFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -58,7 +61,7 @@
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4954.pkl",
 	"OutputSubDir" : "cond",
-	"CalibrateFBCTtoDCCT" : false
+	"CalibrateFBCTtoDCCT" : true
 	},
 "makeBeamBeamFileConfig":
 	{
@@ -67,7 +70,8 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
-	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
+	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"InputCapSigmaFile" : "LengthScale/DGConst_FitResults.pkl",
 	"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
@@ -115,7 +119,9 @@
 "vdmFitterConfig":
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
+	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
 	 "FitName" : "DGConst",
 	 "FitConfigFile" : "fits/DGConst_Config.json"
 	 }

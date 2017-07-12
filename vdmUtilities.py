@@ -238,7 +238,10 @@ def doPlot1D(graph,fList, fill, tempPath):
             yval.append(y[i])
         while minval < 0.:
             yval.remove(minval)
-            minval =  min(yval)
+            try:
+                minval =  min(yval)
+            except:
+                minval =  0.001
 
     new_graph.SetTitle("Scan " + scan + ": " + type + "-plane BCID " + bcid)
     new_graph.GetYaxis().SetTitle("L / (N1*N2) [a.u.]")

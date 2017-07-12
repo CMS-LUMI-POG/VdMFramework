@@ -4,11 +4,11 @@
 "Luminometer": "PCC",
 "AnalysisDir": "Fill4954_May272016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
-"Corr" : ["noCorr"],
 "Corr" : ["LengthScale"],
-"Corr" : ["LengthScale","BeamBeam"],
 "Corr" : ["BeamBeam"],
 "Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["noCorr"],
+"Corr" : ["LengthScale","BeamBeam"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -16,13 +16,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": true,
+"makeBeamBeamFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
-"makeLengthScaleFile": true,
+"makeLengthScaleFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -50,7 +50,7 @@
 	},
 "makeRateFileConfig":
 	{	
-	"InputPCCFiles": ["/eos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_PromptReco_vdmminitrees.root"],
+	"InputPCCFiles": ["/eos/cms/store/group/comm_luminosity/PCC/VdM/May2016Scans_FPix_Feb27.root"],
   "Comment": "BCIDs on which trigger read out PCC values",
   "PCC_BCID": [41,281,872,1783,2063],
   "AnalysisDir": "../Fill4954_May272016",
@@ -116,6 +116,7 @@
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
 	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_PromptReco_NoVeto.pkl",
 	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_NoVeto.pkl",
+	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_FPix_2Jan2017Veto.pkl",
 	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_2Jan2017Veto.pkl",
   "OutputSubDir" : "graphs"       
 	},
@@ -129,17 +130,17 @@
 "vdmFitterConfig":
 	 {
 	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
-	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale.pkl",
-	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
    
+   "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
    "FitName" : "SimCapSigma_PCCAndVtx",
    "FitPartner" : "VTX",
-   "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
+   "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"],
    "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json",
-   "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
+	 "FitConfigFile" : "fits/DGConst_Config_PCC.json"
 	 }
 }

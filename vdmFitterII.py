@@ -177,6 +177,7 @@ if __name__ == '__main__':
     FitName = str(ConfigInfo['FitName'])
     FitConfigFile = str(ConfigInfo['FitConfigFile'])
     PlotsTempPath = [["./plotstmp/"]]
+    FitPartner=str(ConfigInfo['FitPartner'])
 
     corrFull = ""
     for entry in Corr:
@@ -205,13 +206,15 @@ if __name__ == '__main__':
     if 'Sim' in FitConfigFile:
         PlotsTempPath = ConfigInfo['PlotsTempPath']
         if 'InputSimGraphsFile' in vdmFitterConfig:
-            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' + vdmFitterConfig['InputSimGraphsFile']
+            InputSimGraphsFile = AnalysisDir + '/' + FitPartner + '/' + vdmFitterConfig['InputSimGraphsFile']
+            print InputSimGraphsFile
             InputGraphsFiles.append(InputSimGraphsFile)
         else:
             defaultSimGraphsFile = 'graphs' + '/' + 'graphs_' + Fill + '_' + corrFull + '.pkl'
-            InputSimGraphsFile = AnalysisDir + '/' + 'VTX' + '/' +  defaultSimGraphsFile
+            InputSimGraphsFile = AnalysisDir + '/' + FitPartner + '/' +  defaultSimGraphsFile
+            print "default",InputSimGraphsFile
             InputGraphsFiles.append(InputSimGraphsFile)
-        OutputDir = './' + AnalysisDir + '/' + 'VTX' + '/results/' + corrFull + '/'
+        OutputDir = './' + AnalysisDir + '/' + FitPartner + '/results/' + corrFull + '/'
         OutputDirs.append(OutputDir)
             
     for OutputDir in OutputDirs:

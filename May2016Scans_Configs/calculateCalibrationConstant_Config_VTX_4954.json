@@ -2,11 +2,12 @@
 "Fill" : "4954",
 "AnalysisDir" : "Fill4954_May272016",
 "Luminometer": "VTX",
-"Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
+"Corr" : ["LengthScale"],
+"Corr" : ["LengthScale","BeamBeam"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
-"FitName" : "DG",
-"InputFitResultsFile" : "DG_FitResults.pkl",
+"FitName" : "DGConst",
+"InputFitResultsFile" : "DGConst_FitResults.pkl",
 "LuminometerSettings":
 	{
 	"LuminometerName": "VTX",

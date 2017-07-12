@@ -16,13 +16,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": true,
+"makeBeamBeamFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
-"makeLengthScaleFile": true,
+"makeLengthScaleFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -132,6 +132,10 @@
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
 	 "FitName" : "DG",
-	 "FitConfigFile" : "fits/DG_Config.json"
+	 "FitConfigFile" : "fits/DG_Config.json",
+   "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
+   "FitName" : "SimCapSigma_PCCAndVtx",
+   "FitPartner" : "PCC",
+   "PlotsTempPath": [["./plotstmp/VTX/"], ["./plotstmp/PCC/"]]
 	 }
 }

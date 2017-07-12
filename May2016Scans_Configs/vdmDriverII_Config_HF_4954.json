@@ -4,11 +4,13 @@
 "Luminometer": "HF",
 "AnalysisDir": "Fill4954_May272016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
+"Corr" : ["LengthScale","BeamBeam"],
+"Corr" : ["LengthScale"],
 "Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
-"makeRateFile": true,
+"makeRateFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -58,7 +60,7 @@
 	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
 	"InputScanFile" : "cond/Scan_4954.pkl",
 	"OutputSubDir" : "cond",
-	"CalibrateFBCTtoDCCT" : false
+	"CalibrateFBCTtoDCCT" : true
 	},
 "makeBeamBeamFileConfig":
 	{

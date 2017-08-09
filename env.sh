@@ -1,5 +1,6 @@
 if [ "$1" = "Timber" ]
 then
+    export _JAVA_OPTIONS="-Xss2m"
     source /cvmfs/sft.cern.ch/lcg/views/LCG_85swan3/x86_64-slc6-gcc49-opt/setup.sh
     export PYTHONPATH=${PWD}:$PYTHONPATH
     export PYTHONPATH=${PWD}/fits:$PYTHONPATH

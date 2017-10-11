@@ -1,0 +1,122 @@
+{
+"Fill": "6016",
+"Date": "Jul282017",
+"Luminometer": "PLT",
+"AnalysisDir": "Fill6016_VdM_28Jul2017",
+"CorrLater" : ["noCorr", "LengthScale", "Ghosts", "Satellites", "BeamBeam"],
+"Corr" : ["BeamBeam"],
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeScanFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
+"makeRateFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/cond", 
+"makeBeamCurrentFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeBeamBeamFile": true,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGhostsFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeSatellitesFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
+"makeLengthScaleFile": false,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphsFile": true,
+"Comment": "Output of following step goes to <AnalysisDir>/corr",
+"makeGraphs2D": false,
+"Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/results/<Corr>", 
+"runVdmFitter": true,
+"makeScanFileConfig":
+	{
+	"InputCentralPath": "/eos/cms/store/group/comm_luminosity/VdM/scanFill6016_28July2017/central",		
+	"InputDIPFile" : "6016_Configs/6016_dip.csv",
+        "ScanNames" : ["X1","Y1", "Y2", "X2", "X3","Y3","X4","Y4","X5","Y5","X6","Y6"],
+        "Comment" : "Since X,Y scans are automatically differentiated, a time window can include an X and a Y scan, will still work, timestamp in UTC", 
+        "ScanTimeWindows" :[[1501228894, 1501229847], [1501230121, 1501231078],[1501231474, 1501232429], [1501232783, 1501233736],[1501235405, 1501236476], [1501236800, 1501237885],[1501238673, 1501239753], [1501240038, 1501241112],[1501245625, 1501246591], [1501246910, 1501247864],[1501269856, 1501270809], [1501271000, 1501271954]],
+	"Comment" : "A few parameters that are not in our current DIP file, but should be available eventually",
+	"Comment" : "betaStar in m, angle in microrad",
+	"BetaStar" : 19.17,
+	"Angle" : 0.0,
+	"Offset" : [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],
+	"ParticleTypeB1" : "proton",
+	"ParticleTypeB2" : "proton",
+	"Comment": "Beam energies in GeV", 
+	"EnergyB1" : 6499,
+	"EnergyB2" : 6499,
+	"OutputSubDir" : "cond"
+	},
+"makeRateFileConfig":
+	{	
+	"Comment": "The following directories are relative to <AnalysisDir>",
+	"InputScanFile": "cond/Scan_6016.pkl",
+	"InputLumiDir" : "/eos/cms/store/group/comm_luminosity/VdM/scanFill6016_28July2017/central",
+	"RateTable": "pltlumizero",
+	"OutputSubDir": "LuminometerData"
+	},
+"makeBeamCurrentFileConfig":
+	{
+	"InputCentralPath": "/eos/cms/store/group/comm_luminosity/VdM/scanFill6016_28July2017/central",	
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_6016.pkl",
+	"OutputSubDir" : "cond",
+	"CalibrateFBCTtoDCCT" : true
+	},
+"makeBeamBeamFileConfig":
+	{
+	"Comment": "Input scan info file is <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_6016.pkl",
+	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_6016.pkl",
+	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
+	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
+	"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10],[11,12]],
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGhostsFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeSatellitesFileConfig":
+	{
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeLengthScaleFileConfig":
+	{
+	"Comment": "Length scale scan fill",
+	"FillLS": "3563",	
+	"Comment" : "Where to find the correction factors in json format",
+	"InputDataDir" : "dataPrep_corr/corrData",
+	"Comment": "This is relative to <AnalysisDir>",
+	"OutputSubDir": "corr"
+	},
+"makeGraphsFileConfig":
+	{
+	"Comment": "Input scan file in <AnalysisDir>/<InputScanFile>",
+	"InputScanFile" : "cond/Scan_6016.pkl",
+	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
+	"InputBeamCurrentFile" : "cond/BeamCurrents_6016.pkl",
+	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
+	"InputLuminometerData" : "LuminometerData/Rates_PLT_6016.pkl",
+	"OutputSubDir" : "graphs"       
+	},
+"makeGraphs2DConfig":
+	{
+	"Comment": "Defines each X/Y pair for which to make 2D graphs", 
+	"Scanpairs" : [[1,2],[4,3]],
+	"Comment": "Input/output directory is <AnalysisDir>/<Luminometer>/graphs",
+	"InOutSubDir": "graphs"
+	},
+"vdmFitterConfig":
+	 {
+	 "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs", 
+	 "InputGraphsFile" : "graphs/graphs_6016_BeamBeam.pkl",
+	 "FitName" : "DG",
+	 "FitConfigFile" : "fits/DG_Config.json"
+	 }
+}

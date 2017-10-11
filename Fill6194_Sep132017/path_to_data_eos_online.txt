@@ -1,0 +1,5 @@
+Data files 
+/eos/cms/store/group/comm_luminosity/VdM/scanFill6194_13Sep2017_muScan
+
+Online machine, rate files
+/brildata/vdmoutput/Automation/Analysed_Data/6194_13Sep17_111416_13Sep17_113651/LuminometerData/Rate...

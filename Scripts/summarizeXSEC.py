@@ -50,7 +50,7 @@ scans=[]
 for fit in fits:
     if fit[0] not in scans:
         scans.append(fit[0])
-scans.sort()
+scans.sort(lambda x,y: cmp(len(x), len(y))) 
     
 
 

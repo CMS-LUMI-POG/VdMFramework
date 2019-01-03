@@ -175,6 +175,7 @@ def doMakeGraphsFile(ConfigInfo):
         graphsList = {}
 
         for i, bx in enumerate(entry.usedCollidingBunches):
+            print "CAP",i, bx
             coord = entry.spPerBX[bx]
             coorde = [0.0 for a in coord] 
             coord = array("d",coord)
@@ -185,31 +186,40 @@ def doMakeGraphsFile(ConfigInfo):
             lumie = array("d",lumie)
             lumi = array("d",lumi)
             name = prefix +str(bx)
-            graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
+            print "Positions and lumis",len(coord),len(lumi)
+            #graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
+            graph = r.TGraphErrors()
+            iPoint=0
+            for iVal in range(len(lumi)):
+                if entry.lumi[i][iVal]>=0:
+                    graph.SetPoint(iPoint,coord[iVal],lumi[iVal])
+                    graph.SetPointError(iPoint,coorde[iVal],lumie[iVal])
+                    iPoint=iPoint+1
             graph.SetName(name)
             graph.SetTitle(name)
-            graph.SetMinimum(1e-2)#0.000001)
+            #graph.SetMinimum(1e-2)#0.000001)
+            graph.SetMinimum(0.000001)
             graphsList[bx] = graph
             
 
 # same for the sum, as double check, where sumLumi comes from avgraw
-        try:
-            coord = entry.displacement
-            coorde = [0.0 for a in coord] 
-            coord = array("d",coord)
-            coorde = array("d", coorde)
-            currProduct = [ a*b/1e22 for a,b in zip(entry.sumCollAvrgFbctB1,entry.sumCollAvrgFbctB2)]
-            lumi = [a/b for a,b in zip(entry.sumLumi,currProduct)]
-            lumie = [a/b for a,b in zip(entry.sumLumiErr,currProduct)]
-            lumie = array("d",lumie)
-            lumi = array("d",lumi)
-            name = prefix + 'sum'
-            graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
-            graph.SetName(name)
-            graph.SetTitle(name)
-            graphsList['sum'] = graph
-        except KeyError,e: 
-            print 'KeyError in makeGraphsFile- reason "%s"' % str(e)
+        #try:
+        #    coord = entry.displacement
+        #    coorde = [0.0 for a in coord] 
+        #    coord = array("d",coord)
+        #    coorde = array("d", coorde)
+        #    currProduct = [ a*b/1e22 for a,b in zip(entry.sumCollAvrgFbctB1,entry.sumCollAvrgFbctB2)]
+        #    lumi = [a/b for a,b in zip(entry.sumLumi,currProduct)]
+        #    lumie = [a/b for a,b in zip(entry.sumLumiErr,currProduct)]
+        #    lumie = array("d",lumie)
+        #    lumi = array("d",lumi)
+        #    name = prefix + 'sum'
+        #    graph = r.TGraphErrors(len(coord),coord,lumi,coorde,lumie)
+        #    graph.SetName(name)
+        #    graph.SetTitle(name)
+        #    graphsList['sum'] = graph
+        #except KeyError,e: 
+        #    print 'KeyError in makeGraphsFile- reason "%s"' % str(e)
 
 
         graphsListAll['Scan_'+ str(scanNumber)]=graphsList 

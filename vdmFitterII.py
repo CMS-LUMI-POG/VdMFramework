@@ -3,7 +3,7 @@ import SG_Fit
 import SGConst_Fit
 import DG_Fit
 import DGConst_Fit
-import SimCapSigma_PCCAndVtx_Fit
+import SimCapSigma_PCCAndVtx_Fit, SimFixedCapSigma_PCCAndVtx_Fit
 import GSupGConst_Fit
 import DG_2D_Fit
 from vdmUtilities import showAvailableFits
@@ -128,7 +128,7 @@ def doRunVdmFitter(Fill, FitName, InputGraphsFiles, OutputDir, PlotsTempPath, Fi
      fitlogfile.close()
 
      return resultsAll, table
-    else: #Sim Fit
+    else: #Sim Fit or SimFixedCapSigma Fit
      for (keyAll1,keyAll2) in sorted(zip(graphsAll_list[0].keys(), graphsAll_list[1].keys())):
          graphs  = {}
          graphs1 = {}
@@ -151,12 +151,18 @@ def doRunVdmFitter(Fill, FitName, InputGraphsFiles, OutputDir, PlotsTempPath, Fi
             result = fitter.doFit(graphs[key], FitConfigInfo)
             results[key] = result
             functions = result[0]
-            canvas = fitter.doPlot(graphs[key][0], functions[:4], Fill, PlotsTempPath[0]) 
-            canvas = fitter.doPlot(graphs[key][1], functions[4:], Fill, PlotsTempPath[1])
+            if "Fixed" in FitName:
+                canvas = fitter.doPlot(graphs[key][0], functions, Fill, PlotsTempPath[0])
+            else:
+                canvas = fitter.doPlot(graphs[key][0], functions[:4], Fill, PlotsTempPath[0]) 
+                canvas = fitter.doPlot(graphs[key][1], functions[4:], Fill, PlotsTempPath[1])
      sys.stdout = sysstdout
      sys.stderr = sysstderr
      fitlogfile.close()
-     table = [fitter.table_Luminometer1, fitter.table_Luminometer2]
+     if "Fixed" in FitName:
+         table = [fitter.table, fitter.table]
+     else:
+         table = [fitter.table_Luminometer1, fitter.table_Luminometer2]
      return resultsAll, table 
 
 

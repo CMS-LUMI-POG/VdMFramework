@@ -58,7 +58,7 @@
 	],
         "Comment": "BCIDs on which trigger read out PCC values",
         "PCC_BCID": [41,281,872,1783,2063],
-        "AnalysisDir": "../Fill6016_Nov222016",
+        "AnalysisDir": "../Fill6016_Jul282017",
         "Comment": "The following directories are relative to <AnalysisDir>",
         "InputScanFile" : "cond/Scan_6016.pkl",
         "PCCTreeName": "pccminitree",

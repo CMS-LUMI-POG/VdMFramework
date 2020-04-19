@@ -143,7 +143,12 @@ and
 Fill4634_Nov192015/TrkVtx/results/noCorr/ and plotstmp/2 (just under the VdMFramework/ directory).
 ```
 
-The `"PlotsTempPath":` argument inside the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file are configurable and user is free to change them.
+In addtion, there is the option to select `"FitName" : "SimFixedCapSigma_PCCAndVtx"`, i.e. the option for a PCC fit with parameters fixed to a prior VTX fit, in the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file, then the output is only stored under
+```
+Fill4634_Nov192015/PCC/results/noCorr/ and plotstmp/1/ (just under the VdMFramework/ directory).
+```
+
+In all cases, the `"PlotsTempPath":` argument inside the `4634_Configs/vdmDriverII_Config_PCC_4634.json` configuration file are configurable and user is free to change them.
 
 
 You are done! What is left is simply to illustrate the fitting results. 

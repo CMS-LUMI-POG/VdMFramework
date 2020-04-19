@@ -1,0 +1,13 @@
+{
+   "Comment": "Config file for makeDynamicBeta.py",
+   "InputScanFile": "../Fill4954_VdM_27May2016_all/cond/Scan_4954.pkl",
+   "InputBeamCurrentFile": "../Fill4954_VdM_27May2016_all/cond/BeamCurrents_4954.pkl",
+   "InputRatesFile": "../Fill4954_VdM_27May2016_all/LuminometerData/Rates_BCM1F_4954.pkl",
+   "InputBeamBeamFile": "../Fill4954_VdM_27May2016_all/corr/BeamBeam_BCM1F_4954.pkl",
+   "InputFitResultsFile": "../Fill4954_VdM_27May2016_all/BCM1F/results/noCorr/DGConst_FitResults.pkl",
+   "OutputSubDir": "graphs",
+   "Comment": "Fist position: X_scan. second position: Y_scan",
+   "Scanpair": [[1,2]],
+   "FitName": "DGConst",
+   "FitConfigFile": "../fits/DGConst_Config.json"
+}

@@ -1,0 +1,12 @@
+{
+   "Comment": "Config file for makeDynamicBeta.py",
+   "InputScanFile": "../Fill4266_Aug252015/cond/Scan_4266.pkl",
+   "InputBeamCurrentFile": "../Fill4266_Aug252015/cond/BeamCurrents_4266.pkl",
+   "InputRatesFile": "../Fill4266_Aug252015/LuminometerData/Rates_HF_4266.pkl",
+   "InputBeamBeamFile": "../Fill4266_Aug252015/corr/BeamBeam_HF_4266.pkl",
+   "InputFitResultsFile": "../Fill4266_Aug252015/HF/results/BeamBeam/DGConst_FitResults.pkl",
+   "Comment": "Fist position: X_scan. second position: Y_scan",
+   "Scanpair": [[1,2],[4,3],[5,6],[7,8],[9,10]],
+   "FitName": "DGConst",
+   "FitConfigFile": "../fits/DGConst_Config.json"
+}

@@ -1,0 +1,13 @@
+{
+   "Comment": "Config file for calculateDynamicBeta_light.py",
+   "ScanFilePath": "../Fill4266_Aug252015/cond/Scan_4266.pkl",
+   "CurrentFilePath": "../Fill4266_Aug252015/cond/BeamCurrents_4266.pkl",
+   "RateFilePath": "../Fill4266_Aug252015/LuminometerData/Rates_HF_4266.pkl",
+   "BeamBeamFilePath": "../Fill4266_Aug252015/corr/BeamBeam_HF_4266.pkl",
+   "FitResultsFilePath": "../Fill4266_Aug252015/HF/results/BeamBeam/DGConst_FitResults.pkl",
+   "BCID": 1011,
+   "Comment": "Fist position: X_scan. second position: Y_scan",
+   "Scanpair": [9,10],
+   "FitName": "DGConst",
+   "FitConfigFile": "../fits/DGConst_Config.json"
+}

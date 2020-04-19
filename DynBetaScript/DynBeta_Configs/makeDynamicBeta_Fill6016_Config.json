@@ -1,0 +1,13 @@
+{
+   "Comment": "Config file for makeDynamicBeta.py",
+   "InputScanFile": "../Fill6016_VdM_28Jul2017/cond/Scan_6016.pkl",
+   "InputBeamCurrentFile": "../Fill6016_VdM_28Jul2017/cond/BeamCurrents_6016.pkl",
+   "InputRatesFile": "../Fill6016_VdM_28Jul2017/LuminometerData/Rates_HFOC_6016.pkl",
+   "InputBeamBeamFile": "../Fill6016_VdM_28Jul2017/corr/BeamBeam_HFOC_6016.pkl",
+   "InputFitResultsFile": "../Fill6016_VdM_28Jul2017/HFOC/results/noCorr/DGConst_FitResults.pkl",
+   "OutputSubDir": "graphs",
+   "Comment": "Fist position: X_scan. second position: Y_scan",
+   "Scanpair": [[1,2],[4,3],[5,6],[7,8],[9,10],[11,12]],
+   "FitName": "DGConst",
+   "FitConfigFile": "../fits/DGConst_Config.json"
+}

@@ -1,0 +1,15 @@
+{
+   "Comment": "Config file for calculateDynamicBeta_light.py",
+   "ScanFilePath": "../Fill6016_VdM_28Jul2017/cond/Scan_6016.pkl",
+   "CurrentFilePath": "../Fill6016_VdM_28Jul2017/cond/BeamCurrents_6016.pkl",
+   "RateFilePath": "../Fill6016_VdM_28Jul2017/LuminometerData/Rates_HFOC_6016.pkl",
+   "BeamBeamFilePath": "../Fill6016_VdM_28Jul2017/corr/BeamBeam_HFOC_6016.pkl",
+   "Comment": "../Fill6016_VdM_28Jul2017/HFOC/results/noCorr/DGConst_FitResults.pkl",
+   "FitResultsFilePath": "../Fill6016_VdM_28Jul2017/HFOC/results/BeamBeam/DGConst_FitResults.pkl",
+   "BCID": 992,
+   "Comment": "Fist position: X_scan. second position: Y_scan",
+   "Scanpair": [1,2],
+   "Comment": "Fit config for corrected lumi",
+   "FitName": "DGConst",
+   "FitConfigFile": "../fits/DGConst_Config.json"
+}
